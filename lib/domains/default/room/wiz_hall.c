@@ -12,6 +12,7 @@ string LongDesc(){
          "test and development mud, visit the upstairs annex." : "")+
         " The test lab facilities are east.";
     desc += "\nA sign reads: "+load_object(ROOM_ARCH)->SignRead();
+    desc += "\nНа стене написано %^%^RED%^%^ТУТ БЫЛ ПРУЛЬ%^%^RESET%^%^";
     return desc;
 }
 
@@ -45,6 +46,7 @@ static void create() {
                 "north" : "/domains/default/room/start",
                 "east" : "/domains/default/room/wiz_corr1",
                 "up" : "/domains/default/room/wiz_hall2.c",
+                "west" : "/domains/default/room/wiz_hall_prool.c",
                 ]) );
     SetRead("sign", (: load_object(ROOM_ARCH)->SignRead() :) );
 }
