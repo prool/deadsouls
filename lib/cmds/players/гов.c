@@ -6,8 +6,8 @@ mixed cmd (string str)
 {
     if (str)
 	{
-    write("Вы сказали '"+str+"'\n");
-    say(this_player()->GetName()+" сказал: "+str);
+    write("Вы сказали %^BOLD%^%^CYAN%^\""+str+"\"%^RESET%^\n");
+    say(this_player()->GetName()+" сказал: %^BOLD%^%^CYAN%^\""+str+"\"%^RESET%^");
 	}
     else
 	{

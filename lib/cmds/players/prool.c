@@ -4,8 +4,8 @@ inherit LIB_DAEMON;
 
 mixed cmd (string str)
 {
-    write("Вы сказали '"+str+"'\n");
-    say(this_player()->GetName()+" сказал: "+str);
+    write("%^BOLD%^%^CYAN%^prool v.0.2%^RESET%^");
+    shout("Uuuuuuuuuuuuuuuuuu!");
     return 1;
 }
 
