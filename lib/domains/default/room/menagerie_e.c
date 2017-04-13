@@ -6,8 +6,8 @@ inherit LIB_ROOM;
 void create() {
     room::create();
     SetAmbientLight(30);
-    SetShort("Menagerie, east");
-    SetLong("This is the eastern annex of the menagerie.");
+    SetShort("Зверинец, восток");
+    SetLong("Это восточная часть зверинца.");
     SetInventory(([
                 "/domains/default/npc/foochy" : 1,
                 "/domains/default/npc/satyr" : 1,

@@ -7,8 +7,8 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Disease Lab Annex");
-    SetLong("This room is designed for testing the effects and transmissibility of disease. Another testing area is west.");
+    SetShort("Пристройка лаборатории болезней");
+    SetLong("Эта комната предназначена для изучения эффектов и переносимости болезней. Другая тестовая область на западе.");
     SetExits( ([ 
                 "west" : "/domains/default/room/quarantine2",
                 ]) );

@@ -4,10 +4,10 @@
 inherit LIB_ROOM;
 
 string LongDesc(){
-    string desc = "Immortals come here to visit parts of "+
-        "the world they are building. The Creators' Hall is above. "+
-        "To visit the Dead Souls "+
-        "test and development mud, go west.";
+    string desc = "Бессмертные приходят сюда чтобы посетить "+
+        "созданный ими мир. Зал билдеров находится выше. "+
+        "Чтобы посетить "+
+        "тестовую комнату, идите на запад.";
     return desc;
 }
 
@@ -15,26 +15,22 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Domains Room");
-    SetLong("This room provides a convenient access point to various domain start rooms and featured realms.");
+    SetShort("Перекресток миров");
+    SetLong("Из этого места вы можете попасть в различные части этого мира.");
     SetItems(([
-                "Ylsrim" : "This is the entry point for the Ylsrim domain.",
-                "campus" : "This is the entry point for the campus domain.",
-                "examples" : "This is the entry point for the examples domain.",
-                "town" : "This is the entry point for the town domain.",
-                "cave" : "This is the entry point for the cave domain.",
-                "praxis" : "This is the entry point for the praxis domain.",
-                "learning" : "This is the entry point for the tutorial",
-                ({ "sign" }) : "A sign you can read.",
+                "кампус" : "Это точка входа в зону кампус.",
+                "примеры" : "Это точка входа в зону примеров.",
+                "город" : "Это точка входа в зону город.",
+                "пещера" : "Это точка входа в зону пещера.",
+                "обучение" : "Это точка входа в обучающую зону.",
+                ({ "знак" }) : "Знак который можно прочесть.",
                 ]));
     SetEnters( ([
-                "campus" : "/domains/campus/room/start",
-                "ylsrim" : "/domains/Ylsrim/room/bazaar",
-                "examples" : "/domains/examples/room/start.c",
-                "cave" : "/domains/cave/room/start",
-                "town" : "/domains/town/room/start",
-                "learning" : "/domains/learning/room/start",
-                "praxis" : "/domains/Praxis/square",
+                "кампус" : "/domains/campus/room/start",
+                "примеры" : "/domains/examples/room/start.c",
+                "пещера" : "/domains/cave/room/start",
+                "город" : "/domains/town/room/start",
+                "обучение" : "/domains/learning/room/start",
                 ]) );
     SetProperty("no attack", 1);
     SetProperty("nopeer",1);
@@ -45,13 +41,13 @@ static void create() {
     SetInventory(([
                 ]));
 
-    SetRead("sign", (: load_object(ROOM_ARCH)->SignRead() :) );
+    SetRead("знак", (: load_object(ROOM_ARCH)->SignRead() :) );
 }
 
 int CanReceive(object ob) {
     if(playerp(ob) && !creatorp(ob) && !present("testchar badge",ob) &&
             !member_group(ob,"TEST")) {
-        message("info","Creator staff only, sorry.", ob);
+        message("info","Извините, но эта вещь только для билдеров.", ob);
         return 0;
     }
 

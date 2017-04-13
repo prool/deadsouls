@@ -8,8 +8,8 @@ void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("An airless room");
-    SetLong("A room whose only purpose is to have nothing to breathe.");
+    SetShort("Безвоздушное пространство");
+    SetLong("Комната единственное предназначение которой - препятствовать дыханию.");
     SetRespirationType(R_VACUUM);
 }
 

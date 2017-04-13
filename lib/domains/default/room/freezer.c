@@ -7,8 +7,8 @@ void create() {
     room::create();
     SetNoClean(1);
     SetProperties(([ "login" : ROOM_START ]));
-    SetShort( "The freezer");
-    SetLong( "The local freezer.  Go down to leave.");
+    SetShort( "Морозильник");
+    SetLong( "Местный морозильник, идите вниз, чтобы покинуть это место.");
     SetObviousExits("down");
     SetExits( ([ "down" : ROOM_START ]) );
     call_out("clean_room", MAX_NET_DEAD_TIME);

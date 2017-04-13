@@ -7,8 +7,8 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Test Labs Corridor");
-    SetLong("This is the main corridor of the test labs. North is the combat arena. South is the menagerie. The corridor continues east and west.");
+    SetShort("Коридор между тестовыми лабораториями");
+    SetLong("Это главный коридор ведущий к тестовым лабораториям. На севере вы видите боевую арену. На юге зверинец. Коридор продолжается на запад и восток.");
     SetExits( ([
                 "south" : "/domains/default/room/wiz_corr_south",
                 "west" : "/domains/default/room/wiz_corr1",

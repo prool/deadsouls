@@ -22,17 +22,17 @@ void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("the telnet room");
-    SetLong("From this room, you can attempt "+
-            "to connect to Dead Souls Dev. This is useful if you "+
-            "need to ask questions but the intermud connection is down. "+
+    SetShort("узел связи");
+    SetLong("Отсюда вы можете попытаться "+
+            "связаться с разработчиками. Это бывает полезно "+
+            "если у вас есть вопросы, а intermud не работает. "+
             "Note that being in charmode interferes with input. "+
             "\n\tIf the connection "+
             "fails, email cratylus@comcast.net to ask for help. "+
             "Once you connect to Dead Souls Dev, type \"dcon\" to "+
             "return to your own mud. \n\n"+
             "To connect type \"connect\" \n"+
-            "The Creators' Hall annex is west of here.");
+            "К западу отсюда зал билдеров.");
     SetExits( ([ 
                 "west" : "/domains/default/room/wiz_hall2",
                 ]) );
@@ -58,7 +58,7 @@ int CanRelease(object ob){
 
 int CanReceive(object ob) {
     if(interactive(ob)){
-        tell_object(this_object(),ob->GetName()+" is about to enter the telnet room.");
+        tell_object(this_object(),ob->GetName()+" готовится войти в узел связи.");
     }
     return 1;
 }

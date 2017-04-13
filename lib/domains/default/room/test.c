@@ -7,9 +7,9 @@ void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("The start room");
-    SetLong("The default start room. To enter "+
-            "a sample set of rooms, go down.");
+    SetShort("Начальная комната");
+    SetLong("Начальная комната этого места. Чтобы войти "+
+            "в примеры комнат идите вниз.");
     SetExits( ([ 
                 "down" : "/domains/town/room/road",
                 ]) );

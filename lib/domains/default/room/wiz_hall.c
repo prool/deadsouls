@@ -5,14 +5,13 @@ inherit LIB_ROOM;
 int ds;
 
 string LongDesc(){
-    string desc = "Immortals come here to communicate with each other about "+
-        "the world they are building. The default start room is "+
-        "north. The Arch Room is south."+
-        (!(ds) ? " To visit the Dead Souls "+
-         "test and development mud, visit the upstairs annex." : "")+
-        " The test lab facilities are east.";
-    desc += "\nA sign reads: "+load_object(ROOM_ARCH)->SignRead();
-    desc += "\nНа стене написано %^%^RED%^%^ТУТ БЫЛ ПРУЛЬ%^%^RESET%^%^";
+    string desc = "Бессмертные приходят сюда чтобы обсуждать "+
+        "мир, который они создают. Начальная комната этого места "+
+        "на севере, комната создателя на юге."+
+        (!(ds) ? " Чтобы посетить "+
+         "тестовые и служебные комнаты, подмитесь наверх." : "")+
+        " А на востоке находятся тестовые лаборатории.";
+    desc += "\nНа знаке написано: "+load_object(ROOM_ARCH)->SignRead();
     return desc;
 }
 
@@ -24,22 +23,22 @@ static void create() {
     }
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Creators' Hall");
+    SetShort("Зал билдеров");
     SetLong( (: LongDesc :) );
     SetProperty("no attack", 1);
     SetProperty("nopeer",1);
     ob = new("/lib/bboard");
-    ob->SetKeyName("chalkboard");
-    ob->SetId( ({ "board", "chalkboard", "dusty board", "dusty chalkboard" }) );
+    ob->SetKeyName("доска объявлений");
+    ob->SetId( ({ "доска", "доска объявлений", "объявлений", "объявления" }) );
     ob->set_board_id("immortal_board");
     ob->set_max_posts(30);
-    ob->SetShort("a dusty chalkboard");
+    ob->SetShort("доска объявлений");
     ob->eventMove(this_object());
     SetInventory(([
                 "/domains/default/npc/tree" : ({ 10, 1 }),
                 "/domains/default/obj/chest" : 1 ]));
     SetItems( ([
-                ({"sign"}) : "A sign you can read.",
+                ({"знак"}) : "На знаке что-то написано.",
                 ]) );
     SetExits( ([
                 "south" : "/secure/room/arch",
@@ -48,7 +47,7 @@ static void create() {
                 "up" : "/domains/default/room/wiz_hall2.c",
                 "west" : "/domains/default/room/wiz_hall_prool.c",
                 ]) );
-    SetRead("sign", (: load_object(ROOM_ARCH)->SignRead() :) );
+    SetRead("знак", (: load_object(ROOM_ARCH)->SignRead() :) );
 }
 
 int CanReceive(object sneak) {
@@ -61,7 +60,7 @@ int CanReceive(object sneak) {
                 base_name(ob) != "/domains/default/npc/drone3" &&
                 base_name(ob) != "/secure/obj/floodmapper" &&
                 !member_group(ob,"TEST")) {
-            message("info","Creator staff only, sorry.", ob);
+            message("info","Извините, но эта вещь только для билдеров.", ob);
             return 0;
         }
     }
@@ -73,13 +72,13 @@ int eventReceiveObject(object ob){
     int ret = ::eventReceiveObject(ob);
     if(!ret) return 0;
     if(race && race == "orc"){
-        ob->eventPrint("Welcome to our inclusive halls, proud orc!");
+        ob->eventPrint("Добро пожаловать в наши скрытые помещения, славный орк!");
     }
     if(ob->GetInvis()){
         tell_room(this_object(), capitalize(ob->GetKeyName())+
-                " enters invisibly.", ({ ob }) );
-        ob->eventPrint("%^BOLD%^%^RED%^Your invisible entry has "+
-                "been announced.%^RESET%^");
+                " стал невидимым.", ({ ob }) );
+        ob->eventPrint("%^BOLD%^%^RED%^Ваш невидимый вход "+
+                "был замечен.%^RESET%^");
     }
     return ret;
 }
@@ -89,9 +88,9 @@ int eventReleaseObject(object ob){
     if(!ret) return 0;
     if(ob->GetInvis()){
         tell_room(this_object(), capitalize(ob->GetKeyName())+
-                " exits invisibly.", ({ ob }) );
-        ob->eventPrint("%^BOLD%^%^RED%^Your invisible exit has "+
-                "been announced.%^RESET%^");
+                " стал невидимым.", ({ ob }) );
+        ob->eventPrint("%^BOLD%^%^RED%^Ваш невидимый вход "+
+                "стал замечен.%^RESET%^");
     }
     return ret;
 }

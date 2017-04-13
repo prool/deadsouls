@@ -12,19 +12,19 @@ static void create() {
     }
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Creators' Hall Upstairs");
-    SetLong("This is the upstairs annex of the Creators' Hall. East is the telnet room where you can connect to the Dead Souls test and development mud. South is the domains room, where you can conveniently visit featured domains or realms. The main hall is below.");
+    SetShort("Верхняя часть зала билдеров");
+    SetLong("Это верхняя часть зала билдеров. На востоке находится узел связи с создателями этого мада. На юге части мира, которые вы можете посетить. Основной зал ниже.");
     SetProperty("no attack", 1);
     SetProperty("nopeer",1);
     ob = new("/lib/bboard");
-    ob->SetKeyName("chalkboard");
-    ob->SetId( ({ "board", "chalkboard", "dusty board", "dusty chalkboard" }) );
+    ob->SetKeyName("доска объявлений");
+    ob->SetId( ({ "доска", "доска объявлений", "объявлений", "объявления" }) );
     ob->set_board_id("immortal_board");
     ob->set_max_posts(30);
-    SetShort("Creators' Hall West Wing");
+    SetShort("Залы билдеров, западное крыло");
     ob->eventMove(this_object());
     SetItems( ([
-                ({"sign"}) : "A sign you can read.",
+                ({"знак"}) : "На знаке что-то написано.",
                 ]) );
     SetExits( ([
                 "south" : "/domains/default/room/domains_room",
@@ -36,13 +36,13 @@ static void create() {
     SetInventory(([
                 ]));
 
-    SetRead("sign", (: load_object(ROOM_ARCH)->SignRead() :) );
+    SetRead("знак", (: load_object(ROOM_ARCH)->SignRead() :) );
 }
 
 int CanReceive(object ob) {
     if(playerp(ob) && !creatorp(ob) &&
             !member_group(ob,"TEST")) {
-        message("info","Creator staff only, sorry.", ob);
+        message("info","Извините, но эта вещь только для билдеров.", ob);
         return 0;
     }
 

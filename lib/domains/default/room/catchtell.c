@@ -7,8 +7,8 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("catch_tell room");
-    SetLong("This is a room designed to receive certain messages from NPC's. It is largely for debugging purposes, and it is not vital to normal mud operations.");
+    SetShort("catch_tell комната");
+    SetLong("Эта комната предназначена для приема сообщений от NPC. Нужна в основном для отладки мада.");
     SetExits(([
                 "west" : "/secure/room/network",
                 ]));
@@ -16,8 +16,8 @@ static void create() {
 }
 int CanReceive(object ob) {
     if( !archp(ob) ){
-        message("info","The catch tell room is available only to "+
-                "admins, sorry.",ob);
+        message("info","Комната catch tell доступна только для администраторов, "+
+                "просим прощения.",ob);
         return 0;
     }
     return 1;
