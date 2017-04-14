@@ -1,3 +1,5 @@
+Russificated by Prool & Pacifist. test MUD here: mud.kharkov.org 6666
+---
 		      The Dead Souls 2 Mud Library
 		         Released December 2005
 
