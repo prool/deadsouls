@@ -18,10 +18,16 @@ static void create() {
     SetLong( (: LongDesc :) );
     SetProperty("no attack", 1);
     SetProperty("nopeer",1);
+    SetInventory(([
+			"/obj/meal" : 10,
+			"/obj/drink" : 10,
+			"/domains/Praxis/obj/mon/spider" : 1
+		]));
     SetExits( ([
                 "east" : "/domains/default/room/wiz_hall",
                 ]) );
 }
+
 
 int CanReceive(object ob) {
     return room::CanReceive();
