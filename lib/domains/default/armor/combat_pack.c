@@ -5,11 +5,11 @@ inherit LIB_WORN_STORAGE;
 
 static void create(){
     ::create();
-    SetKeyName("combat pack");
-    SetAdjectives( ({"combat", "back"}) );
-    SetId( ({"pack", "backpack"}) );
-    SetShort("a combat backpack");
-    SetLong("A pack containing the equipment a testchar will need to jump into battle.");
+    SetKeyName("боевое снаряжение");
+    SetAdjectives( ({"боевое"}) );
+    SetId( ({"снаряжение", "комплект"}) );
+    SetShort("боевое снаряжение");
+    SetLong("Комплект боевого снаряжения для тестовых персонажей.");
     SetClosed(1);
     SetInventory(([
                 "/domains/default/armor/glove_r" : 1,

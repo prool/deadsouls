@@ -8,12 +8,12 @@ int CheckRing(string skill);
 
 static void create(){
     armor::create();
-    SetKeyName("ring");
-    SetId(({"ring"}));
-    SetAdjectives( ({"magic", "thin", "unobtrusive"}) );
-    SetShort("a thin ring");
-    SetLong("This thin ring seems designed to be "+
-            "as light and unobtrusive as possible.");
+    SetKeyName("кольцо");
+    SetId(({"кольцо"}));
+    SetAdjectives( ({"магическое", "тонкое", "простое"}) );
+    SetShort("тонкое кольцо");
+    SetLong("Это простое кольцо создано из тонкой "+
+            "скрученной проволоки.");
     SetMass(10);
     SetBaseCost("silver",5000);
     SetArmorType(A_RING);
@@ -29,9 +29,9 @@ varargs int DoWear(object who, string where){
     object env = environment(who);
     who->AddSkillBonus("blade attack", (: CheckRing :) );
     who->AddSkillBonus("blade defense", (: CheckRing :) );
-    who->eventPrint("You wear the ring and feel oddly dextrous..."+
-            "and somehow fancy.");
-    if(env) tell_room(env, who->GetName()+" wears "+GetShort()+".", ({who}));
+    who->eventPrint("Вы одели кольцо и почувствовали себя ловче..."+
+            "и немного бодрее.");
+    if(env) tell_room(env, who->GetName()+" одел "+GetShort()+".", ({who}));
     return 1;
 }
 

@@ -4,11 +4,11 @@
 inherit LIB_ARMOR;
 static void create(){
     armor::create();
-    SetKeyName("steel helmet");
-    SetId(({"helmet","cover","steel"}));
-    SetAdjectives(({"steel","battle","hard"}));
-    SetShort("a steel helmet");
-    SetLong("This is a helmet made of tough  metal.");
+    SetKeyName("стальной шлем");
+    SetId(({"шлем","стальной"}));
+    SetAdjectives(({"стальной"}));
+    SetShort("стальной шлем");
+    SetLong("Этот шлем сделан из очень качественной стали.");
     SetMass(180);
     SetBaseCost("silver",500);
     SetDamagePoints(100);

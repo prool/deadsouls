@@ -13,25 +13,25 @@ mapping SpecialFuns = ([]);
 
 int CheckPanel(){
     if(this_object()->GetClosed()){
-        write("The wrist computer is closed. The panel is not accessible.");
+        write("Переносной компьютер закрыт, дисплей не доступен.");
     }
     else {
-        write("A panel you can read.");
+        write("Инофрмация на дисплее доступна.");
     }
     return 1;
 }
 
 static void create() {
     worn_storage::create();
-    SetKeyName("wrist computer");
-    SetId( ({ "computer", "bracer","comp","wristcomp","system" }) );
-    SetAdjectives( ({ "wrist","odd","odd looking","complex","tough","rugged",
-                "tactical", "tactical data" }) );
-    SetShort("a Yautja wrist computer");
-    SetLong("An odd looking bracer intended to be worn on the arm. It looks "
-            "extremely complex yet also very tough and rugged. One may perhaps "
-            "\"activate bracer\". It appears that one can access special functions "
-            "by opening it.");
+    SetKeyName("переносной компьютер");
+    SetId( ({ "компьютер", "браслет","система" }) );
+    SetAdjectives( ({ "ручной","странный","сложный","прочный","надежный",
+                 "информационный" }) );
+    SetShort("переносной компьютер");
+    SetLong("Этот странно выглядящий браслет носится на руке. Он выглядит "
+            "очень сложным, но также прочным и надежным. Вы вероятно можете "
+            "\"activate bracer\". Вероятно вам станут доступны специальные функции, "
+            "когда откроете его.");
     SetDamagePoints(75);
     SetVendorType(VT_ARMOR);
     SetMass(10);
@@ -50,7 +50,7 @@ static void create() {
                 ({"panel","functions"}) : (: CheckPanel :),
                 ]) );
     SetRead( ([
-                ({ "panel", "default" }) :"Yautja tactical data system, version .09",
+                ({ "panel", "default" }) :"Тактическая информационная система, версия .09",
                 //"panel": (: eventRead :),
                 ]) );
     SetMaxClones(2);
@@ -106,12 +106,12 @@ int eventTurnOn(){
     object *contents = all_inventory();
     if(!(this_object()->GetWorn()) || !this_player() ||
             environment(this_object()) != this_player()){
-        write("You are not wearing the wrist computer.");
+        write("На вас не одет переносной компьютер.");
         return 1;
     }
-    write("You activate the wrist computer. The computer says:");
-    say(this_player()->GetName()+" operates "+possessive(this_player())+" "
-            "wrist computer. You hear the computer say: "); 
+    write("Вы активируете переносной компьютер. Появляется информация:");
+    say(this_player()->GetName()+" использует "+possessive(this_player())+" "
+            "переносной компьютер. Вы слышите доносящийся звук: "); 
     yaut_say("Computer online.");
     if(sizeof(contents)) contents->eventPowerOn();
     active = 1;
@@ -120,9 +120,9 @@ int eventTurnOn(){
 
 int eventTurnOff(){
     object *contents = all_inventory();
-    write("You deactivate the wrist computer. The computer says:");
-    say(this_player()->GetName()+" operates "+possessive(this_player())+" "
-            "wrist computer. You hear the computer say: ");
+    write("Вы деактивируете переносной компьютер. Появляется информация:");
+    say(this_player()->GetName()+" использует "+possessive(this_player())+" "
+            "переносной компьютер. Вы слышите доносящийся звук: ");
     yaut_say("Computer offline.");
     if(sizeof(contents)) contents->eventPowerOff();    
     active = 0;
@@ -130,13 +130,13 @@ int eventTurnOff(){
 }
 
 varargs mixed eventInstall(object what, object where){
-    write("The wrist computer is not installable anywhere");
+    write("Переносной компьютер не может быть установлен в любом месте.");
     return 1;
 }
 
 int CanReceive(object ob){
-    if(!answers_to("yautja data module",ob)){
-        write("That is not a proper data module for this computer.");
+    if(!answers_to("Информационный модуль",ob)){
+        write("Это не подходящий информационный модуль для этого компьютера.");
         return 0;
     }
     else return 1;
@@ -146,15 +146,15 @@ varargs mixed eventUninstallModule(object which, int auto){
     object *contents = all_inventory();
     object module = previous_object();
     if(which) module = which;
-    if(!auto) say(this_player()->GetName()+" operates "+possessive(this_player())+" "
-            "wrist computer.");
+    if(!auto) say(this_player()->GetName()+" использует "+possessive(this_player())+" "
+            "переносной компьютер.");
     if(!active){
-        if(!auto) write("The computer is not active.");
+        if(!auto) write("Компьютер не активен.");
         return 1;
     }
     if(!auto){
-        write("You attempt to uninstall a module from the wrist computer. The computer says:");
-        say(this_player()->GetName()+"'s wrist computer says: ");
+        write("Вы пытаетесь извлечь модуль из переносного компьютера. Появляется сообщение:");
+        say(this_player()->GetName()+" появляется сообщение из переносного компьютера: ");
         yaut_say("Uninstalling...");
     }
     if(SpecialFuns[module])
@@ -172,18 +172,18 @@ varargs mixed eventInstallModule(mapping ModuleData, int auto){
     string *contents = ({});
     object module = previous_object();
     if(member_array("eventInitialize",call_stack(2)) != -1) auto = 1;
-    if(!auto) say(this_player()->GetName()+" operates "+possessive(this_player())+" "
-            "wrist computer.");
-    if(!answers_to("Yautja data module",module)){
-        if(!auto) write("That is not a proper data module for this computer.");
+    if(!auto) say(this_player()->GetName()+" использует "+possessive(this_player())+" "
+            "переносной компьютер.");
+    if(!answers_to("Информационный модуль",module)){
+        if(!auto) write("Это не подходящий информационный модуль для этого компьютера.");
         return 0;
     }
     if(!active){
-        if(!auto) write("The computer is not active.");
+        if(!auto) write("Компьютер не активен..");
         return 1;
     }
     if(this_object()->GetClosed()){
-        write("The computer is closed.");
+        write("Компьютер закрыт.");
         return 1;
     }
     if(sizeof(all_inventory()))
@@ -192,14 +192,14 @@ varargs mixed eventInstallModule(mapping ModuleData, int auto){
         }
     if(member_array(base_name(module),contents) != -1){
         if(!auto){
-            write("The wrist computer already contains that type of module.");
+            write("Переносной компьютер уже содержит этот модуль.");
             return 0;
         }
     }
     SpecialFuns[module] = ModuleData;
     if(!auto){ 
-        write("You install a module into the wrist computer. The computer says:");
-        say(this_player()->GetName()+"'s wrist computer says: ");
+        write("Вы устанавливаете модуль в переносной компьютер. Появляется информация:");
+        say(this_player()->GetName()+" из переносного компьютера появляется информация: ");
         yaut_say("Installing...");
     }
     foreach(mixed key, mixed val in SpecialFuns[module]){
@@ -213,17 +213,17 @@ varargs mixed eventInstallModule(mapping ModuleData, int auto){
 }
 
 mixed CanPutInto(object who, object item){
-    return "This is a wrist computer. One can install modules on it.";
+    return "Это переносной компьютер. Вы можете установить в него модули.";
 }
 
 mixed CanGetFrom(object who, object item){
-    return "This is a wrist computer. One can uninstall modules from it.";
+    return "Это переносной компьютер. Из него можно удалить модули.";
 }
 
 varargs mixed eventRead(mixed who, mixed str){
     object dude;
     string what;
-    string ret = "Yautja tactical data system display. Installed modules:\n";
+    string ret = "Информационный дисплей. Установленные модули:\n";
     if(stringp(who)){
         what = who;
         dude = this_player();
@@ -233,11 +233,11 @@ varargs mixed eventRead(mixed who, mixed str){
         what = str;
     }
     if(this_object()->GetClosed()){
-        write("The wrist computer is closed. There is nothing to read.");
+        write("Переносной компьютер закрыт. Вы не можете ничего на нем прочесть.");
         return 1;
     }
     if(!active){
-        write("The wrist computer is not activated.");
+        write("Переносной компьютер не активен.");
         return 1;
     }
     foreach(mixed ob in all_inventory()){
@@ -260,7 +260,7 @@ varargs mixed eventOpen(object who, object tool){
     SetProtection(HEAT, 3);
     ::eventOpen(who || 0, tool || 0);
     if(!(this_object()->GetClosed())){
-        write("Opening the wrist computer yields a panel you can read.");
+        write("При открытии переносного компьютера вам стала доступна информационная панель.");
         return 1;
     }
     return 0;
@@ -275,7 +275,7 @@ mixed eventClose(object who){
 }
 
 string GetInternalDesc(){
-    return "This is the interface for the wrist computer. You may try to \"read computer\"";
+    return "Это интерфейс переносного компьютера. Вы можете попытаться \"read computer\"";
 }
 
 varargs mixed eventUnequip(object who){

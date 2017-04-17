@@ -5,13 +5,13 @@ inherit LIB_DOOR;
 static void create() {
     door::create();
 
-    SetSide("north", (["id" : ({ "steel door", "steel door leading north", "door", "north door" }),
-                "short" : "a steel door leading north",
-                "long" : "This is an imposing, large steel door leading north into the arena.",
+    SetSide("north", (["id" : ({ "стальная дверь", "север", "дверь", "северная дверь" }),
+                "short" : "стальная дверь ведущая на север",
+                "long" : "Эта внушительная стальная дверь ведет на север, на арену.",
                 "lockable" : 0 ]) );
-    SetSide("south", (["id" : ({ "steel door", "steel door leading south", "south door", "door" }),
-                "short" : "a steel door leading south",
-                "long" : "This is an imposing, large steel door leading south, out of the arena.",
+    SetSide("south", (["id" : ({ "стальная дверь", "юг", "дверь", "южная дверь" }),
+                "short" : "стальная дверь ведущая на юг",
+                "long" : "Эта внушительная стальная дверь ведет на юг, с арены.",
                 "lockable" : 0 ]) );
 
     SetClosed(0);

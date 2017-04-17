@@ -14,20 +14,20 @@ string current_direction;
 mapping Directions = ([]);
 
 string LongD(){
-    string ret = "This is a large device worn on the back and designed to \"boost\" " +
-        "the wearer through the air or through space. For continuous operation, "+
-        "it should probably be activated.  The fuel gauge "+
-        "reads "+to_int(percent(charge,maxcharge))+" percent.";
+    string ret = "Это большое устройство, носимое на спине способно \"boost\" " +
+        "носителя через воздух и через космос. Для последующего использования, "+
+        "оно должно быть правильно активировано.  Уровень топлива "+
+        "показывает "+to_int(percent(charge,maxcharge))+" процентов.";
     return ret;
 }
 
 static void create(){
     armor::create();
     if(!Directions) Directions = ([]);
-    SetKeyName("rocket pack");
-    SetId(({"pack","rocket"}));
-    SetAdjectives(({"large","rocket"}));
-    SetShort("a small rocket pack");
+    SetKeyName("ракетный ранец");
+    SetId(({"ранец","ракета"}));
+    SetAdjectives(({"большое","ракетный"}));
+    SetShort("ракетный ранец");
     SetLong( (: LongD :) );
     SetMass(800);
     SetBaseCost(18000);
@@ -58,7 +58,7 @@ void heart_beat(){
         object env = environment();
         activated = 0;
         if(env){
-            tell_object(env,"The rocket pack sputters and fails.");
+            tell_object(env,"Ракетный ранец выходит из строя.");
         }
     }
 
@@ -107,20 +107,20 @@ int boost(string str, int coasting){
     }
 
     if(!coasting && environment(this_object()) != owner){
-        write("You don't have the rocket pack.");
+        write("У вас нет ракетного ранца.");
         return 1;
     }
     if(!coasting && !GetWorn()){
-        write("You're not wearing the rocket pack.");
+        write("На вас не одет ракетный ранец.");
         return 1;
     }
     if(!coasting && !str || !env){
-        write("Boost in which direction?");
+        write("В каком направлении?");
         return 1;
     }
 
     if(!coasting && !charge){
-        write("The rocket pack is out of fuel.");
+        write("У ракетного ранца нет топлива.");
         return 1;
     }
     dest = env->GetExit(str);
@@ -128,14 +128,14 @@ int boost(string str, int coasting){
         if(str == "up" && env->GetFlyRoom()) dest = env->GetFlyRoom();
         else if(str == "down" && env->GetSinkRoom()) dest = env->GetSinkRoom();
         else {
-            if(!coasting) write("No such direction");
+            if(!coasting) write("Это направление не доступно.");
             return 1;
         }
     }
     Exit = environment(owner)->GetExitData(str);
 
     if( sizeof(Doors) && Doors[str] && Doors[str]->GetClosed() ){
-        message("my_action", "You bump into " +
+        message("my_action", "Вы врезались в " +
                 Doors[str]->GetShort(str) + ".", owner);
         return 1;
     }
@@ -147,24 +147,24 @@ int boost(string str, int coasting){
     }
 
     if(!sizeof(dest)){
-        write("You can't go that way.");
+        write("Вы не можете перемещаться в этом направлении.");
         return 1;
     }
 
-    omsg = owner->GetName()+" rockets "+str+".";
-    imsg = owner->GetName()+" rockets in.";
+    omsg = owner->GetName()+" ранец "+str+".";
+    imsg = owner->GetName()+" с ранцом.";
 
-    if(!coasting) write("You engage your rocket pack's boosters to rocket you "+str+".");
+    if(!coasting) write("Вы задействовали ускорители ракетного ранца чтобы достичь "+str+".");
     if(!coasting) charge--;
 
     ret = owner->eventMoveLiving(dest, omsg, imsg, str);
     if(ret){
         if( Exit && Exit["post"] ) evaluate(Exit["post"], str);
         if(activated){
-            if(!coasting) write("The rocket pack's boosters resume normal operation.");
+            if(!coasting) write("Ускорители ракетного ранца возобновляют нормальную работу.");
         }
         else {
-            if(!coasting) write("The rocket pack's boosters sputter and go silent.");
+            if(!coasting) write("Ускорители ракетного ранца не исправны и отвечают тишиной.");
         }
     }
 
@@ -174,20 +174,20 @@ int boost(string str, int coasting){
 int eventTurnOn(){
     if(!(this_object()->GetWorn()) || !this_player() ||
             environment(this_object()) != this_player()){
-        write("You are not wearing the rocket pack.");
+        write("На вас не одет ракетный ранец.");
         return 1;
     }
-    write("You activate the rocket pack with a deep, rumbling roar!");
-    say(this_player()->GetName()+" fires up "+possessive(this_player())+" "
-            "rocket pack with a deep, rumbling roar!");
+    write("Вы активируете ракетный ранец с громким грохочущим ревом!");
+    say(this_player()->GetName()+" запускает "+possessive(this_player())+" "
+            "ракетный ранец с громким ревом!");
     activated = 1;
     return 1;
 }
 
 int eventTurnOff(){
-    write("You deactivate the rocket pack. The boosters sputter and go silent.");
-    say(this_player()->GetName()+" deactivates "+possessive(this_player())+" "
-            "rocket pack. The boosters sputter and go silent.");
+    write("Вы деактивируете ракетный ранец. Ускорители прекращают свою работу.");
+    say(this_player()->GetName()+" деактивировал "+possessive(this_player())+" "
+            "ракетный ранец. Ускорители прекращают свою работу.");
     activated = 0;
     return 1;
 }
@@ -226,12 +226,12 @@ int eventDecrementCharge(){
     else charge--;
 
     if(charge < 50){
-        tell_object(environment(this_object()),"The rocket pack beeps loudly!");
+        tell_object(environment(this_object()),"Ракетный ранец подает громкий сигнал!");
         return charge;
     }
 
     if(charge < 100){
-        tell_object(environment(this_object()),"The rocket pack beeps softly.");
+        tell_object(environment(this_object()),"Ракетный ранец подает громкий сигнал.");
         return charge;
     }
 

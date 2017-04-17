@@ -5,13 +5,13 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("wizard's hat");
-    SetAdjectives( ({"wizard","wizards", "floppy", "large", "conical", "blue"}) );
-    SetId( ({"hat"}) );
-    SetShort("a wizard's hat");
-    SetLong("This is a large, floppy hat with a wide brim all "+
-            "around it, and a conical center. It is dark blue in color, "+
-            "and is decorated with pictures of yellow moons and stars.");
+    SetKeyName("шляпа волшебника");
+    SetAdjectives( ({"волшебника","wizards", "floppy", "large", "conical", "blue"}) );
+    SetId( ({"шляпа"}) );
+    SetShort("шляпа волшебника");
+    SetLong("Это большая гибкая шляпа с широкими полями "+
+            "и конической основой. Она темно-синего цвета "+
+            "и украшена золотыми узорами в виде звезд и полумесяцев.");
     SetProperties(([
                 "beta" : 2,
                 ]));

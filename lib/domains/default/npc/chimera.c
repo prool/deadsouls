@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("chimera");
-    SetId(({"npc","mob","character","mobile"}));
-    SetAdjectives(({"non-player", "non player"}));
-    SetShort("a terrifying chimera");
-    SetLong("This terrible creature is an unholy mix consisting of the head and body of a lion, a head of a dragon, another head of a goat, and a serpent for a tail. Its heads bob ceaselessly, eyes rolling madly in their sockets, mouths opening and snapping shut.");
+    SetKeyName("химера");
+    SetId(({"нпс","моб","существо","монстр"}));
+    SetAdjectives(({"ужасная", "ужасный"}));
+    SetShort("ужасная химера");
+    SetLong("Этот ужасный монстр состоит из частей различных животных. Тело и одна голова у химеры львиные, вторая голова от дракона, а третья козья. Дополняет это ужасное зрелище отвратительный змеиный хвост.");
     SetClass("fighter");
     SetLevel(15);
     SetMelee(1);

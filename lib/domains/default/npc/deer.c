@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("deer");
-    SetId(({"npc","mob","character","mobile"}));
+    SetKeyName("коза");
+    SetId(({"нпс","моб","существо","животное"}));
     SetAdjectives(({"non-player", "non player"}));
-    SetShort("a deer");
-    SetLong("A Typical creature of its kind: nervous, shify, yet beautiful and graceful. This gentle herbivore just wants to eat plants and reproduce.");
+    SetShort("коза");
+    SetLong("Типичный представитель своего вида: нервная и упрямая, но по-своему грациозная. Все что она хочет, это вкусно поесть и оставить побольше потомства.");
     SetWanderSpeed(4);
     SetLevel(1);
     SetMelee(1);

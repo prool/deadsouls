@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("dodo");
-    SetId(({"npc","mob","character","mobile"}));
-    SetAdjectives(({"non-player", "non player"}));
-    SetShort("a fat little dodo bird");
-    SetLong("This foolish little creature's only crime was being born trusting and delicious.");
+    SetKeyName("додо");
+    SetId(({"нпс","моб","существо","птица"}));
+    SetAdjectives(({"толстый", "глупая"}));
+    SetShort("толстый додо");
+    SetLong("Это глупая небольшая птица обладает великолепным на вкус мясом.");
     SetWanderSpeed(10);
     SetLevel(1);
     SetMelee(1);

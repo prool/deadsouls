@@ -5,12 +5,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("ring");
-    SetId(({"ring"}));
-    SetAdjectives( ({"magic","magical","glowing","light","glowing"}) );
-    SetShort("a brilliant, glowing ring");
-    SetLong("This magical ring radiates very bright light that "+
-            "can illuminate a room.");
+    SetKeyName("кольцо");
+    SetId(({"кольцо"}));
+    SetAdjectives( ({"магическое","светящееся","бриллиантовое"}) );
+    SetShort("бриллиантовое светящееся кольцо");
+    SetLong("Это магическое кольцо испускает очень яркий свет, "+
+            "который может осветить комнату.");
     SetRadiantLight(30);
     SetMass(1);
     SetBaseCost("silver",5000);

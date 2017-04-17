@@ -5,12 +5,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("riding boot");
-    SetId(({"boot"}));
-    SetAdjectives(({"long","riding","black","leather","right"}));
-    SetShort("a long riding boot");
-    SetLong("A long riding boot, made of black leather. It is "+
-            "designed for wear on the right foot and leg.");
+    SetKeyName("ботинок для верховой езды");
+    SetId(({"ботинок"}));
+    SetAdjectives(({"длинный","верховой","правый","черный"}));
+    SetShort("ботинок для верховой езды");
+    SetLong("Это длинный ботинок для верховой езды, сделанный из черной кожи. "+
+            "Одевается на правую ногу.");
     SetMass(60);
     SetBaseCost("silver",75);
     SetDamagePoints(5);

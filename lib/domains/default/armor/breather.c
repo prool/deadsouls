@@ -8,19 +8,19 @@ int charge = 1000;
 int maxcharge = 1000;
 
 string LongD(){
-    string ret = "This remarkably small device fits over the "+
-        "wearer's mouth, and provides a long supply of oxygenated "+
-        "air. Its current charge level is "+
-        to_int(percent(charge,maxcharge))+" percent.";
+    string ret = "Это замечательное небольшое устройство "+
+        "прикладывается ко рту и обеспечивает постоянный приток "+
+        "свежего воздуха. Его текущий уровень заряда "+
+        to_int(percent(charge,maxcharge))+" процентов.";
     return ret;
 }
 
 static void create(){
     armor::create();
-    SetKeyName("breathing mask");
-    SetId(({"mask","breather","a99","apparatus","device"}));
-    SetAdjectives(({"a99","breathing"}));
-    SetShort("an A99 breathing device");
+    SetKeyName("дыхательная трубка");
+    SetId(({"дыхательная","трубка","устройство"}));
+    SetAdjectives(({"под водой"}));
+    SetShort("дыхательная трубка");
     SetLong( (: LongD :) );
     SetMass(50);
     SetBaseCost("silver",1000);
@@ -74,16 +74,16 @@ int eventDecrementCharge(){
 
     perc = to_int(percent(charge, maxcharge));
     if(perc < 10){
-        tell_object(env,"The "+remove_article(GetShort())+" beeps loudly!");
+        tell_object(env,remove_article(GetShort())+" ярко заискрилась!");
         if(room){
             name = env->GetName();
-            tell_room(room, name+"'s breathing device beeps.", ({ env }));
+            tell_room(room, name+": его дыхательная трубка ярко заискрилась.", ({ env }));
         }
         return charge;
     }
 
     if(perc < 20){
-        tell_object(env,"The "+remove_article(GetShort())+" beeps softly.");
+        tell_object(env,remove_article(GetShort())+" мягко заискрилась.");
         return charge;
     }
 

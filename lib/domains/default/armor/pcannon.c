@@ -15,23 +15,23 @@ object myroom;
 varargs mixed DoWear(object who, mixed where);
 
 string LongDesc(){
-    string ret = "A highly advanced weapon of Poleepkwa design, "+
-        "meant to be worn.";
+    string ret = "Высокотехнологическое оружие неземного происхождения, "+
+        "которым можно вооружиться.";
     if(!active) return ret;
-    if(cache < percent_of(10, maxcache)) ret += " A %^RED%^red%^RESET%^ light is illuminated on it.";
-    else if(cache < percent_of(50, maxcache)) ret += " A %^YELLOW%^yellow%^RESET%^ light is illuminated on it.";
-    else if(cache < percent_of(80, maxcache)) ret += " A %^GREEN%^green%^RESET%^ light is illuminated on it.";
-    else ret += " A %^BLUE%^blue%^RESET%^ light is illuminated on it.";
+    if(cache < percent_of(10, maxcache)) ret += " Подсвечен %^RED%^красным%^RESET%^ цветом.";
+    else if(cache < percent_of(50, maxcache)) ret += " Подсвечен %^YELLOW%^желтым%^RESET%^ цветом.";
+    else if(cache < percent_of(80, maxcache)) ret += " Подсвечен %^GREEN%^зеленым%^RESET%^ цветом.";
+    else ret += " Подсвечен %^BLUE%^синим%^RESET%^ цветом.";
     return ret;
 }
 
 static void create() {
     ::create();
-    SetKeyName("plasma cannon");
-    SetId(({"cannon"}));
+    SetKeyName("бластер");
+    SetId(({"бластер"}));
     AddSave(({"cache","Prey"}));
-    SetAdjectives(({"shoulder","poleepkwa","plasma"}));
-    SetShort("a plasma shoulder cannon");
+    SetAdjectives(({"неземной","неземное","высокотехнологическое"}));
+    SetShort("плазменный бластер");
     SetLong((:LongDesc:));
     SetMass(400);
     SetDollarCost(15000);
@@ -39,7 +39,7 @@ static void create() {
     SetArmorType(A_CUSTOM);
     SetRestrictLimbs(({"torso"}));
     SetWear( (: DoWear :) );
-    AddItem( ({"light","status light"}), "A status light.");
+    AddItem( ({"light","status light"}), "Уровень освещения");
     set_heart_beat(2);
     Prey = ([]);
 }
@@ -50,11 +50,11 @@ varargs int OperateThing(object who, mixed what){
     if(!who) who = this_player();
     env = environment(this_player());
     this = remove_article(GetShort());
-    tell_player(who, "You operate your "+this+".");
-    tell_object(env, who->GetName() + " operates " + possessive(who) +
+    tell_player(who, "Вы используете "+this+".");
+    tell_object(env, who->GetName() + " использует " + possessive(who) +
             " " + this + ".", ({who}));
     if(what && stringp(what) && !active){
-        tell_player(who, "The "+this+" is not activated.");
+        tell_player(who, ""+this+" не активирован.");
         return 0;
     }
     return 1;
@@ -79,15 +79,15 @@ varargs mixed eventShoot(object who, mixed target, string dir, string whom){
     dam = cache + random(maxcache);
 
     if(!active){
-        write("The cannon clicks.");
-        say(name+"'s cannon emits a click.");
+        write("Щелкнул затвор бластера.");
+        say("Щелкнул затвор бластера "+name+".");
         return 1;
     }
 
     if(cache < 5){
         cache = 0;
-        write("The cannon clicks.");
-        say(name+"'s cannon emits a click.");
+        write("Щелкнул затвор бластера.");
+        say("Щелкнул затвор бластера "+name+".");
         if(room) room->eventHearTalk(this_object(),0,TALK_LOCAL,"say",
                 "Power cache too low.", "poleepkwa");
         return 1;
@@ -95,8 +95,8 @@ varargs mixed eventShoot(object who, mixed target, string dir, string whom){
 
     if(fuel < maxcache){
         cache = 0;
-        write("The cannon emits a harsh buzzing noise.");
-        say(name+"'s cannon emits a harsh buzzing noise.");
+        write("Бластер издал резкий жужжащий звук.");
+        say("Бластер "+name+" издал резкий жужжащий звук.");
         if(room) room->eventHearTalk(this_object(),0,TALK_LOCAL,"say",
                 "Operator essence too low.", "poleepkwa");
         return 1;
@@ -104,21 +104,21 @@ varargs mixed eventShoot(object who, mixed target, string dir, string whom){
 
     if(dir){
         if(!env){
-            write("No environment.");
+            write("Нет среды.");
             return 1;
         }
         if(!env->GetExit(dir)){
-            write("You can't shoot in that direction.");
+            write("Вы не можете стрелять в этом направлении.");
             return 1;
         }
         bolt = new("/domains/default/weap/plasma");
         if(!bolt){
-            write("There appears to be some sort of malfunction.");
+            write("Тут кажется какая-то неисправность.");
             return 1;
         }
-        write("You fire your plasma cannon "+dir+"!");
-        tell_room(env, name+" fires "+possessive(killer)+
-                " plasma cannon "+dir+"!", ({killer}));
+        write("Вы выстрелили из бластера на "+dir+"!");
+        tell_room(env, name+" выстрелил "+possessive(killer)+
+                " из бластера на "+dir+"!", ({killer}));
 
         if(debugging) bolt->SetDebugging(1);
         bolt->SetOwner(who);
@@ -132,11 +132,11 @@ varargs mixed eventShoot(object who, mixed target, string dir, string whom){
         return 1;
     }
 
-    write("You blast "+patsy+" with your plasma cannon!");
-    tell_room(env, name+" blasts "+patsy+" with "+possessive(killer)+
-            " plasma cannon!", ({killer, target}));
-    target->eventPrint(name+" blasts you with "+possessive(killer)+
-            " plasma cannon!");
+    write("Вы подстрелили "+patsy+" из вашего бластера!");
+    tell_room(env, name+" подстрелил "+patsy+" своим "+possessive(killer)+
+            " бластером!", ({killer, target}));
+    target->eventPrint(name+" подстрелил вас "+possessive(killer)+
+            " бластером!");
 
     dam = cache + random(maxcache);
     cache = 0;
@@ -184,8 +184,8 @@ void heart_beat(){
     object env = environment();
     object room = room_environment();
     if(active && !GetWorn()){
-        if(env) tell_room(env, "The "+remove_article(GetShort())+
-                " whines and clicks off.");
+        if(env) tell_room(env, remove_article(GetShort())+
+                " пищит и пощелкивает.");
         active = 0;
     }
     else if(active){
@@ -193,9 +193,9 @@ void heart_beat(){
         if(!fuel){
             active = 0;
             if(environment(env)){
-                tell_room(environment(env), env->GetName()+"'s "+
-                        "plasma cannon whines and clicks off.", ({env}));
-                env->eventPrint("Your plasma cannon whines and clicks off.");
+                tell_room(environment(env), env->GetName()+
+                        " бластер пищит и пощелкивает.", ({env}));
+                env->eventPrint("Ваш бластер пищит и пощелкивает.");
             }
         }
         else if(cache < maxcache){
@@ -261,8 +261,8 @@ void init(){
     object env = environment();
     ::init();
     if(active && !GetWorn()){
-        if(env) tell_room(env, "The "+remove_article(GetShort())+
-                " whines and clicks off.");
+        if(env) tell_room(env, remove_article(GetShort())+
+                " пищит и пощелкивает.");
         active = 0;
     }
 }
@@ -274,10 +274,10 @@ varargs mixed DoWear(object who, mixed where){
         active = 1; 
         if(creatorp(who)) cache = maxcache;
     }
-    if(active) extra = " and it beeps and clicks on.";
+    if(active) extra = " и он пискнул и щелкнул.";
     else extra = ".";
-    who->eventPrint("You wear "+GetShort()+extra);
-    if(env) tell_room(env, who->GetName()+" wears "+
+    who->eventPrint("Вы вооружились "+GetShort()+extra);
+    if(env) tell_room(env, who->GetName()+" вооружился "+
             GetShort()+extra, ({who}));
     return 1;
 }
@@ -286,9 +286,9 @@ mixed eventUnequip(object who){
     mixed ret = ::eventUnequip(who);
     object env = environment(who);
     if(ret && active){
-        who->eventPrint("The cannon whines and clicks off.");
-        if(env) tell_room(env, who->GetName()+"'s cannon "+
-                "whines and clicks off.", ({who}));
+        who->eventPrint("Ваш бластер пищит и пощелкивает.");
+        if(env) tell_room(env, who->GetName()+" бластер "+
+                "пищит и пощелкивает.", ({who}));
         active = 0;
     }
     return ret;
@@ -318,17 +318,17 @@ int eventTurnOn(mixed str){
         }
     }
     if(active){
-        write("The cannon is already on.");
+        write("Бластер уже активирован.");
         return 1;
     }
     if(!(this_object()->GetWorn()) || !this_player() ||
             environment(this_object()) != this_player()){
-        write("You are not wearing the "+remove_article(GetShort())+".");
+        write("Вы не вооружены "+remove_article(GetShort())+".");
         return 1;
     }
-    write("You activate the "+remove_article(GetShort())+".");
-    say(this_player()->GetName()+"'s "+remove_article(GetShort())+
-            " beeps and clicks on.");
+    write("Вы активировали "+remove_article(GetShort())+".");
+    say(this_player()->GetName()+" "+remove_article(GetShort())+
+            " пискнул и щелкнул.");
     active = 1;
     return 1;
 }
@@ -357,12 +357,12 @@ int eventTurnOff(mixed str){
         }
     }
     if(!active){
-        write("The cannon is already off.");
+        write("Бластер уже деактивирован.");
         return 1;
     }
-    write("You deactivate the "+remove_article(GetShort())+".");
-    say(this_player()->GetName()+"'s "+remove_article(GetShort())+
-            " whines and clicks off.");
+    write("Вы деактивировали "+remove_article(GetShort())+".");
+    say(this_player()->GetName()+" "+remove_article(GetShort())+
+            " пищит и щелкает.");
     active = 0;
     return 1;
 }

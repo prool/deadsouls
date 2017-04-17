@@ -13,13 +13,13 @@ varargs mixed GetSuitHelp(mixed who, string where);
 
 static void create(){
     ::create();
-    SetKeyName("arbiter suit");
-    SetId(({"suit", "armor"}));
-    SetAdjectives(({"arbiter","suit of","powered","formidable", "formidable looking"}));
-    SetShort("a suit of powered arbiter armor");
-    SetLong("A formidable looking suit of powered armor used by "+
-            "forces of the Extant Authority. This one appears to be one of "+
-            "the arbiter variety.");
+    SetKeyName("мантия Судьи");
+    SetId(({"мантия", "судьи", "мантию"}));
+    SetAdjectives(({"усиленная","suit of","powered","formidable", "formidable looking"}));
+    SetShort("мантия Судьи");
+    SetLong("Эта мантия усилена пластинами небесной стали, что позволяет "+
+            "ее обладателю не только выносить приговоры, но и собственноручно "+
+            "исполнять их.");
     SetMass(7000);
     SetMatching(0);
     SetBaseCost("silver",50000);
@@ -51,25 +51,24 @@ varargs mixed GetSuitHelp(mixed who, string where){
     }
     else str = GetKeyName();
     env = environment(who);
-    if(query_verb() == "wear" || (str && answers_to(str, this_object()))){
+    if(query_verb() == "одеть" || (str && answers_to(str, this_object()))){
         if(environment() == who && charge){
-            ret = "The suit's Heads Up Display crackles to life and reads:\n ";
-            ret += "%^GREEN%^This suit allows you, mighty Arbiter, to travel in hazardous terrain "+
-                "with a minimum of inconvenience. In the interest of fulfilling the exigencies "+
-                "of your duties to the Extant Authority, this suit provides the following "+
-                "improvements to your abilities:\n\n"+
-                "* Good vision in all light conditions.\n"+
-                "* A constant supply of breathable air.\n"+
-                "* Substantial enhancement of strength, coordination, agility, and durability.\n"+
-                "* Substantial enhancement of unarmed combat capability.\n"+
-                "* Heads Up Display of key environmental information.\n"+
-                "* Grid coordinate information where available.\n"+
-                "* Protection from all forms of external damage.\n"+
-                "* Immunity from disease.\n"+
-                "\nNote that once the power level of the suit reaches zero, all enhancements "+
-                "become unavailable.%^RESET%^";
-            who->eventPrint("You wear "+GetShort()+".");
-            if(env) tell_room(env, who->GetName()+" wears "+
+            ret = "Перед вами возникают светящиеся буквы:\n ";
+            ret += "%^GREEN%^Это одеяние позволяет вам, могучий Судия, путешествовать по опасным землям "+
+                "с минимальным риском. Для исполнения ваших обязанностей  "+
+                "мантия дает следующие способности:\n\n"+
+                "* хорошее зрение при любом освещении;\n"+
+                "* постоянный приток свежего воздуха;\n"+
+                "* сущестсвенную прибавку к силе, координации, ловкости и устойчивости;\n"+
+                "* существенную прибавку к способности безоружного боя;\n"+
+                "* невидимый дисплей с информацией о происходящем;\n"+
+                "* информация о ваших координатах, где это возможно;\n"+
+                "* защиту от любых форм повреждений;\n"+
+                "* иммунитет к болезням.\n"+
+                "\nОднако, если магический заряд мантии достигнет нуля, все ее бонусы "+
+                "станут недоступны.%^RESET%^";
+            who->eventPrint("Вы одели "+GetShort()+".");
+            if(env) tell_room(env, who->GetName()+" одел "+
                     GetShort()+".", ({who}));
             return 1;
         }
@@ -126,23 +125,23 @@ int eventDecrementCharge(int i){
     perc = to_int(percent(charge, maxcharge));
     if(perc < 10){
         if(living(env) && creatorp(env)){
-            env->eventPrint("Your creator powers magically recharge the "+
+            env->eventPrint("Ваша сверхестественная сила перезарядила "+
                     remove_article(GetShort())+".");
             charge = maxcharge;
             return charge;
         }
-        tell_object(env,"The "+remove_article(GetShort())+" beeps loudly!");
+        tell_object(env,remove_article(GetShort())+" ярко заискрилась!");
         return charge;
     }
 
     if(perc < 20){
         if(living(env) && creatorp(env)){
-            env->eventPrint("Your creator powers magically recharge the "+
+            env->eventPrint("Ваша сверхестественная сила перезарядила "+
                     remove_article(GetShort())+".");
             charge = maxcharge;
             return charge;
         }
-        tell_object(env,"The "+remove_article(GetShort())+" beeps softly.");
+        tell_object(env,remove_article(GetShort())+" слабо заискрилась.");
         return charge;
     }
 

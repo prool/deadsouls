@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("leather pants");
-    SetId(({"pants"}));
-    SetAdjectives(({"strong","leather","black","tough"}));
-    SetShort("leather pants");
-    SetLong("These are trousers made of strong, tough leather. ");
+    SetKeyName("кожаные штаны");
+    SetId(({"штаны"}));
+    SetAdjectives(({"прочные","кожаные"}));
+    SetShort("кожаные штаны");
+    SetLong("Эти штаны сделаны из прочной кожи и защищают ноги от случайных порезов или ударов. ");
     SetMass(150);
     SetBaseCost("silver",110);
     SetDamagePoints(10);

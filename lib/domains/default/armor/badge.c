@@ -6,13 +6,13 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("visitor pass");
-    SetId(({"testchar badge","badge","pass","visitor's pass"}));
-    SetShort("a test character Visitor's Pass");
-    SetLong("This clip-on plastic badge grants the wearer access to "+
-            "some areas typically restricted to creator staff only. Abuse of this "+
-            "pass is grounds for disciplinary action. A small scribble "+
-            "at the bottom of the pass reads: click heels");
+    SetKeyName("пропуск посетителя");
+    SetId(({"пропуск посетителя","пропуск","посетителя","жетон"}));
+    SetShort("пропуск посетителя зон");
+    SetLong("Этот небольшой жетон, который можно прикрепить к одежде, "+
+            "позволяет посещать зоны, обычно закрытые для билдеров. Злоупотребление "+
+            "пропуском может повлечь наказание. Надпись на дне "+
+            "пропуска гласит: нажмите рычажок");
     SetProperties(([
                 "no steal" : 1,
                 ]));
@@ -25,23 +25,23 @@ static void create(){
 }
 void init(){
     ::init();
-    add_action("nplh","click");
+    add_action("nplh","нажать");
 }
 int nplh(string str){
-    if(str=="heels"){
+    if(str=="рычажок"){
         if(present(this_object()->GetKeyName(),this_player() ) ){
-            write("There's no place like home!\n"+
-                    "You are transported by an awesome whirlwind somewhere "+
-                    "else...\n");
+            write("Решив, что здесь вам не место!\n"+
+                    "Вы перенеслись в мощном вихре куда-то "+
+                    "еще...\n");
             this_player()->eventMoveLiving(ROOM_START);
             return 1;
         }
-        write("You click your heels together...but feel "+
-                "as though you're missing something.\n");
+        write("Вы нажали рычажок... но кажется, "+
+                "что вы чего-то упустили.\n");
         return 1;
     }
 }
 string GetAffectLong(object ob) {
     if(!ob || !living(ob)) return 0;
-    return ob->GetName() + " is an authorized Test Character.";
+    return ob->GetName() + " авторизованный тестер мира.";
 }

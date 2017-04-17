@@ -5,11 +5,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("avidryl");
-    SetId(({"npc","mob","character","mobile"}));
+    SetKeyName("авидрил");
+    SetId(({"нпс","моб","существо","птицечеловек"}));
     SetAdjectives(({"non-player", "non player"}));
-    SetShort("an avidryl");
-    SetLong("This is the fabled avidryl, or 'birdman'. He is very human-like, approximately six feet tall and robust in build. He looks like he might even be a match for a Klingon. The most striking thing about him are the two large birdlike wings on his back, used for flying.");
+    SetShort("авидрил");
+    SetLong("Это легендарный авидрил или 'птицечеловек'. Он очень походил бы на человека, если бы не его огромный птичий хвост. Также у него есть пара великолепных крыльев, которые он использует для полета.");
     SetAutoStand(1);
     SetPosition(POSITION_FLYING);
     SetClass("explorer");

@@ -5,12 +5,12 @@ inherit LIB_CHAMBER;
 
 static void create() {
     chamber::create();
-    SetKeyName("coffin");
-    SetId(({"box"}));
-    SetAdjectives(({"pine", "simple"}));
-    SetShort("a coffin");
-    SetLong("This is a simple pine box for holding the remains "+
-            "of the deceased.");
+    SetKeyName("гроб");
+    SetId(({"гроб"}));
+    SetAdjectives(({"сосновый", "простой"}));
+    SetShort("гроб");
+    SetLong("Это простой сосновый ящик для хранения останков "+
+            "умершего.");
     SetRace("vehicle");
     SetPosition(POSITION_NULL);
     SetMelee(0);

@@ -6,17 +6,16 @@ inherit LIB_BANE;
 
 static void create(){
     armor::create();
-    SetKeyName("collar");
-    SetId(({"repellent_collar","bane"}));
+    SetKeyName("ошейник");
+    SetId(({"ошейник"}));
     SetAdjectives( ({"repellent","odd","plastic","white"}) );
-    SetShort("a plastic collar");
-    SetLong("This is a simple collar made of a soft white plastic. It "+
-            "seems to be coated with a fine, clear resin. There is something "+
-            "written on the collar.");
+    SetShort("кожаный ошейник");
+    SetLong("Этот ошейник сделан из мягкой белой кожи, "+
+            "с внешней стороны его что-то написано. ");
     SetProperties(([
                 "no steal" : 1,
                 ]));
-    SetRead("Disease and parasite repellent collar, test character use only.");
+    SetRead("Противопаразитный ошейник, защищает от болезней. Только для тестовых персонажей!");
     SetMass(10);
     SetBaseCost("silver", 10);
     SetDamagePoints(100);

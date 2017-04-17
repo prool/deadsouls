@@ -14,23 +14,23 @@ string owner;
 varargs mixed GetSuitHelp(mixed who, string where);
 
 string LongDesc(){
-    string ret = "A highly advanced armored suit of Poleepkwa design, "+ 
-        "used by elements of the Host whose role requires them to have "+
-        "some protection from environmental hazards.";
+    string ret = "Высокотехнологичный инопланетный скафандр, "+ 
+        "в который установлены системы жизнеобеспечения "+
+        "защищающие от вредных условий окружающей среды.";
     if(!active) return ret;
-    if(charge < percent_of(10, maxcharge)) ret += " A %^RED%^red%^RESET%^ light is illuminated on it.";
-    else if(charge < percent_of(50, maxcharge)) ret += " A %^YELLOW%^yellow%^RESET%^ light is illuminated on it.";
-    else if(charge < percent_of(80, maxcharge)) ret += " A %^GREEN%^green%^RESET%^ light is illuminated on it.";
-    else ret += " A %^BLUE%^blue%^RESET%^ light is illuminated on it.";
+    if(charge < percent_of(10, maxcharge)) ret += " Подсвечен %^RED%^красным%^RESET%^ цветом.";
+    else if(charge < percent_of(50, maxcharge)) ret += " Подсвечен %^YELLOW%^желтым%^RESET%^ цветом.";
+    else if(charge < percent_of(80, maxcharge)) ret += " Подсвечен %^GREEN%^зеленым%^RESET%^ цветом.";
+    else ret += " Подсвечен %^BLUE%^синим%^RESET%^ цветом.";
     return ret;
 }
 
 static void create(){
     ::create();
-    SetKeyName("scout suit");
-    SetId(({"suit", "armor"}));
-    SetAdjectives(({"poleepkwa","scout","suit of","powered","formidable", "formidable looking"}));
-    SetShort("a suit of poleepkwa scout armor");
+    SetKeyName("скафандр");
+    SetId(({"скафандр"}));
+    SetAdjectives(({"инопланетный","высокотехнологичный"}));
+    SetShort("инопланетный скафандр");
     SetLong((:LongDesc:));
     SetMass(500);
     SetMatching(0);
@@ -51,7 +51,7 @@ static void create(){
     SetProtection(KNIFE,20);
     SetDamagePoints(100);
     SetWear((: GetSuitHelp :));
-    AddItem( ({"light","status light"}), "A status light.");
+    AddItem( ({"light","status light"}), "Уровень освещения.");
     set_heart_beat(5);
 }
 
@@ -74,24 +74,20 @@ varargs mixed GetSuitHelp(mixed who, string where){
     env = environment(who);
     if(query_verb() == "wear" || (str && answers_to(str, this_object()))){
         if(environment() == who){
-            ret = "The suit's Heads Up Display crackles to life and reads:\n ";
+            ret = "Перед вашими глазами опустился интерактивный экран с информацией:\n ";
             ret += "%^B_BLACK%^CYAN%^";
-            ret2 = "From the Host you get identity. From the many "+
-                "we are Host. You are protected to serve. Serve the Host "+
-                "with this suit. This suit protects you. Use it to serve. "+
-                "\nWhen suit light is yellow or red, hide."
-                "\nWhen suit light is green or blue, serve."
-                "\nYour black juice makes the suit go."
-                "\nThe suit pulls from you the black juice."
-                "\nWhen it is full of black juice, the light is blue."
-                "\nWhen the light is on you can breathe."
-                "\nWhen the light is on you can take big hurt."
-                "\nWhen the light is on you can see good."
-                "\nWhen the light is on you don't get sick.";
-            "\nYou can not trade suits with others.";
+            ret2 = "Этот скафандр способен защитить от множества опасностей. "+
+                "\nКогда скафандр подсвечен красным или желтым, прячьтесь."
+                "\nКогда подсветка синяя или зеленая, исполняйте свои обязанности."
+                "\nСкафандр подпитывается вашей энергией."
+                "\nПри максимальном заряде посветка скафандра синяя."
+                "\nВ таком случае он будет поддерживать ваше дыхание."
+                "\nИ поглощать большую часть повреждений."
+                "\nКроме того, он защитит вас от болезней."
+            "\nСкафандр настроился на вас и вы не сможете продать его другим.";
             if(query_verb() == "wear" && !GetWorn()){
-                who->eventPrint("You wear "+GetShort()+".");
-                if(env) tell_room(env, who->GetName()+" wears "+
+                who->eventPrint("Вы одели "+GetShort()+".");
+                if(env) tell_room(env, who->GetName()+" одел "+
                         GetShort()+".", ({who}));
             }
             ret2 = translate(ret2, who->GetLanguageLevel("Poleepkwa"));
@@ -151,23 +147,23 @@ int eventDecrementCharge(int i){
     perc = to_int(percent(charge, maxcharge));
     if(perc < 2){
         if(living(env) && creatorp(env)){
-            env->eventPrint("Your creator powers magically recharge the "+
+            env->eventPrint("Ваша магическая сила подзарядила "+
                     remove_article(GetShort())+".");
             charge = maxcharge;
             return charge;
         }
-        tell_object(env,"The "+remove_article(GetShort())+" beeps loudly!");
+        tell_object(env,remove_article(GetShort())+" тихо пискнул!");
         return charge;
     }
 
     if(perc < 2){
         if(living(env) && creatorp(env)){
-            env->eventPrint("Your creator powers magically recharge the "+
+            env->eventPrint("Ваша магическая сила подзарядила "+
                     remove_article(GetShort())+".");
             charge = maxcharge;
             return charge;
         }
-        tell_object(env,"The "+remove_article(GetShort())+" beeps softly.");
+        tell_object(env,remove_article(GetShort())+" тихо пискнул.");
         return charge;
     }
 
@@ -214,13 +210,13 @@ void heart_beat(){
     if(!env || !room) return;
     envname = env->GetKeyName();
     if(owner && GetWorn() && envname != owner){
-        tell_object(env, "The suit makes a brief cranking, buzzing sound.");
+        tell_object(env, "Скафандр издал звук разрыва.");
         if(active) active = 0;
         return;
     }
     if(active && !GetWorn()){
-        tell_room(env, "The "+remove_article(GetShort())+
-                " whines.");
+        tell_room(env, remove_article(GetShort())+
+                " заскрипел.");
         active = 0;
     }
     else if(GetWorn() && charge < maxcharge){
@@ -230,9 +226,9 @@ void heart_beat(){
             if(!charge && active){
                 active = 0;
                 if(environment(env)){
-                    tell_room(environment(env), env->GetName()+"'s "+
-                            "powered suit whines.", ({env}));
-                    env->eventPrint("Your powered suit whines.");
+                    tell_room(environment(env), env->GetName()+" "+
+                            "заскрипел.", ({env}));
+                    env->eventPrint("Ваш скафандр заскрипел.");
                 }
             }
         }
@@ -247,9 +243,9 @@ void heart_beat(){
     if(GetWorn() && !active && charge > 9){
         active = 1;
         if(environment(env)){
-            tell_room(environment(env), env->GetName()+"'s "+
-                    "powered suit chirps.", ({env}));
-            env->eventPrint("Your powered suit chirps.");
+            tell_room(environment(env), env->GetName()+" "+
+                    "запищал.", ({env}));
+            env->eventPrint("Ваш скафандр запищал.");
         }
     }
 }
@@ -260,8 +256,8 @@ void eventDeteriorate(int type){
     object env = environment();
     if(maxcharge > 100){
         if(active){
-            if(env) env->eventPrint("Your powered suit emits a harsh buzz and "+
-                    "the indicator light dims briefly.");
+            if(env) env->eventPrint("Ваш скафандр издает жуткий шум "+
+                    "и его световой индикатор кратковременно гаснет.");
         }
         maxcharge -= 100;
     }

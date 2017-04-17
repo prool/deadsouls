@@ -4,11 +4,11 @@
 inherit LIB_ARMOR;
 static void create(){
     armor::create();
-    SetKeyName("a white t-shirt");
-    SetId(({"shirt","tshirt","t-shirt","t shirt"}));
-    SetAdjectives(({"white"}));
-    SetShort("a white t-shirt");
-    SetLong("An ordinary white t-shirt.");
+    SetKeyName("белая рубаха");
+    SetId(({"рубаха"}));
+    SetAdjectives(({"белая","обычная"}));
+    SetShort("белая рубаха");
+    SetLong("Самая обычная белая рубаха.");
     SetMass(5);
     SetBaseCost(1);
     SetDamagePoints(1);

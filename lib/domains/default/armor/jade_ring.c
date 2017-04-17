@@ -5,24 +5,24 @@ inherit LIB_ARMOR;
 object ringshadow;
 
 string LongRet(mixed whom){
-    string ret = "A green ring, glowing with unearthly power.";
+    string ret = "Зеленое кольцо светящееся неземной силой.";
     if(!whom || !objectp(whom) || !living(whom)) whom = this_player();
     if(creatorp(whom) ||
             member_group(whom,"TEST")){
-        ret += "\nTo enable damage protection, type: protection on";
-        ret += "\nTo enable damage reporting, type: reporting on";
-        ret += "\nTo make a creature report its damage: enablereport <name>";
-        ret += "\nTo make it stop reporting its damage: disablereport <name>\n";
+        ret += "\nАктивация защиты от урона: protection on";
+        ret += "\nАктивация сообщений о типах урона: reporting on";
+        ret += "\nЗаставить существо сообщить свой урон: enablereport <name>";
+        ret += "\nОтмена сообщений существа о его уроне: disablereport <name>\n";
     }
     return ret;
 }
 
 static void create(){
     armor::create();
-    SetKeyName("jade ring");
-    SetId(({"ring","ward","jade"}));
-    SetAdjectives( ({"jade","green","power","powerful"}) );
-    SetShort("a jade ring");
+    SetKeyName("нефритовое кольцо");
+    SetId(({"кольцо","оберег","нефрит"}));
+    SetAdjectives( ({"нефритовое","зеленое"}) );
+    SetShort("нефритовое кольцо");
     SetLong( (: LongRet :) );
     SetMass(1);
     SetBaseCost("silver",5000);
@@ -39,7 +39,7 @@ void init(){
 
 mixed CanEquip(object who, string array limbs){
     if(who && !creatorp(who) && !member_group(who,"TEST")){
-        return "Somehow it just won't go on. Strange, isn't it?";
+        return "Кольцо не лезет на наш палец. Странно, не так ли?";
         return 0;
     }
     else return armor::CanEquip(who, limbs);
@@ -92,28 +92,28 @@ int SetNPCReporting(string name){
     object *sombras = ({});
     object ob;
     if(!CheckRing() || !ringshadow){
-        write("The ring must be worn by you in order to access its power.");
+        write("Кольцо должно быть одето на вас, чтобы вам была доступна его сила.");
         return 1;
     }
     if(CheckRing() == -1){
-        write("The ring's power can only be harnessed by special people. That means, \"not you\".");
+        write("Сила кольца открывается лишь не обычным людям. Это значит, \"не вы\".");
         return 1;
     }
     if(!(ob = present(name,environment(this_player())))){
-        write("No such creature is here.");
+        write("Такого существа здесь нет");
         return 1;
     }
     sombras = keys(ob->GetShadows());
     if(sizeof(sombras)){
         foreach(object element in sombras){
             if(base_name(element) == "/shadows/diag"){
-                write("That creature is already reporting its damage status.");
+                write("Это существо уже сообщает о своем уроне.");
                 return 1;
             }
         }
     }
     new("/shadows/diag")->eventShadow(ob);
-    write("Damage reporting enabled for "+name+".");
+    write(""+name+": сообщает о своем уроне.");
     return 1;
 }
 
@@ -122,15 +122,15 @@ int UnsetNPCReporting(string name){
     object ob;
     int stat = 0;
     if(!CheckRing() || !ringshadow){
-        write("The ring must be worn by you in order to access its power.");
+        write("Кольцо должно быть одето на вас, чтобы вам была доступна его сила.");
         return 1;
     }
     if(CheckRing() == -1){
-        write("The ring's power can only be harnessed by special people. That means, \"not you\".");
+        write("Сила кольца открывается лишь не обычным людям. Это значит, \"не вы\".");
         return 1;
     }
     if(!(ob = present(name,environment(this_player())))){
-        write("No such creature is here.");
+        write("Такого сушества здесь нет.");
         return 1;
     }
     sombras = keys(ob->GetShadows());
@@ -142,23 +142,23 @@ int UnsetNPCReporting(string name){
             }
         }
     }
-    if(!stat) write("That creature does not have reporting enabled.");
-    else write("Damage reporting disabled for "+name+".");
+    if(!stat) write("Это существо не сообщает о своем уроне.");
+    else write(""+name+": прекратило сообщать о своем уроне.");
     return 1;
 }
 
 int SetProtection(string str){
     int booly = 0;
     if(!CheckRing() || !ringshadow){
-        write("The ring must be worn by you in order to access its power.");
+        write("Кольцо должно быть одето на вас, чтобы вам была доступна его сила.");
         return 1;
     }
     if(CheckRing() == -1){
-        write("The ring's power can only be harnessed by special people. That means, \"not you\".");
+        write("Сила кольца открывается лишь не обычным людям. Это значит, \"не вы\".");
         return 1;
     } 
     if(str == "on") booly=1;
-    write("You set the ring's protection to: "+(booly ? "on" : "off")+".");
+    write("Защита нефритового кольца: "+(booly ? "on" : "off")+".");
     if(ringshadow) ringshadow->JadeProtection(booly);
     return 1;
 }
@@ -166,15 +166,15 @@ int SetProtection(string str){
 int SetReporting(string str){
     int booly = 0;
     if(!CheckRing() || !ringshadow){
-        write("The ring must be worn by you in order to access its power.");
+        write("Кольцо должно быть одето на вас, чтобы вам была доступна его сила.");
         return 1;
     }
     if(CheckRing() == -1){
-        write("The ring's power can only be harnessed by special people. That means, \"not you\".");
+        write("Сила кольца открывается лишь не обычным людям. Это значит, \"не вы\".");
         return 1;
     }
     if(str == "on") booly=1;
-    write("You set the ring's reporting to: "+(booly ? "on" : "off")+".");
+    write("Сообщения нефритового кольца: "+(booly ? "on" : "off")+".");
     if(ringshadow) ringshadow->JadeReporting(booly);
     return 1;
 }

@@ -5,11 +5,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("bat");
-    SetId(({"npc","mob","character","mobile"}));
-    SetAdjectives(({"non-player", "non player"}));
-    SetShort("a little bat");
-    SetLong("An ordinary bat. It's no bigger than a mouse.");
+    SetKeyName("лутечая мышь");
+    SetId(({"нпс","моб","существо","животное"}));
+    SetAdjectives(({"летучая", "обычная"}));
+    SetShort("летучая мышь");
+    SetLong("Самая обычная летучая мышь, размером в половину вашей руки.");
     SetWimpy(80);
     SetPermitLoad(1);
     SetPosition(POSITION_FLYING);
@@ -19,7 +19,7 @@ static void create() {
     SetRace("bat");
     SetMaxHealthPoints(20);
     SetGender("male");
-    SetMessage("leave","$N scurries $D.");
+    SetMessage("leave","$N сбежала $D.");
 }
 void init(){
     ::init();

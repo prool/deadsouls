@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("chainmail shirt");
-    SetId(({"armor","chainmail","mail","shirt","chain mail"}));
-    SetAdjectives(({"chainmail","sturdy","sturdy-looking","chain mail"}));
-    SetShort("chainmail armor");
-    SetLong("A body-length suit of armor made of small metal rings fashioned together.");
+    SetKeyName("кольчужная рубашка");
+    SetId(({"доспех","колучужная рубашка","кольчуга","рубашка"}));
+    SetAdjectives(({"кольчужная","sturdy","sturdy-looking","chain mail"}));
+    SetShort("кольчужная рубашка");
+    SetLong("Кольчуга сплетенная из серебряных колец в полный человеческий рост.");
     SetMass(600);
     SetBaseCost("silver",1000);
     SetDamagePoints(100);

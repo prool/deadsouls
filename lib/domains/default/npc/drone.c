@@ -6,11 +6,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("drone");
-    SetAdjectives( ({"small","metal"}) );
-    SetId( ({"drone","bot","robot"}) );
-    SetShort("a small drone");
-    SetLong("A small metal orb.");
+    SetKeyName("дрон");
+    SetAdjectives( ({"маленький","металлический"}) );
+    SetId( ({"дрон","бот","робот"}) );
+    SetShort("маленький дрон");
+    SetLong("Вы видите маленького металлического дрона, округлой формы.");
     SetLevel(1);
     SetInvis(1);
     SetMaxHealthPoints(50000);

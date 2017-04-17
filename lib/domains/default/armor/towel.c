@@ -4,11 +4,11 @@
 inherit LIB_ARMOR;
 static void create(){
     armor::create();
-    SetKeyName("damp towel");
-    SetId(({"towel"}));
-    SetAdjectives(({"damp","bath","ordinary", "bathtowel"}));
-    SetShort("a damp towel");
-    SetLong("This is an ordinary bath towel.");
+    SetKeyName("влажное полотенце");
+    SetId(({"полотенце"}));
+    SetAdjectives(({"влажное","банное","обычное"}));
+    SetShort("влажное полотенце");
+    SetLong("Это самое обычное банное полотенце.");
     SetMass(25);
     SetDamagePoints(10);
     SetProtection(BLUNT,1);

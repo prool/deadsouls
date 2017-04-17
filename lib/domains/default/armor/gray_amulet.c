@@ -9,11 +9,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("gray amulet");
-    SetId(({"amulet", "gray", "idler_amulet" }));
-    SetShort("a gray amulet");
-    SetLong("This dull, heavy amulet seems rather worthless, though "
-            "something about it seems to suggest hidden purpose.");
+    SetKeyName("серый амулет");
+    SetId(({"амулет", "серый", "idler_amulet" }));
+    SetShort("серый амулет");
+    SetLong("Этот простой тяжелый амулет кажется бесполезным, "
+            "хотя в нем скрыты магические свойства.");
     SetProperties(([
                 "no steal" : 1,
                 ]));

@@ -8,11 +8,11 @@ int CheckRing(string stat);
 
 static void create(){
     armor::create();
-    SetKeyName("ring");
-    SetId(({"ring"}));
-    SetAdjectives( ({"magic", "heavy", "metal"}) );
-    SetShort("a heavy metal ring");
-    SetLong("This ring seems to almost pulse with power.");
+    SetKeyName("кольцо");
+    SetId(({"кольцо"}));
+    SetAdjectives( ({"магическое", "тяжелое", "металлическое"}) );
+    SetShort("тяжелое металлическое кольцо");
+    SetLong("Это кольцо как будто пульсирует силой.");
     SetMass(10);
     SetBaseCost("silver",5000);
     SetArmorType(A_RING);
@@ -27,9 +27,9 @@ void init(){
 varargs int DoWear(object who, string where){
     object env = environment(who);
     who->AddStatBonus("strength", (: CheckRing :) );
-    who->eventPrint("You feel a resonant chord of strength roar within you "+
-            "as you wear the ring.");
-    if(env) tell_room(env, who->GetName()+" wears "+GetShort()+".", ({who}));
+    who->eventPrint("Вы почувствовали наливающиеся силой мышцы, "+
+            "как только одели кольцо.");
+    if(env) tell_room(env, who->GetName()+" одел "+GetShort()+".", ({who}));
     return 1;
 }
 
