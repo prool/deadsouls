@@ -21,7 +21,8 @@ static void create() {
     SetInventory(([
 			"/obj/meal" : 10,
 			"/obj/drink" : 10,
-			"/domains/Praxis/obj/mon/spider" : 1
+			"/domains/Praxis/obj/mon/spider" : 1,
+			"/obj/burning_orb" : 1
 		]));
     SetExits( ([
                 "east" : "/domains/default/room/wiz_hall",
