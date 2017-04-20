@@ -22,10 +22,12 @@ static void create() {
 			"/obj/meal" : 10,
 			"/obj/drink" : 10,
 			"/domains/Praxis/obj/mon/spider" : 1,
-			"/obj/burning_orb" : 1
+			"/obj/burning_orb_prool" : 1,
+			"/domains/town/weap/knife2" : 1
 		]));
     SetExits( ([
                 "east" : "/domains/default/room/wiz_hall",
+                "west" : "/domains/default/room/пруль2"
                 ]) );
 }
 
