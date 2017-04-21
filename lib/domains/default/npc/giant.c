@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("giant");
-    SetAdjectives( ({"jolly", "green"}) );
-    SetId(({"npc","mob","character","mobile"}));
-    SetShort("a green giant");
-    SetLong("This massive being is well over fifteen feet tall. He doesn't seem hostile though. Just rather amused, in fact. His skin is entirely green and his clothes are made from the leaves of what must be some gigantic palm trees.");
+    SetKeyName("великан");
+    SetAdjectives( ({"забавный", "зеленый"}) );
+    SetId(({"нпс","моб","существо","монстр"}));
+    SetShort("зеленый великан");
+    SetLong("Вы видите массивное существо, которое не кажется враждебным. Наоборот, он даже немного забавен. Кожа его зеленая, а одежда сделана из пальмовых листьев.");
     SetLevel(1);
     SetMelee(1);
     SetRace("giant");

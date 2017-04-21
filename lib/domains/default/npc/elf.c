@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("elf");
-    SetAdjectives( ({"arrogant", "smug", "malicious"}) );
-    SetId(({"npc","mob","character","mobile"}));
-    SetShort("an arrogant elf");
-    SetLong("Oh don't be fooled. Elves just love to pretend they believe in equality and so on, but they all secretly harbor a malicious joy in being oh so much smarter and long-lived and wiser than humans. Don't you just want to punch this elf's smug little smirk?");
+    SetKeyName("эльф");
+    SetAdjectives( ({"высокомерный", "самодовольный", "злорадный"}) );
+    SetId(({"нпс","моб","существо","персонаж"}));
+    SetShort("высокомерный эльф");
+    SetLong("Не нужно обманывать себя, эльфы только притворяются, что верят в равенство и все такое. На самом деле они злорадствуют по поводу своего ума и долголетия по сравнению с людьми. Разве вам не хочется ударить по его самодовольной роже?");
     SetLevel(1);
     SetMelee(1);
     SetRace("elf");

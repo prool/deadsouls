@@ -5,13 +5,13 @@ inherit LIB_NPC;
 
 static void create(){
     npc::create();
-    SetKeyName("dummy");
-    SetId( ({"dummy","mokujin","buster"}) );
-    SetShort("a training dummy");
-    SetLong("This is a magical sparring partner. It is made of "+
-            "logs, cut to the proportions of a human's "+
-            "head, torso, and limbs. The logs are held "+
-            "together by joints made of chains.");
+    SetKeyName("манекен");
+    SetId( ({"манекен","mokujin","buster"}) );
+    SetShort("тренировочный манекен");
+    SetLong("Это магический партнер для спарринга. Он вырезан "+
+            "из бревен, отдаленно напоминающим человека. У него есть "+
+            "голова, тело и конечности. Бревна соединяются "+
+            "вместе сочленениями из цепей.");
     SetPacifist(1);
     SetBodyComposition("wood");
     SetInventory(([
@@ -28,8 +28,8 @@ varargs int eventReceiveDamage(object agent, int type, int x, int internal, mixe
     int hp, damage, damdiff;
     string evidence, limb_string;
     evidence = "";
-    if(objectp(agent)) evidence += "I receive damage from "+agent->GetKeyName();
-    else evidence += "I receive damage from "+agent;
+    if(objectp(agent)) evidence += "Я получил урон от "+agent->GetKeyName();
+    else evidence += "Я получил урон от "+agent;
     evidence += ".";
     if(type) {
         string *damtypes = TYPES_D->eventCalculateTypes("damage", type);
@@ -38,13 +38,13 @@ varargs int eventReceiveDamage(object agent, int type, int x, int internal, mixe
             if(sizeof(damtypes) > 1) verboid = "s are ";
             else verboid = " is ";
 
-            evidence += " Damage type"+verboid;
+            evidence += " Тип урона"+verboid;
             evidence += implode(damtypes,", ");
         }
-        else evidence += " Damage type is UNKNOWN";
+        else evidence += " Тип урона НЕИЗВЕСТЕН.";
     }
-    if(x) evidence += ", raw damage is "+x;
-    if(internal) evidence += ", internal variable is "+internal;
+    if(x) evidence += ", прямой урон "+x;
+    if(internal) evidence += ", внутренняя переменная "+internal;
     if(limbs) {
         if(stringp(limbs)) limb_string = limbs;
         else if(arrayp(limbs)) {
@@ -56,12 +56,12 @@ varargs int eventReceiveDamage(object agent, int type, int x, int internal, mixe
             }
         }
     }
-    else limb_string = ", and I can't tell where I'm hit. ";
+    else limb_string = ", и я не могу сообщить, куда меня ударили. ";
     if(limbs) { 
-        evidence += ", body part(s) affected: ";
+        evidence += ", пораженная часть тела: ";
         evidence += limb_string + ".";
     }
-    eventForce("say "+evidence);
+    eventForce("гов "+evidence);
     hp = GetHealthPoints();
 
     if(!agent) agent = this_object();
@@ -74,7 +74,7 @@ varargs int eventReceiveDamage(object agent, int type, int x, int internal, mixe
 
     damage = GetHealthPoints();
     damdiff = hp - damage;
-    eventForce("say actual damage done: "+damdiff);
+    eventForce("гов фактический урон: "+damdiff);
     AddHP(damdiff+1);
 }
 
@@ -83,8 +83,8 @@ int RemoveLimb(string limb, object agent){
             query_verb() == "call"){
         return ::RemoveLimb(limb, agent);
     }
-    eventForce("say My "+limb+" has received enough damage to sever it. "
-            "However, since I am a training dummy, I'll be keeping it.");
+    eventForce("гов "+limb+" получило достаточно урона для отрыва. "
+            "Но, так как я - тренировочный манекен, оно останется на месте.");
     return 1;
 }
 

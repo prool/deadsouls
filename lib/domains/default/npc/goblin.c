@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("goblin");
-    SetAdjectives( ({"malicious", "short", "green", "clever"}) );
-    SetId(({"npc","mob","character","mobile"}));
-    SetShort("a short, green goblin");
-    SetLong("This awful creature is confirmation of the worst stories you heard as a child. It seems to ooze malice from its slick, green skin. It looks much like a troll but smaller and more clever, and the eyes almost appear to radiate poison and hatred. Its very presence contaminates the air.");
+    SetKeyName("гоблин");
+    SetAdjectives( ({"вредное", "зеленый"}) );
+    SetId(({"нпс","гоблин","существо","монстр"}));
+    SetShort("зеленый гоблин");
+    SetLong("Это вредное существо - подтверждение самых ужасных историй, слышанных вами в детстве. Он как-будто светится злобой и ненавистью. Само его присутствие отравляет воздух.");
     SetLevel(1);
     SetMelee(1);
     SetRace("goblin");

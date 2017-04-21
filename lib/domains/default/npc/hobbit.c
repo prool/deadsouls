@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("hobbit");
-    SetAdjectives( ({"saucy", "saucy looking", "stout", "somewhat stout", "capable"}) );
-    SetId( ({"lass", "adventurer"}) );
-    SetShort("a hobbit");
-    SetLong("About three feet tall, somewhat stout, and with a jolly twinkle in her eye, this saucy looking hobbit lass looks just as capable as any adventurer.");
+    SetKeyName("хоббит");
+    SetAdjectives( ({"краснощекая", "пухленькая", "привлекательная"}) );
+    SetId( ({"хоббит", "девушка"}) );
+    SetShort("хоббит");
+    SetLong("Краснощекая и пухленькая, эта девушка-хоббит довольно привлекательна. Вместе с тем она достаточно проворна, чтобы не дать себя в обиду.");
     SetLevel(1);
     SetMelee(1);
     SetRace("hobbit");

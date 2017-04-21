@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("optis");
-    SetId( ({"half elf", "half-elf", "half-human", "half human"}) );
+    SetKeyName("оптис");
+    SetId( ({"полуэльф"}) );
     SetAdjectives(({"non-player", "non player"}));
-    SetShort("Optis the half-elf");
-    SetLong("Like most of his kind, Optis is very attractive and athletic. His ears aren't entirely pointy, but he's exotic enough to be very popular with the ladies.");
+    SetShort("полуэльф Оптис");
+    SetLong("Как и большинство представителей своего вида, Оптис очень привлекателен. Хотя его уши не такие заостренные, вид у него достаточно экзотичен, чтобы пользоваться популярностью у дам.");
     SetLevel(1);
     SetMelee(1);
     SetRace("half-elf");

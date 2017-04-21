@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("elephant");
+    SetKeyName("слон");
     SetAdjectives( ({"docile", "pink", "friendly", "large", "very large"}) );
-    SetId(({"npc","mob","character","mobile"}));
-    SetShort("a pink elephant");
-    SetLong("This is a very large creature, yet it seems quite docile and even friendly. It's unclear whether the pink color is natural or painted on, but it's quite becoming.");
+    SetId(({"нпс","моб","существо","животное"}));
+    SetShort("розовый слон");
+    SetLong("Это очень крупное животное, но оно кажется смирным и даже дружелюбным. Остается только непонятным, розовый цвет его натуральный или его кто-то в него покрасил?");
     SetLevel(1);
     SetMelee(1);
     SetRace("elephant");

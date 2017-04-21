@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("foochy");
-    SetAdjectives( ({"overpampered", "ridiculous", "little", "toy", "toylike"}) );
-    SetId(({"npc","mob","character","mobile","poodle"}));
-    SetShort("Foochy the pink poodle");
-    SetLong("A rather ridiculous, obviously overpampered little toylike dog.");
+    SetKeyName("фучи");
+    SetAdjectives( ({"нелепая", "маленькая", "розовый"}) );
+    SetId(({"нпс","моб","собачка","животное","пудель"}));
+    SetShort("розовый пудель Фучи");
+    SetLong("Довольно нелепая маленькая собачка, похожая на плюшевую игрушку.");
     SetLevel(1);
     SetMelee(1);
     SetRace("dog");

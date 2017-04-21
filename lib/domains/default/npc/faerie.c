@@ -5,11 +5,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("faerie");
-    SetAdjectives( ({"fragile", "beautiful", "incredibly beautiful", "insubstantial", "tiny"}) );
-    SetId( ({"fairy", "fairie"}) );
-    SetShort("a small, delicate fairy");
-    SetLong("This creature looks like a tiny human, perhaps six inches tall, with diaphanous wings. It seems fragile and insubstantial, as well as incredibly beautiful.");
+    SetKeyName("фея");
+    SetAdjectives( ({"хрупкая", "красивая", "сказочная", "иллюзорная", "крохотная"}) );
+    SetId( ({"фея", "фэйри"}) );
+    SetShort("маленькая изящная фея");
+    SetLong("Это создание выглядит как крохотная девушка с крыльями стрекозы. Она кажется хрупкой и иллюзорной, а еще она сказочно красива.");
     SetPosition(POSITION_FLYING);
     SetLevel(1);
     SetMelee(1);

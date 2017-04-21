@@ -15,23 +15,23 @@ int eventShootDude(object ob){
     if(!environment()) return 0;
     str = ob->GetName();
     if(!ammo){
-        tell_room(environment(),"The killbot clicks.");
+        tell_room(environment(),"Терминатор передернул затвор.");
         active = 0;
         return 0;
     }
-    tell_object(this_object(),"You fire at "+ob->GetName()+"!");
-    tell_room(environment(),"The killbot fires at "+ob->GetName()+"!",
+    tell_object(this_object(),"Вы сражаетесь с "+ob->GetName()+"!");
+    tell_room(environment(),"Терминатор сражается с "+ob->GetName()+"!",
             ({this_object(),ob}));
-    tell_object(ob,"The killbot fires at you!");
+    tell_object(ob,"Терминатор сражается с вами!");
     ammo--;
     if(random(100) < 10) return 1;
     limbs=ob->GetLimbs();
     numlimbs=sizeof(limbs);
     limbname = limbs[random(numlimbs-1)]; 
     tell_room(environment(this_object()),
-            "The bullet smashes into "+
-            capitalize(str)+"'s "+limbname+"!\n",ob);
-    tell_object(ob,"The bullet smashes into your "+limbname+"!\n");
+            "Пуля попадает в "+
+            capitalize(str)+" "+limbname+"!\n",ob);
+    tell_object(ob,"Пуля попадает в вашу "+limbname+"!\n");
     dam = 20;
     dam *= random(10);
     dam -= random(ob->GetStatLevel("coordination"));
@@ -75,15 +75,15 @@ int eventTargetScan(){
     targets = scramble_array(targets);
     targets -= ({ this_object() });
     if((targs = sizeof(targets)) < 1){
-        if(newenv) eventForce("say Environment scan complete.");
+        if(newenv) eventForce("гов Проверка местности завершена.");
         newenv = 0;
         eventQuell();
         return 0;
     }
     if(targs > 10) targs = 10;
     else {
-        eventForce("say "+cardinal(targs)+" target"+
-                ((targs > 1) ? "s" : "" )+" acquired.");
+        eventForce("гов "+cardinal(targs)+" цель"+
+                ((targs > 1) ? "s" : "" )+" принята.");
     }
     targs--;
     targets = targets[0..targs];
@@ -95,11 +95,11 @@ int eventTargetScan(){
 
 int ActivateTurret(){
     if(!ammo){
-        write("The killbot clicks and goes silent.");
+        write("В терминаторе что-то щелкнуло и он затих.");
         return 0;
     }
     active = 1;
-    eventForce("say KILLBOT IS NOW FULLY ARMED AND OPERATIONAL.");
+    eventForce("гов Терминатор теперь полностью вооружен и функционален.");
     eventTargetScan();
     set_heart_beat(1);
     return 1;
@@ -109,12 +109,12 @@ static void create() {
     sentient::create();
     visited = ({});
     incept = time();
-    SetKeyName("killbot");
-    SetId( ({"drone","bot", "robot","turret"}) );
-    SetAdjectives(({"kill","non-player", "non player"}));
-    SetShort("a killbot");
-    SetLong("This is a hovering orb with a machine gun hanging "+
-            "underneath it and a single red glowing eye scanning the area.");
+    SetKeyName("терминатор");
+    SetId( ({"дрон","бот", "робот","турель"}) );
+    SetAdjectives(({"убийственный","non-player", "non player"}));
+    SetShort("терминатор");
+    SetLong("Это парящий шар с огромным пулеметом и одним "+
+            "красным глазком, сканирующим область.");
     SetPosition(POSITION_FLYING);
     SetLevel(1);
     SetPacifist(1);
@@ -135,25 +135,25 @@ void init(){
 
 int eventTurnOn(){
     if(active){
-        write("The killbot is already active.");
+        write("Терминатор уже активен.");
         return 1;
     }
     else {
         call_out("ActivateTurret",7);
-        write("You activate the killbot.");
-        eventForce("say KILLBOT ACTIVE.");
-        eventForce("say YOU HAVE 5 SECONDS TO REACH MINIMUM SAFE DISTANCE.");
+        write("Вы активировали терминатора.");
+        eventForce("гов Терминатор активен.");
+        eventForce("гов У вас 5 секунд чтобы отойти на безопасное расстояние.");
     }
     return 1;
 }
 
 int eventTurnOff(){
     if(!active){
-        write("The killbot is already inactive.");
+        write("Терминатор уже неактивен.");
         return 1;
     }
     else {
-        write("It seems this killbot cannot be deactivated.");
+        write("Кажется, этот терминатор не может быть деактивирован.");
     }
     return 1;
 }
@@ -188,7 +188,7 @@ varargs int eventReceiveDamage(mixed agent, int type, int x, int internal,
         mixed limbs){
     object env = room_environment();
     if(env){
-        tell_room(env,"The killbot %^RED%^BEEPS%^RESET%^.");
+        tell_room(env,"Терминатор %^RED%^ПИСКНУЛ%^RESET%^.");
     }
     ActivateTurret();
     return ::eventReceiveDamage(agent, type, x, internal, limbs);
@@ -223,7 +223,7 @@ varargs int eventDie(mixed arg){
             newbot = new(base_name(this_object()));
             ret = newbot->eventMove(env);
             if(ret){
-                tell_room(env,"The killbot has teleported in reinforcements.");
+                tell_room(env,"Терминатор телепортирован для перевооружения");
             }
         }
     }

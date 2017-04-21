@@ -6,19 +6,19 @@ inherit LIB_DOMESTICATE;
 
 static void create() {
     sentient::create();
-    SetKeyName("horse");
-    SetId(({"horse","large horse"}));
-    SetShort("a large horse");
-    SetLong("A large, hooved quadruped, taller and more muscular than you.");
+    SetKeyName("жеребец");
+    SetId(({"жеребец","рослый жеребец"}));
+    SetShort("рослый жеребец");
+    SetLong("Рослый и хорошо сложенный, жеребец может лягнуть так, что мало не покажется.");
     SetWimpy(50);
     SetLevel(5);
     SetRace("horse");
     SetGender("male");
     SetMelee(1);
     SetAction(5, ({ 
-                "The horse snorts.", "You hear the horse whinny.", 
-                "The horse flips its tail in the air.",
-                "The horse looks around."}));
+                "Жеребец фыркнул.", "Вы слышите лошадиное ржание.", 
+                "Жеребец помахивает своим хвостом, отгоняя назойливых мух.",
+                "Жеребец оглянулся."}));
     SetNoClean(1);
 }
 void init(){

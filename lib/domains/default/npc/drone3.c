@@ -12,18 +12,18 @@ int spawned;
 int hb = 10;
 
 string ShortDesc(){
-    return "drone "+file_name();
+    return "дрон "+file_name();
 }
 
 string LongDesc(){
-    return "drone "+file_name();
+    return "дрон "+file_name();
 }
 
 static void create() {
     sentient::create();
-    SetKeyName("drone");
-    SetAdjectives( ({"small","metal"}) );
-    SetId( ({"drone","bot","robot"}) );
+    SetKeyName("дрон");
+    SetAdjectives( ({"маленький","металлический"}) );
+    SetId( ({"дрон","бот","робот"}) );
     SetShort( (: ShortDesc :) );
     SetLong( (: LongDesc :) );
     SetLevel(1);

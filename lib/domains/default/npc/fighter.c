@@ -3,12 +3,12 @@ inherit LIB_NPC;
 
 static void create(){
     npc::create();
-    SetKeyName("fighter");
-    SetId( ({"human","npc","warrior","fighter"}) );
-    SetShort("a fighter");
-    SetLong("This is a large human warrior. His pectoral muscles "+
-            "are clearly visible even through his armor. His face is covered in "+
-            "bold blue tattoos.");
+    SetKeyName("воин");
+    SetId( ({"человек","нпс","воин","боец"}) );
+    SetShort("воин");
+    SetLong("Это высокий человек-воин. Его рельефные мускулы "+
+            "четко видны даже под доспехами. Его лицо сплошь покрыто "+
+            "синими таттуровками.");
     SetClass("fighter");
     SetLevel(10);
     SetCustomXP(350);

@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("dwarf");
-    SetId(({"npc","mob","character","mobile"}));
-    SetAdjectives(({"non-player", "non player"}));
-    SetShort("a dwarf");
-    SetLong("This is your typical hearty-looking, short, powerfully-built dwarf. Ruddy cheeks, full beard, the works. Straight out of central casting, this one.");
+    SetKeyName("карлик");
+    SetId(({"нпс","моб","существо","персонаж"}));
+    SetAdjectives(({"крепко сложенный", "non player"}));
+    SetShort("карлик");
+    SetLong("Это типичный крепко сложенный карлик. С румяными щеками, большой бородой и за работой с металлом.");
     SetLevel(1);
     SetMelee(1);
     SetRace("dwarf");
