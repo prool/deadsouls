@@ -107,8 +107,13 @@ static void parse_rule (parse_state_t *);
 static void clear_parallel_errors (saved_error_t **);
 static svalue_t *get_the_error (parser_error_t *, int);
 
+#if 0 // 1- orig 0 - prool
 #define isignore(x) (!uisprint(x) || x == '\'')
 #define iskeep(x) (uisalnum(x) || x == '*' || x == '?' || x == '!'|| x == '.'|| x == ':')
+#else
+#define isignore(x) (x == '\'')
+#define iskeep(x) (x!=' ')
+#endif
 
 #define SHARED_STRING(x) ((x)->subtype == STRING_SHARED ? (x)->u.string : findstring((x)->u.string))
 
@@ -2925,6 +2930,8 @@ static void parse_sentence (const char * input) {
     int i;
     int flag;
     
+//    printf("prooldebug parse_sentence '%s'\n", input);
+    
     reset_error();
     free_words();
     p = start = buf;
@@ -2988,6 +2995,10 @@ static void parse_sentence (const char * input) {
         starts[n] = p;
         *p = 0;
     }
+
+#if 0 // prool
+printf("starts[0]='%s' starts[1]='%s'\n", starts[0], starts[1]);
+#endif
 
     /* find an interpretation, first word must be shared (verb) */
     for (i = 1; i <= n; i++) {
