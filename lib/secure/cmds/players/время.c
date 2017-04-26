@@ -25,7 +25,7 @@ mixed cmd() {
 
     if(minutes < 10) nulle = "0";
 
-    write("Сегодня "+query_day_name()+", "+daynum+" день "+
+    write("Сегодня "+query_day_name()+", "+daynum+"й день "+
             query_month()+", "+query_season()+".");
 
     write("Локальное время: "+hours+":"+nulle+minutes+meridiem+"."); 
