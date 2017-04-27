@@ -3,8 +3,8 @@
 #define DEFAULT_PROMPT           "> "
 #define HOST_IP                  "127.0.0.1"
 #define MUD_STATUS               "mudlib development"
-#define ADMIN_EMAIL              "pathfinderchemical@gmail.com"
-#define DEBUGGER                 "tuor"
+#define ADMIN_EMAIL              "admin@here"
+#define DEBUGGER                 "DEBUG_NAME"
 #define LOCAL_NEWS_PREFIX        "nm"
 #define MUD_IS_LOCKED            0
 #define AUTO_WIZ                 0
@@ -91,4 +91,5 @@
 #define CED_DISABLED             1
 #define PLAYER_INTERTELL_ALLOWED 0
 #define GUEST_ALLOWED            1
+
 #endif /* s_config_h */
