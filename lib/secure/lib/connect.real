@@ -146,7 +146,7 @@ varargs static void logon(mixed foo) {
         receive("\n" + center("Driver: " + version() + 
                     "               Mudlib: "+
                     mudlib() + " " + mudlib_version()) + "\n");
-        receive("\nWhat name do you wish? ");
+        receive("\nКакое имя вы желаете? ");
         input_to((: InputName :), I_NOESC);
     }
 } 
@@ -169,8 +169,8 @@ static void InputName(string namen, string kill_me) {
     }
 
     if(!CheckIp()){
-        receive("\nToo many users from your site are currently logged on.\n");
-        receive("Please try again later.\n");
+        receive("\nС вашего адреса слишком много игроков.\n");
+        receive("Пожалуйста, попытайтесь зайти позже.\n");
         flush_messages();
         Destruct();
         return;
@@ -187,14 +187,14 @@ static void InputName(string namen, string kill_me) {
 
     if( !name || name == "" ) {
         if( kill_me ) {
-            if(!Moved) receive("\nPerhaps try another time then?\n");
+            if(!Moved) receive("\nМожет, попробуете в другой раз?\n");
             Destruct();
             return;
         }
         else {
             if(!Moved){
-                receive("\nYou must enter a name in order to join!\n");
-                receive("\nWhat name do you wish? ");
+                receive("\nВы должны ввести имя, чтобы войти в игру!\n");
+                receive("\nКакое имя вы желаете? ");
             }
             input_to((: InputName :), I_NOESC, "kill me");
             return;
@@ -216,7 +216,7 @@ static void InputName(string namen, string kill_me) {
     name = capitalize(name);
     if( master()->is_locked() || toomany) {
         if(toomany){
-            news = "Too many players logged in!";
+            news = "В игре слишком много игроков!";
         }
         else news = read_file(NEWS_LOCKED) || "No reason logged.";
         receive("\n" + mud_name() + " is locked.  Reason:\n" + news + "\n");
@@ -233,15 +233,15 @@ static void InputName(string namen, string kill_me) {
         return;
     }
     if( !(BANISH_D->eventConnect(Name, client_ip)) ) {
-        news = read_file(NEWS_BANISHED) || "You are not allowed here.\n";
+        news = read_file(NEWS_BANISHED) || "Вас не хотят здесь видеть.\n";
         receive("\n" + news + "\n");
         Destruct();
         return; 
     }
     if( (tmp = CHARACTER_D->eventConnect(Name)) != 1 ) {
         if( tmp ) receive(tmp + "\n");
-        else receive("One of your characters was recently logged in.\n"
-                "You must wait a little longer before logging in.\n");
+        else receive("Один из ваших персонажей недавно был в игре.\n"
+                "Вы должны немного подождать, прежде чем войти.\n");
         Destruct();
         return;
     }
@@ -261,19 +261,19 @@ static void InputPassword(string pass, string cap) {
     if(Name != "guest"){
 
         if( !pass || pass == "" ) {
-            receive("\nYou must enter a password.  Please try again later.\n");
+            receive("\nВы должны ввести пароль.  Пожалуйста, повторите попытку.\n");
             Destruct();
             return;
         }
         if(!cap || cap == "") {
-            receive("\nAn unusual error has occurred.  Please try again.\n");
+            receive("\nПроизошла странная ошибка.  Пожалуйста, повторите попытку.\n");
             Destruct();
             return;
         }
 
         control = PLAYERS_D->GetPlayerData(Name,"Password");
         if( control != crypt(pass, control) ) {
-            receive("\nInvalid password.\n");
+            receive("\nНеверный пароль.\n");
             if( ++CrackCount > MAX_PASSWORD_TRIES ) {
                 receive("\nNo more attempts allowed\n");
                 unguarded( (: log_file("/secure/log/security", 
@@ -297,7 +297,7 @@ static void InputPassword(string pass, string cap) {
 
     Player = master()->player_object(Name);
     if( !Player ) {
-        receive("\nIt seems some work is being done right now, try later.\n");
+        receive("\nКажется сейчас проводят технические работы, повторите попытку позже.\n");
         Destruct();
         return;
     }
@@ -325,7 +325,7 @@ static void eventCreatePlayer(string cap) {
         receive("\t\tA-Z\n\t\ta-z\n\t\t'\n\t\t-\n");
         receive("\tMinimum length: " + MIN_USER_NAME_LENGTH + "\n");
         receive("\tMaximum length: " + MAX_USER_NAME_LENGTH + "\n");
-        receive("\nPlease enter a new name: \n");
+        receive("\nПожалуйста, введите новое имя: \n");
         input_to( (: InputName :), I_NOESC );
         return;
     }
@@ -339,7 +339,7 @@ static void eventCreatePlayer(string cap) {
     }
     foreach(string tmpfile in tmpfiles){
         if(!strsrch(tmpfile, lcname+".")){
-            receive("\nThat name is taken. Please choose a new one.\n");
+            receive("\nЭто имя занято. Пожалуйста, выберите новое.\n");
             input_to( (: InputName :), I_NOESC );
             return;
         }
@@ -353,48 +353,48 @@ static void eventCreatePlayer(string cap) {
         Destruct();
         return;
     }
-    receive("Do you really wish to be known as " + cap + "? (y/n) \n");
+    receive("Вы действительно желаете чтобы вас называли " + cap + "? (y/n) \n");
     input_to((: ConfirmName :), I_NOESC, cap);
 }
 
 static BlindCheck(string ans, string cap){
     if( !ans || ans == "" || lower_case(ans)[0..0] == "y" ) {
-        receive("\nOk, disabling default overhead map.\n");
+        receive("\nХорошо, убираем внутриигровую карту.\n");
         blindmode = 1;
     }
-    else receive("\Ok, allowing default overhead map behavior.\n");
+    else receive("\Хорошо, добавляем внутриигровую карту.\n");
     log_file("new_players", Name + " (" + ctime(time()) + ")\n");
-    receive("\nCreate a password of at least 5 letters: \n");
+    receive("\nПридумайте пароль минимум из 5 символов: \n");
     input_to((: CreatePassword :), I_NOECHO | I_NOESC, cap);
 }
 
 static void AgeCheck(string ans, string cap) {
     if( !ans || ans == "" || lower_case(ans)[0..0] != "y" ) {
-        receive("\nSorry. You are not old enough to play here.\n");
+        receive("\nИзвините, но вам недостаточно лет для этой игры.\n");
         Destruct();
         return;
     }
     log_file("new_players", Name + " (" + ctime(time()) + ")\n");
     unguarded( (: log_file("/secure/log/new_players", Name + " from " 
       + client_ip + extra + " (" + ctime(time()) + ")\n") :) );
-    receive("\nDo you use a screen reader for the visually impaired? (y/n)\n");
+    receive("\nВы используете скринридер для слабо видящих? (y/n)\n");
     input_to((: BlindCheck :), I_NOESC, cap);
 } 
 
 static void ConfirmName(string ans, string cap) {
     if( !ans || ans == "" || lower_case(ans)[0..0] != "y" ) {
-        receive("\nOk, then enter the name you really want: \n");
+        receive("\nХорошо, тогда введите имя, которое действительно хотите: \n");
         input_to( (: InputName :), I_NOESC );
         return;
     }
-    receive("\nAre you 13 years of age or older? (y/n) \n");
+    receive("\nВам больше 18ти лет? (y/n) \n");
     input_to((: AgeCheck :), I_NOESC, cap);
 }
 
 static void eventReEnterGame(string cap) {
     if( interactive(Player) ) {
-        receive("\nAn interactive copy of you currently exists.\n");
-        receive("Do you wish to take over this copy? (y/n) \n");
+        receive("\nСейчас существует ваша интерактивная копия.\n");
+        receive("Вы хотите ее использовать? (y/n) \n");
         input_to((: ConfirmReconnect :), I_NOESC, cap);
         return;
     }
@@ -428,7 +428,7 @@ static void ConfirmReconnect(string ans, string cap) {
     object tmp; 
 
     if( !stringp(ans) || ans == "" || lower_case(ans)[0..0] != "y" ) {
-        receive("\nThen please try again later!\n");
+        receive("\nПожалуйста, повторите попытку позже!\n");
         Destruct();
         return;
     }
@@ -454,7 +454,7 @@ static void ConfirmReconnect(string ans, string cap) {
     else {
         Player->SetTeloptIp(0);
     }
-    Player->eventPrint("\nAllowing login.\n", MSG_SYSTEM);
+    Player->eventPrint("\nРазрешение входа.\n", MSG_SYSTEM);
     call_out( (: eventCheckPending, lower_case(Name) :), 3);
     Destruct();
 }
@@ -471,7 +471,7 @@ static int CanLogin() {
 static private void eventEnterGame() { 
     if(!exec(Player, this_object())) { 
         debug("problem connecting");
-        receive("\nProblem connecting.\n"); 
+        receive("\nПроблема соединения.\n"); 
         Player->eventDestruct();
         destruct(this_object());
         return; 
@@ -512,12 +512,12 @@ static private void eventEnterGame() {
 
 static void CreatePassword(string pass, string cap) {
     if( strlen(pass) < 3) {
-        receive("\nYour password must be at least 5 letters in length.\n");
-        receive("Please choose another password: ");
+        receive("\nВаш пароль должен содержать как минимум 5 символов.\n");
+        receive("Пожалуйста, выберите другой пароль: ");
         input_to( (: CreatePassword :), I_NOECHO | I_NOESC, cap);
         return;
     }
-    receive("\nPlease confirm your password: ");
+    receive("\nПожалуйста, подтвердите ваш пароль: ");
     input_to( (: ConfirmPassword :), I_NOECHO | I_NOESC, cap, pass);
 }
 
@@ -526,11 +526,11 @@ static void ConfirmPassword(string control, string cap, string pass) {
         Player = master()->player_object(Name);
         pass = crypt(pass, 0);
         Passwort = pass;
-        receive("\n\nPlease choose an interesting gender (male, female, neutral, or none): \n");
+        receive("\n\nПожалуйста, выберите пол персонажа (male, female, neutral, or none): \n");
         input_to((: InputGender :), I_NOESC, cap);
         return; 
     } 
-    receive("\nPassword entries do not match, re-choose password: ");
+    receive("\nПароли не совпадают, повторите ввод: ");
     input_to((: CreatePassword :), I_NOECHO | I_NOESC, cap);
     return; 
 } 
@@ -539,7 +539,7 @@ static void InputGender(string str, string cap) {
     if( str != "male" && str != "female" 
             && str != "neuter" && str != "neutral" && str != "none") { 
         receive("\nCute, but pretend to be male, female, neutral, or none instead.\n");
-        receive("Gender: ");
+        receive("Пол: ");
         input_to((: InputGender :), I_NOESC, cap);
         return;
     }
@@ -565,8 +565,8 @@ static void InputCapName(string name, string cap) {
     }
     cap = capitalize(name);
     CapNamen = cap;
-    receive("\nFor security reasons, " + mud_name() + " requires a valid "
-            "email.\n"
+    receive("\nДля безопасности, " + mud_name() + " требует действительный "
+            "адрес электронной почты.\n"
             "Email: \n");
     input_to((: InputEmail :), I_NOESC);
 } 
@@ -575,15 +575,15 @@ static void InputEmail(string email) {
     string user, host; 
 
     if( !email || sscanf(email, "%s@%s", user, host) != 2 ) {
-        receive("\nThat is not a valid email address.\n");
-        receive("Please enter a valid email address: \n");
+        receive("\nЭто недействительный адрес электронной почты.\n");
+        receive("Пожалуйста, введите действительный адрес электронной почты: \n");
         input_to( (: InputEmail :), I_NOESC );
         return; 
     } 
     E_Mail = email;
     if(REAL_NAME){
-        receive("\nIf you do not mind, please enter your real name "
-            "(optional): \n");
+        receive("\nЕсли вы не возражаете, введите свое настоящее имя "
+            "(необязательно): \n");
         input_to( (: InputRealName :), I_NOESC );
     }
     else {
@@ -595,21 +595,21 @@ static void InputRealName(string rname) {
     if( !rname || rname == "" ) rname = "Unknown";
     TrueName = rname;
     if(!HUMANS_ONLY){
-        receive("\n\nYou must now pick a race.\n");
-        receive("Picking a race influences what physical traits your character "
-                "will have.\n");
-        receive("\nYou may issue the following commands:\n");
-        receive("\tlist - lists all races from which you can choose\n");
-        receive("\thelp - get help on what races mean\n");
-        receive("\thelp RACE - (e.g. \"help human\") gives you information on "
-                "a race\n");
-        receive("\tpick RACE - pick a particular race for yourself\n");
-        receive("\n\tValid races: ");
+        receive("\n\nВы должны выбрать расу.\n");
+        receive("Выбор расы влияет на начальные характеристики "
+                "и бонусы персонажа.\n");
+        receive("\nВы можете воспользоваться следующими командами:\n");
+        receive("\tlist - выводит список всех доступных вам рас;\n");
+        receive("\thelp - показывает справку по расам;\n");
+        receive("\thelp RACE - (e.g. \"help human\") даст справку по данной "
+                "расе;\n");
+        receive("\tpick RACE - выбор вашей расы.\n");
+        receive("\n\tДоступные расы: ");
         receive(implode(sort_array(RACES_D->GetRaces(1), 1), " "));
-        receive("\n\nRace: \n");
+        receive("\n\nРаса: \n");
         input_to((: InputRace :), I_NOESC);
     }
-    else InputRace("pick human");
+    else InputRace("pick имперец");
 }
 
 static void InputRace(string str) {
@@ -617,7 +617,7 @@ static void InputRace(string str) {
     string *valid = ( RACES_D->GetRaces(1) || ({}) );
 
     if( str == "" || !str ) {
-        receive("\nRace: ");
+        receive("\nРаса: ");
         input_to((: InputRace :), I_NOESC);
         return;
     }
@@ -643,7 +643,7 @@ static void InputRace(string str) {
         return;
 
         default:
-        receive("\nInvalid command.\nRace: \n");
+        receive("\nНеверная команда.\nРаса: \n");
         input_to((: InputRace :), I_NOESC);
         return;
     }
@@ -655,17 +655,17 @@ static void cmdHelp(string args) {
     string help;
 
     f = function(string str) {
-        receive("\nRace: \n");
+        receive("\nРаса: \n");
         input_to((: InputRace :), I_NOESC);
     };
     if( !args ) {
         help = read_file(DIR_PLAYER_HELP + "/races") ||
-            "Error reading help file.\n";
+            "Ошибка чтения справки.\n";
         eventPage(explode(help, "\n"), MSG_HELP, f);
         return;
     }
     if( member_array(args = lower_case(args), races) == -1 ) {
-        receive("No such race exists.\n\nRace: \n");
+        receive("Такой расы не существует.\n\nРаса: \n");
         input_to((: InputRace :), I_NOESC);
         return;
     }
@@ -678,19 +678,19 @@ static void cmdList() {
 
     list = format_page(sort_array(RACES_D->GetRaces(1), 1), 5);
     receive(list);
-    receive("\nRace: \n");
+    receive("\nРаса: \n");
     input_to((: InputRace :), I_NOESC);
 }
 
 static void cmdPick(string args) {
     if( !args || args == "" ) {
-        receive("You must specify a race to pick.\n\nRace: \n");
+        receive("Вы должны указать выбранную расу.\n\nРаса: \n");
         input_to((: InputRace :), I_NOESC);
         return;
     }
     if( member_array(args = lower_case(args),
                 RACES_D->GetRaces(1)) == -1 ) {
-        receive("No such race.\nRace: \n");
+        receive("Нет такой расы.\nРаса: \n");
         input_to((: InputRace :), I_NOESC);
         return;
     }
@@ -715,18 +715,18 @@ static void cmdPick(string args) {
 }
 
 static void eventSelectClass(){
-    receive("\n\nYou must now pick a class.\n");
-    receive("Picking a class influences what skills your character "
-            "will have.\n");
-    receive("\nYou may issue the following commands:\n");
-    receive("\tlist - lists all classes from which you can choose\n");
-    receive("\thelp - get help on what classes mean\n");
-    receive("\thelp CLASS - (e.g. \"help explorer\") gives you information on "
-            "a class\n");
-    receive("\tpick CLASS - pick a particular class for yourself\n");
-    receive("\n\tValid classes: ");
+    receive("\n\nТеперь вы должны выбрать класс.\n");
+    receive("Он будет влиять на ваши первоначальные "
+            "умения.\n");
+    receive("\nВы можете воспользоваться следующими командами:\n");
+    receive("\tlist - выводит список всех доступных вам классов;\n");
+    receive("\thelp - показывает справку по классам;\n");
+    receive("\thelp CLASS - (e.g. \"help explorer\") выдает информацию "
+            "по этому классу;\n");
+    receive("\tpick CLASS - выбор класса.\n");
+    receive("\n\tДоступные классы: ");
     receive(implode(sort_array(CLASSES_D->GetClasses(1), 1), " "));
-    receive("\nClass: \n");
+    receive("\nКласс: \n");
     input_to((: InputClass :), I_NOESC);
 }
 
@@ -735,7 +735,7 @@ static void InputClass(string str){
     string *valid = ( CLASSES_D->GetClasses(1) || ({}) );
 
     if( str == "" || !str ) {
-        receive("\nClass: ");
+        receive("\nКласс: ");
         input_to((: InputClass :), I_NOESC);
         return;
     }
@@ -761,7 +761,7 @@ static void InputClass(string str){
         return;
 
         default:
-        receive("\nInvalid command.\nClass: \n");
+        receive("\nНеверная команда.\nКласс: \n");
         input_to((: InputClass :), I_NOESC);
         return;
     }
@@ -773,17 +773,17 @@ static void cmdHelpClass(string args){
     string help;
 
     f = function(string str) {
-        receive("\nClass: \n");
+        receive("\nКласс: \n");
         input_to((: InputClass :), I_NOESC);
     };
     if( !args ) {
         help = HELP_D->GetHelp("player documents classes") ||
-            "Error reading help file.\n";
+            "Ошибка чтения файла справки.\n";
         eventPage(explode(help, "\n"), MSG_HELP, f);
         return;
     }
     if( member_array(args = lower_case(args), Classes) == -1 ) {
-        receive("No such Class exists.\n\nClass: \n");
+        receive("Такого класса не существует.\n\nКласс: \n");
         input_to((: InputClass :), I_NOESC);
         return;
     }
@@ -796,19 +796,19 @@ static void cmdListClasses() {
 
     list = format_page(sort_array(CLASSES_D->GetClasses(1), 1), 5);
     receive(list);
-    receive("\nClass: \n");
+    receive("\nКласс: \n");
     input_to((: InputClass :), I_NOESC);
 }
 
 static void cmdPickClass(string args) {
     if( !args || args == "" ) {
-        receive("You must specify a class to pick.\n\nClass: \n");
+        receive("Вы должны указать выбранный класс.\n\nКласс: \n");
         input_to((: InputClass :), I_NOESC);
         return;
     }
     if( member_array(args = lower_case(args),
                 CLASSES_D->GetClasses(1)) == -1 ) {
-        receive("No such Class.\nClass: \n");
+        receive("Нет такого класса.\nКласс: \n");
         input_to((: InputClass :), I_NOESC);
         return;
     }
@@ -908,7 +908,7 @@ static void eventTimeout() {
         Destruct();
     }
     else if( query_idle(this_object()) > LOGON_TIMEOUT ) {
-        receive("\nLogin timed out.\n");
+        receive("\nВремя соединения истекло.\n");
         Destruct();
     }
     else call_out( (: eventTimeout :), LOGON_TIMEOUT );
