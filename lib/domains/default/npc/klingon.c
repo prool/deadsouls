@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("klingon");
-    SetAdjectives( ({"klingon", "adolescent", "unpredictable"}) );
-    SetId( ({"warrior", "fighter", "adolescent"}) );
-    SetShort("an adolescent klingon");
-    SetLong("Sometimes more dangerous than the adult klingon, adolescents have something to prove and can be unpredictable in their aggression. This one has the distinctive ridges of the house of D'Ghor, making him all the more eager to prove his worthiness as a fighter.");
+    SetKeyName("клингон");
+    SetAdjectives( ({"клингон", "молодой", "непредсказуемый"}) );
+    SetId( ({"воин", "боец", "подросток"}) );
+    SetShort("молодой клингон");
+    SetLong("Молодые клингоны обязаны доказать свои бойцовские способности, поэтому часто они более непредсказумы в своей агрессии по сравнению со взрослыми представителями своей расы.");
     SetClass("fighter");
     SetLevel(5);
     SetMelee(1);

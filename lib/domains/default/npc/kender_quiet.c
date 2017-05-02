@@ -27,11 +27,11 @@ int StealAttempt(){
 
 static void create() {
     sentient::create();
-    SetKeyName("kender");
-    SetId(({"npc","mob","character","mobile"}));
+    SetKeyName("кендер");
+    SetId(({"нпс","моб","существо","кендер"}));
     SetAdjectives(({"non-player", "non player"}));
-    SetShort("a kender");
-    SetLong("Slight of build and rather attractive, kenders are another race related to hobbits, with all of the playfulness and a little extra disregard for other people's privacy. Kenders are infamous for their extraordinary skill in relieving others of their property, and it is said they are taught to steal before being taught to read. Others dispute this, arguing kenders don't read at all.");
+    SetShort("кендер");
+    SetLong("Кендеры - это печально известная своей клептоманией разновидность хоббитов. Говорят, что они учатся красть раньше, чем учатся читать. Хотя злые языки утверждают, что кендеры читать вообще не умеют.");
     SetClass("thief");
     SetLevel(5);
     SetMelee(1);
