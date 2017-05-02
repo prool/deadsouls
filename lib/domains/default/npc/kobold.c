@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("kobold");
-    SetAdjectives( ({"lizard", "short", "humanoid"}) );
-    SetId( ({"lizard", "lizard man", "creature"}) );
-    SetShort("a short lizard man");
-    SetLong("This three foot tall lizard creature is a kobold. Its features are like those of a reptile, but it has arms and legs like a humanoid.");
+    SetKeyName("кобольд");
+    SetAdjectives( ({"вредный", "маленький"}) );
+    SetId( ({"человекоящер", "ящер", "создание"}) );
+    SetShort("маленький человекоящер");
+    SetLong("Кобольды - это маленькие человекоящеры, отличающиеся крайне вредным характером. Из-за их злых шуток погиб не один шахтер.");
     SetLevel(1);
     SetMelee(1);
     SetRace("kobold");

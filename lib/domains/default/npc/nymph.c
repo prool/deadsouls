@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("claire");
-    SetId( ({"nymph", "danes", "claire danes", "woman"}) );
+    SetKeyName("клэр");
+    SetId( ({"нимфа", "дэйнс", "клэр дэйнс", "девушка"}) );
     SetAdjectives(({"non-player", "non player"}));
-    SetShort("Claire Danes");
-    SetLong("This slender nature spirit appears quite lost, and probably should be accompanying a lesser goddess through woodland glades.");
+    SetShort("Клэр Дэйнс");
+    SetLong("Эта нимфа кажется совершенно потерянной, возможно она из свиты лесной богини и теперь ищет ее.");
     SetLevel(1);
     SetMelee(1);
     SetRace("nymph");

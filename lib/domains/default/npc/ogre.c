@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("ogre");
-    SetAdjectives( ({"foul", "stinking", "unlovable", "potbellied", "snaggletoothed", "monstrous"}) );
-    SetId( ({"oaf", "beast"}) );
-    SetShort("a monstrous ogre");
-    SetLong("This is not a lovable oaf. This foul, stinking beast is twice as tall as a human, potbellied and snaggletoothed. Its skin is crawling with vermin and is encrusted with dried body fluids.");
+    SetKeyName("огр");
+    SetAdjectives( ({"ужасный", "непривлекательный", "вонючий"}) );
+    SetId( ({"огр", "монстр"}) );
+    SetShort("ужасный огр");
+    SetLong("Это совершенно не привлекательный монстр. Он в два раза выше и толще человека и у него огромное сальное пузо. А по его грязной шкуре снуют какие-то мерзкие насекомые.");
     SetLevel(1);
     SetMelee(1);
     SetRace("ogre");

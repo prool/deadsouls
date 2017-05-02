@@ -4,13 +4,13 @@ inherit LIB_NPC;
 
 static void create() {
     npc::create();
-    SetKeyName("orc");
-    SetId(({"orc"}));
-    SetAdjectives(({"dirty"}));
-    SetShort("a dirty orc");
-    SetLong("This orc is typical of its breed: nasty, brutish, and short. It appears "
-            "to be a juvenile or adolescent, making it somewhat less "
-            "dangerous but more hostile. ");
+    SetKeyName("орк");
+    SetId(({"орк"}));
+    SetAdjectives(({"грязный"}));
+    SetShort("грязный орк");
+    SetLong("Это типичный орк во всей его красе: грязный, вонючий и уродливый. Кажется, "
+            "что он еще довольно молод и это делает его менее "
+            "опасным, но более враждебным. ");
     SetLevel(1);
     SetRace("orc");
     SetGender("male");

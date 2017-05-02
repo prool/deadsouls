@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("newt");
-    SetAdjectives( ({"slimy"}) );
-    SetId(({"npc","mob","character","mobile"}));
-    SetShort("a newt");
-    SetLong("A slimy amphibian.");
+    SetKeyName("тритон");
+    SetAdjectives( ({"скользкий","скользкая","мерзкая"}) );
+    SetId(({"нпс","моб","тритон","амфибия"}));
+    SetShort("тритон");
+    SetLong("Это мерзкая и скользкая амфибия.");
     SetWimpy(80);
     SetWanderSpeed(3);
     SetMelee(1);

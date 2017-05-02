@@ -5,11 +5,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("moth");
-    SetId(({"npc","mob","character","mobile"}));
-    SetAdjectives(({"non-player", "non player"}));
-    SetShort("a tiny moth");
-    SetLong("An ordinary flying insect which has a particular taste for old clothes.");
+    SetKeyName("моль");
+    SetId(({"нпс","моб","моль","насекомое"}));
+    SetAdjectives(({"летающее", "крохотная"}));
+    SetShort("крохотная моль");
+    SetLong("Самое обычное насекомое, обладающее необычным пристрастием к старой одежде.");
     SetWimpy(80);
     SetPosition(POSITION_FLYING);
     SetLevel(1);

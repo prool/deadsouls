@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("kwyjibo");
-    SetId(({"npc","mob","character","mobile"}));
-    SetAdjectives(({"bald","overweight","dumb","stupid","North American","American"}));
-    SetShort("a kwijibo");
-    SetLong("A bald, overweight, North American ape of below average intelligence.");
+    SetKeyName("квижибо");
+    SetId(({"нпс","моб","существо","квижибо"}));
+    SetAdjectives(({"толстый","лысый","получеловек","полуобезьяна"}));
+    SetShort("квижибо");
+    SetLong("Вы видите толстого лысого получеловека-полуобезьяну.");
     SetWanderSpeed(20);
     SetClass("fighter");
     SetLevel(10);
