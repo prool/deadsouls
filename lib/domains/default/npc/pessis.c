@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("pessis");
-    SetId( ({"half-orc", "half orc", "half human", "half-human"}) );
+    SetKeyName("пессис");
+    SetId( ({"полуорк", "полу орк", "полу человек", "получеловек"}) );
     SetAdjectives(({"non-player", "non player"}));
-    SetShort("Pessis the half-orc");
-    SetLong("Too rough and brutish looking to be a handsome human, too delicate to be a proper orc, Pessis has lived through great indignity and rejection his entire existence. He's understandably a bit defensive about it, so perhaps it's best not to bring up the subject.");
+    SetShort("Пессис-полуорк");
+    SetLong("Пессис слишком дик для человека и слишком нежен для орка. Его везде отвергают и отовсюду прогоняют.");
     SetInventory(([
                 "/domains/default/armor/horc_shirt" : "wear tshirt",
                 ]));

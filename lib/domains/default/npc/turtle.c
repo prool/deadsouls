@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("mock turtle");
-    SetAdjectives( ({"peculiar", "mock"}) );
-    SetId( ({"turtle", "tortoise"}) );
-    SetShort("a mock turtle");
-    SetLong("This peculiar creature has the head of a calf but the body of a turtle.");
+    SetKeyName("ложная черепаха");
+    SetAdjectives( ({"ложная", "странная"}) );
+    SetId( ({"черепаха", "тортилла"}) );
+    SetShort("ложная черепаха");
+    SetLong("у этого странного существа тело черепахи, но голова теленка.");
     SetLevel(1);
     SetMelee(1);
     SetRace("tortoise");

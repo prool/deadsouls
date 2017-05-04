@@ -78,9 +78,9 @@ int eventDrain(mixed args...){
             default: break;
         }
         if(enemy && which < 100){
-            tell_object(enemy,"The wraith drains your vital essence!");
-            tell_room(environment(this_object()), "The wraith drains "+
-                    enemy->GetName()+" of precious bodily essence!", ({ enemy }));
+            tell_object(enemy,"Умертвие поглотило ваши жизненные силы!");
+            tell_room(environment(this_object()), "Умертвие поглотило у "+
+                    enemy->GetName()+" жизненные силы!", ({ enemy }));
         }
     }
     return 0;
@@ -88,11 +88,11 @@ int eventDrain(mixed args...){
 
 static void create() {
     sentient::create();
-    SetKeyName("archwraith");
-    SetAdjectives( ({"arch", "shadowy", "undead", "unholy", "malevolent", "spiteful"}) );
-    SetId( ({"archwraith", "wraith", "specter", "ghost", "apparition", "manifestation"}) );
-    SetShort("an archwraith");
-    SetLong("This shadowy manifestation is an undead, unholy apparition, oozing malevolence and spite.");
+    SetKeyName("умертвие");
+    SetAdjectives( ({"призрачное"}) );
+    SetId( ({"умертвие", "призрак", "дух", "доказательство"}) );
+    SetShort("умертвие");
+    SetLong("Это призрачное доказательство торжества смерти над жизнью. Вы ощущаете исходящие от призрака мертвенный холод и злобу.");
     SetPosition(POSITION_FLYING);
     SetRace("wraith");
     SetClass("fighter");

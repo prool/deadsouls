@@ -21,13 +21,13 @@ int CheckHuman(mixed val){
 }
 static void create() {
     npc::create();
-    SetKeyName("troll");
-    SetId(({"troll"}));
-    SetAdjectives(({"dirty"}));
-    SetShort("a mean-looking troll");
-    SetLong("This is the dreaded creature of legend: a slimy, "
-            "green, putrid-looking fiend with long, razor-"
-            "sharp claws and fangs.");
+    SetKeyName("тролль");
+    SetId(({"тролль"}));
+    SetAdjectives(({"охотящийся"}));
+    SetShort("охотящийся тролль");
+    SetLong("Это чудовище выглядит точно так, как его описывают в легендах. "
+            "Оно огромное и зеленое, его гнилые зубы остры как бритвы, "
+            "а своими когтями оно легко разорвет даже медведя на части.");
     SetLevel(3);
     SetRace("troll");
     SetClass("fighter");

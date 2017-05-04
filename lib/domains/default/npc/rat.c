@@ -12,24 +12,24 @@ int CheckRat(mixed val){
 
 static void create() {
     sentient::create();
-    SetKeyName("rat");
-    SetAdjectives( ({"mangy", "little", "dirty"}) );
-    SetId( ({"rat"}) );
-    SetShort("a rat");
-    SetLong("A scruffy little dirty rat.");
+    SetKeyName("крыса");
+    SetAdjectives( ({"маленькую", "маленькая", "грязная"}) );
+    SetId( ({"крыса"}) );
+    SetShort("крыса");
+    SetLong("Вы видите маленькую грязную крыса.");
     SetLevel(3);
     SetMaxHealthPoints(50);
     SetRace("rodent");
-    SetGender("male");
+    SetGender("female");
     SetClass("fighter");
     SetWanderSpeed(1);
     SetEncounter( (: CheckRat :) );
     SetMessage("come","$N scurries in.");
     SetMessage("leave","$N scurries $D.");
     SetAction(5, ({ 
-                "The rat squeaks.", "You hear a rat scuttling about.", 
-                "A scruffy little rat brushes against your leg.",
-                "You hear tiny munching sounds."}));
+                "Крыса тревожно запищала", "Вы слышите, как здесь шуршит крыса.", 
+                "Маленькая грязная крыса проскользнула мимо ваших ног.",
+                "Крыса что-то грызет."}));
 }
 void init(){
     ::init();

@@ -4,11 +4,11 @@ inherit LIB_BOT;
 
 static void create() {
     ::create();
-    SetKeyName("zookeeper bot");
-    SetId( ({"bot", "robot", "zookeeper", "keeper"}) );
+    SetKeyName("хранитель зоопарка");
+    SetId( ({"хранитель", "робот", "хранитель зоопарка", "механизм"}) );
     SetAdjectives(({"non-player", "non player"}));
-    SetShort("a robot zookeeper");
-    SetLong("This efficient automaton continually feeds, bathes, grooms, and looks after all the wild things kept in the menagerie.");
+    SetShort("хранитель зоопарка");
+    SetLong("Вы видите искуссно собранный механизм, который круглосуточно следит за состоянием животных в зоопарке.");
     SetLevel(1);
     SetMelee(1);
     SetRace("android");

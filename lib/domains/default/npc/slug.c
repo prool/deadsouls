@@ -5,11 +5,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("slug");
-    SetId( ({"gastropod"}) );
-    SetAdjectives( ({"big", "thick", "slimy", "garden", "gross"}) );
-    SetShort("a slimy slug");
-    SetLong("A big, thick, slimy garden slug. Gross!");
+    SetKeyName("слизень");
+    SetId( ({"брюхоногий"}) );
+    SetAdjectives( ({"большой", "толстый", "садовый"}) );
+    SetShort("скользский слизень");
+    SetLong("Вы видите большого толстого садового слизняка. Какая мерзость!");
     SetAutoStand(0);
     SetPosition(POSITION_LYING);
     SetLevel(1);

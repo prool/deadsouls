@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("triffid");
-    SetAdjectives( ({"six foot tall", "six feet tall", "thick", "bushy", "thorned", "menacing"}) );
-    SetId( ({"plant"}) );
-    SetShort("a large, tall plant");
-    SetLong("This plant is about six feet tall and similar to a very thick and bushy corn plant. It possesses tentacle-like thorned vines which wave about menacingly, and it appears capable of locomotion.");
+    SetKeyName("триффид");
+    SetAdjectives( ({"уродливое", "высокое"}) );
+    SetId( ({"растение"}) );
+    SetShort("высокое растение");
+    SetLong("Это уродливое растение похоже на кукурузу-переросток. У него есть похожие на щупальца лианы, благодаря которым способно перемещаться.");
     SetLevel(1);
     SetMelee(1);
     SetRace("plant");
