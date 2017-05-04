@@ -18,11 +18,21 @@ private static string       KeyName      = 0;
 private static int          Matching     = 1;
 private static object array NotifiedObjects = ({});
 private static mixed array  rfn          = ({});
+private static int Magaral = 0;
 
 string GetKeyName();
 
 string array GetAdjectives(){
     return Adjectives;
+}
+
+int GetMagaral (){
+    return Magaral;
+}
+
+int SetMagaral(int i) {
+    Magaral=i;
+    return i;
 }
 
 varargs string array SetAdjectives(mixed adjs...){
@@ -47,6 +57,10 @@ varargs string array SetAdjectives(mixed adjs...){
 
 string GetCapName(){
     return CapName;
+}
+
+string GetProolTest(){
+    return "prooltest";
 }
 
 string SetCapName(string str){
