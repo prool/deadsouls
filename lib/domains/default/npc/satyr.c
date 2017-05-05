@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("satyr");
-    SetAdjectives( ({"wild", "ferocious", "looking", "male", "humanoid", "creature"}) );
-    SetId( ({"male", "humanoid", "creature"}) );
-    SetShort("a satyr");
-    SetLong("This is a wild and ferocious looking humanoid male with the upper body of a human, but the lower body is goatish, woolly, and his legs are those of a hooved animal. Horns grow from beneath the wild mane of hair on his head. However human his face might be, his expression and demeanor make it clear this is not a domesticated person, but an untamed forest creature.");
+    SetKeyName("сатир");
+    SetAdjectives( ({"огромного", "волосатого", "огромный", "волосатый"}) );
+    SetId( ({"мужчина", "монстр", "тварь"}) );
+    SetShort("сатир");
+    SetLong("Вы видите огромного волосатого мужчину с козлиными ногами. Сквозь гриву грязных волос растет пара острых рогов. Весь его вид указывает на то, что это не разумная личность, а дикая лесная тварь.");
     SetLevel(1);
     SetMelee(1);
     SetRace("satyr");

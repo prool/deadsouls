@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("treant");
-    SetAdjectives( ({"great", "old", "giant", "ancient", "benevolent"}) );
-    SetId( ({"protector", "tree"}) );
-    SetShort("an ancient treant");
-    SetLong("This is a great old treant, which looks much like a giant tree with a face, arms, and legs. Ancient protectors of forests, treants are widely respected for their general good will and benevolence.");
+    SetKeyName("треант");
+    SetAdjectives( ({"древний", "ожившее", "древнее"}) );
+    SetId( ({"защитник", "дерево"}) );
+    SetShort("древний треант");
+    SetLong("Это древний защитник лесов, похожий на ожившее дерево с узловатыми ногами и руками. Обычно они очень доброжелательны, но кто знает, что у этого на уме.");
     SetLevel(1);
     SetMelee(1);
     SetRace("tree");

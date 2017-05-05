@@ -6,15 +6,14 @@ inherit LIB_TELLER;
 
 static void create() {
     ::create();
-    SetKeyName("zoe");
-    SetId( ({ "teller","banker","executive" }) );
-    SetAdjectives( ({ "bank","executive","friendly","efficient" }) );
-    SetShort("Zoe the bank teller");
+    SetKeyName("зоя");
+    SetId( ({ "кассирша","банкир","кассир" }) );
+    SetAdjectives( ({ "привлекательная","доброжелательная" }) );
+    SetShort("Зоя-кассирша");
     SetLevel(12);
-    SetLong("Zoe is an attractive young blonde woman with "
-            "a French accent. She is dressed in a conservative, "
-            "executive style, and has a friendly and efficient air "
-            "about her.");
+    SetLong("Зоя - привлекательная блондинка с иностранным "
+            "акцентом. Она одета в классический деловой "
+            "костюм и всем своим видом излучает доброжелательность.");
     SetGender("female");
     SetMorality(40);
     SetRace("human");

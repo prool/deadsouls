@@ -4,11 +4,11 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("winged horse");
-    SetId( ({"horse", "steed", "equine", "pegasus"}) );
-    SetAdjectives( ({"flying", "winged", "white"}) );
-    SetShort("a winged horse");
-    SetLong("This beautiful white steed is a pegasus, a horse endowed with great feathered wings and can fly.");
+    SetKeyName("пегас");
+    SetId( ({"конь", "жеребец", "пегас"}) );
+    SetAdjectives( ({"великолепный", "белоснежный", "крылатый"}) );
+    SetShort("пегас");
+    SetLong("Этот великолепный белоснежный жеребец обладает двумя восхитительными крыльями, способными поднять его в воздух.");
     SetLevel(5);
     SetMount(1);
     SetRace("pegasus");
@@ -16,9 +16,9 @@ static void create() {
     SetGender("male");
     SetMelee(1);
     SetAction(5, ({ 
-                "The winged horse snorts.", "You hear the winged horse flap its wings a bit.", 
-                "The winged horse flips its tail in the air.",
-                "The winged horse looks around."}));
+                "Пегас фыркнул.", "Пегас взмахнул крыльями.", 
+                "Пегас помахивает своим хвостом.",
+                "Пегас оглядывается по сторонам."}));
 }
 void init(){
     ::init();
