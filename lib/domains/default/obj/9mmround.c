@@ -4,11 +4,11 @@ inherit "/lib/round";
 
 void create(){
     ::create();
-    SetKeyName("9mmround");
-    SetId(({"round","bullet"}));
+    SetKeyName("патрон 9мм");
+    SetId(({"патрон","пуля"}));
     SetAdjectives(({"9 millimeter","9mm","pistol"}));
-    SetShort("a 9 millimeter pistol round");
-    SetLong("This is a 9 millimeter pistol bullet. It has not been fired.");
+    SetShort("патрон от пистолета калибра 9мм");
+    SetLong("Это патрон от пистолета калибра 9мм. Целый...");
     SetMillimeter(9);
     SetFirearmType("auto");
     SetAmmoType("acp");

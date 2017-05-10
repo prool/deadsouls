@@ -5,12 +5,12 @@ inherit LIB_STORAGE;
 
 void create() {
     ::create();
-    SetKeyName("bin");
-    SetId(({"bin","can","dustbin","trash","rubbish"}));
-    SetAdjectives(({"metal","small","blue","recycling","trash","garbage","dust"}));
-    SetShort("a recycling bin");
-    SetLong("This is a blue trash can, marked with "+
-            "the letters \"/dev/null\".");
+    SetKeyName("корзина");
+    SetId(({"корзина"}));
+    SetAdjectives(({"голубая","мусора"}));
+    SetShort("корзина для мусора");
+    SetLong("Это голубая корзина для мусора, промаркерованная "+
+            "буквами \"/dev/null\".");
     SetMass(200);
     SetBaseCost("silver",50);
     SetMaxCarry(999999);
@@ -26,11 +26,11 @@ int tidy_up(){
 }
 
 int eventReceiveObject(object ob){
-    write("You make a deposit into the the recycling bin.\n");
+    write("Вы выбросили мусор в корзину для мусора.\n");
     call_out((: tidy_up :),1);
     return 1;
 }
-mixed CanGet(object ob) { return "The bucket does not budge.";}
+mixed CanGet(object ob) { return "Крышка не открывается.";}
 
 void init(){
     ::init();

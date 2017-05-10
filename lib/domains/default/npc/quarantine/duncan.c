@@ -4,10 +4,10 @@ inherit LIB_SENTIENT;
 
 static void create() {
     sentient::create();
-    SetKeyName("Duncan");
-    SetId(({"duncan"}));
-    SetShort("Duncan");
-    SetLong("Duncan is a foreign exchange student from the United Kingdom.");
+    SetKeyName("Дункан");
+    SetId(({"дункан"}));
+    SetShort("Дункан");
+    SetLong("Дункан - студент по программе обмена из Великобритании.");
     SetLevel(5);
     SetRace("human");
     SetGender("male");

@@ -4,11 +4,11 @@ inherit LIB_MATCH;
 
 static void create() {
     match::create();
-    SetKeyName("match");
-    SetId("match");
-    SetAdjectives( ({ "wooden" }) );
-    SetShort("a wooden match");
-    SetLong("A wooden match that might light if you strike it.");
+    SetKeyName("спичка");
+    SetId("спичка");
+    SetAdjectives( ({ "деревянная" }) );
+    SetShort("деревянная спичка");
+    SetLong("Деревянная спичка, которая может загореться, если вы по ней ударите.");
     SetRadiantLight(2);
     SetStrikeChance(50);
     SetMinHeat(10);

@@ -28,16 +28,16 @@ varargs mixed CheckBlue(int ob){
 }
 
 string ExaOrange(){
-    string ret = "An orange button. ";
-    if(CheckOrange()) ret += "It is glowing.";
-    else ret += "It is darkened.";
+    string ret = "Оранжевая кнопка. ";
+    if(CheckOrange()) ret += "Она светится.";
+    else ret += "Она темнеет.";
     return ret;
 }
 
 string ExaBlue(){
-    string ret = "A blue button. ";
-    if(CheckBlue()) ret += "It is glowing.";
-    else ret += "It is darkened.";
+    string ret = "Синяя кнопка. ";
+    if(CheckBlue()) ret += "Она светится.";
+    else ret += "Она темнеет.";
     return ret;
 }  
 
@@ -47,16 +47,16 @@ mixed PressOrange(mixed args...){
         orange = new(oportal)->eventMove(environment(this_player()));
     }
     if(orange){
-        write("You press the button and with a deep thumping "+
-                "sound an orange portal appears.");
-        say(this_player()->GetName()+" presses a button on "+
-                possessive(this_player())+" portal generator, and with "+
-                "a deep thumping sound an orange portal appears.");
+        write("Вы нажали кнопку и с низким гулом "+
+                "появился оранжевый портал.");
+        say(this_player()->GetName()+" нажал кнопку "+
+                possessive(this_player())+" генератора портала "+
+                "и с низким гулом появился оранжевый портал.");
     }  
     else {
-        write("Click.");
-        say(this_player()->GetName()+" presses a button on "+
-                possessive(this_player())+" portal generator.");
+        write("Клик.");
+        say(this_player()->GetName()+" нажал кнопку "+
+                possessive(this_player())+" генератора портала.");
     }
     return 1;
 }
@@ -67,16 +67,16 @@ mixed PressBlue(mixed args...){
         blue = new(bportal)->eventMove(environment(this_player()));
     }
     if(blue){
-        write("You press the button and with a deep thumping "+
-                "sound a blue portal appears.");
-        say(this_player()->GetName()+" presses a button on "+
-                possessive(this_player())+" portal generator, and with "+
-                "a deep thumping sound a blue portal appears.");
+        write("Вы нажали кнопку и с низким гулом "+
+                "появился синий портал.");
+        say(this_player()->GetName()+" нажал кнопку "+
+                possessive(this_player())+" генератора портала "+
+                "и с низким гулом появился синий портал.");
     }
     else {
-        write("Click.");
-        say(this_player()->GetName()+" presses a button on "+
-                possessive(this_player())+" portal generator.");
+        write("Клик.");
+        say(this_player()->GetName()+" нажал кнопку "+
+                possessive(this_player())+" генератора портала.");
     }
     return 1;
 }
@@ -103,73 +103,73 @@ string ReadScribbles(){
 void create(){
     ::create();
     SetKeyName("GCM Portal Generator Mk I");
-    SetId( ({"generator", "device", "generator mk i","generator mark i"}) );
-    SetAdjectives( ({"sleek","mk i","futuristic","portal","gcm"}) );
-    SetShort("a portal generator");
-    SetLong("This is a sleek, futuristic device with orange and "+
-            "blue buttons. It has a printed label you can read, and it looks "+
-            "like someone has scribbled some markings on it as well.");
+    SetId( ({"генератор", "устройство", "generator mk i","генератор портала"}) );
+    SetAdjectives( ({"блестящее","mk i","футуристическое","portal","gcm"}) );
+    SetShort("генератор портала");
+    SetLong("Это блестящее футуристическое устройство с оранжевыми и "+
+            "синими кнопками. Вы видите на нем метку производителя и "+
+            "корявую инструкцию.");
     SetMass(100);
     SetBaseCost("silver",5000);
     SetVendorType(VT_TREASURE);
     SetItems( ([
-                ({"label","printed label"}) : "A printed label you can read.",
-                ({"markings","scribbles","scribbled markings"}) : "Markings "+
-                "you can read, apparently scribbled in haste.",
-                ({ "button", "buttons" }) : "The portal generator has two buttons, one"+  
-                " orange, one blue.",
-                ({ "orange button" }) : (: ExaOrange :),
-                ({ "blue button" }) : (: ExaBlue :),
+                ({"метка","метку"}) : "На метке производителя что-то написано.",
+                ({"инструкция","инструкции","scribbled markings"}) : "Инструкция "+
+                "написана наспех и не очень понятная.",
+                ({ "кнопка", "кнопки" }) : "У генератора портала две кнопки - "+  
+                " оранжевая и синяя.",
+                ({ "оранжевая кнопка" }) : (: ExaOrange :),
+                ({ "синяя кнопка" }) : (: ExaBlue :),
                 ]) );
     SetReads( ([
-                "default" : "Try 'read label on generator'",
-                ({"label","printed label"}) : (: ReadLabel :),
-                ({"markings","scribbles","scribbled markings"}) : (: ReadScribbles :),
+                "default" : "Попробуйте 'read метка'",
+                ({"метка","метку"}) : (: ReadLabel :),
+                ({"инструкция","инструкции","scribbled markings"}) : (: ReadScribbles :),
                 ]) );
     SetPress( ([
-                "default" : "Try 'push blue button on generator'",
-                ({ "button", "buttons" }) : "You have to press one or the other.",
-                ({"orange button"}) : (: PressOrange :),
-                ({"blue button"}) : (: PressBlue :),
+                "default" : "Попробуйте 'push синяя кнопка'",
+                ({ "кнопка", "кнопки" }) : "Вы можете нажать либо ту, либо эту.",
+                ({"оранжевая кнопка"}) : (: PressOrange :),
+                ({"синяя кнопка"}) : (: PressBlue :),
                 ]) );
     SetMaxCarry(200);
     SetUnique(1);
 }
 
 varargs mixed eventInstall(object what, object where){
-    write("The portal generator is not installable anywhere");
+    write("Генератор портала не может быть установлен в любом месте.");
     return 1;
 }
 
 mixed CanPutInto(object who, object item){
-    return "This is a portal generator. One can install things in it.";
+    return "Это генератор портала. В него можно установить дополнительные модули.";
 }
 
 mixed CanGetFrom(object who, object item){
-    return "This is a portal generator. One can uninstall things from it.";
+    return "Это генератор портала. Из него можно вынуть дополнительные модули.";
 }
 
 int CanReceive(object ob){
     if(base_name(ob) == "/domains/default/obj/vial_blue"){
         if(CheckBlue()){
-            write("It doesn't fit.");
+            write("Это не подходит.");
             return 0;
         }
         else return 1;
     }
     if(base_name(ob) == "/domains/default/obj/vial_orange"){
         if(CheckOrange()){
-            write("It doesn't fit.");
+            write("Это не подходит.");
             return 0;
         }
         else return 1;
     }
-    write("That doesn't belong in there.");
+    write("Это не отсюда.");
     return 0;
 }
 
 int eventTurnOn(){
-    write("Try 'push orange button on generator'");
+    write("Попробуйте 'push оранжевая кнопка'");
     return 1;
 }
 

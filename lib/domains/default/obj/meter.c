@@ -9,15 +9,15 @@ varargs string translate_vision(object ob){
     if(!ob) vision = this_player()->GetEffectiveVision();
     else vision = ob->GetEffectiveVision();
     switch(vision){
-        case 0 : ret = "level 0: blindness.";break; 
-        case 1 : ret = "level 1: too dark.";break; 
-        case 2 : ret = "level 2: dark.";break; 
-        case 3 : ret = "level 3: dim.";break; 
-        case 4 : ret = "level 4: clear.";break; 
-        case 5 : ret = "level 5: light.";break; 
-        case 6 : ret = "level 6: bright.";break; 
-        case 7 : ret = "level 7: too bright.";break; 
-        default : ret = "a mystery.";
+        case 0 : ret = "уровень 0: ничего не видно.";break; 
+        case 1 : ret = "уровень 1: очень темно.";break; 
+        case 2 : ret = "уровень 2: темно.";break; 
+        case 3 : ret = "уровень 3: тускло.";break; 
+        case 4 : ret = "уровень 4: ясно.";break; 
+        case 5 : ret = "уровень 5: светло.";break; 
+        case 6 : ret = "уровень 6: ярко.";break; 
+        case 7 : ret = "уровень 7: очень ярко.";break; 
+        default : ret = "не понятно.";
     }
     return ret;
 }
@@ -29,27 +29,27 @@ varargs mixed EvaluateRadiantLight(object ob, int report){
     if(!ob) ob = this_player();
     foreach(object guy in get_livings(environment(ob))){
         if(guy->GetRadiantLight()) 
-            rep += guy->GetName()+"'s radiant light is: "+guy->GetRadiantLight()+".\n";
+            rep += guy->GetName()+" испускающий свет: "+guy->GetRadiantLight()+".\n";
         foreach(object item in all_inventory(guy)){
             x += item->GetRadiantLight();
             if(item->GetRadiantLight()){
-                subrep += guy->GetName()+"'s "+item->GetName()+"'s radiant light is: "+
+                subrep += guy->GetName()+"'s "+item->GetName()+" испускающий свет: "+
                     item->GetRadiantLight()+".\n";
             }
         }
     }
     if(!report) return x;
-    else return "Livings: \n"+rep+"\nObjects:\n"+subrep;
+    else return "Существа: \n"+rep+"\nОбъекты:\n"+subrep;
 }
 
 string DefaultReading(){
-    write("This small device is a portable light meter. It tells "+
-            "you what the available light is.");
-    write("The ambient light here is: "+environment(this_player())->GetAmbientLight());
-    write("Total radiant light here is: "+EvaluateRadiantLight());
-    write("Your vision range is: "+this_player()->GetEffectiveVision(environment(this_player()),1));
-    write("\nYour effective vision is "+translate_vision());
-    write("\nFull radiance details:\n"+EvaluateRadiantLight(this_player(),1));
+    write("Это маленькое устройство - портативный измеритель освещенности. Оно показывает "+
+            "вам сколько тут света.");
+    write("Окружающий свет здесь: "+environment(this_player())->GetAmbientLight());
+    write("Общий испускающий свет: "+EvaluateRadiantLight());
+    write("Ваша дальность видимости: "+this_player()->GetEffectiveVision(environment(this_player()),1));
+    write("\nВаше эффективное видение "+translate_vision());
+    write("\nПолная информация о освещенности:\n"+EvaluateRadiantLight(this_player(),1));
     return "";
 }
 
@@ -59,10 +59,10 @@ varargs mixed eventUse(mixed arg){
 
 void create(){
     ::create();
-    SetKeyName("light meter");
-    SetAdjectives( ({"light"}) );
-    SetId( ({"meter", "lightmeter"}) );
-    SetShort("a light meter");
+    SetKeyName("люксметр");
+    SetAdjectives( ({"освещенности"}) );
+    SetId( ({"meter", "люксметр"}) );
+    SetShort("люксметр");
     SetLong( (: DefaultReading :) );
     SetProperties(([
                 "no steal" : 1,

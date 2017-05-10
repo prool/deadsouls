@@ -4,12 +4,12 @@ inherit LIB_STORAGE;
 
 void create() {
     ::create();
-    SetKeyName("locker");
-    SetId(({"locker","object"}));
-    SetAdjectives(({"metal","tall","large"}));
-    SetShort("a tall metal locker");
-    SetLong("This large object is designed to hold "+
-            "armor and related accessories.");
+    SetKeyName("шкафчик");
+    SetId(({"шкаф","object"}));
+    SetAdjectives(({"металлический","высокий","большой"}));
+    SetShort("высокий металлический шкафчик");
+    SetLong("Этот высокий шкаф сделан для того, "+
+            "чтобы держать в нем доспехи.");
     SetInventory(([
                 "/domains/default/armor/pcannon" : 1,
                 "/domains/default/armor/scoutsuit" : 1,
@@ -20,7 +20,7 @@ void create() {
     SetMaxCarry(10000);
     SetCanClose(1);
     SetClosed(0);
-    SetPreventGet("The locker does not budge.");
+    SetPreventGet("Шкафчик не открывается.");
 }
 void init(){
     ::init();

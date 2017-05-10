@@ -5,10 +5,10 @@ inherit LIB_NPC;
 
 static void create() {
     npc::create();
-    SetKeyName("Edmund");
-    SetId(({"edmund"}));
-    SetShort("Edmund");
-    SetLong("Edmund is a foreign exchange student from the United Kingdom.");
+    SetKeyName("Эдмунд");
+    SetId(({"эдмунд"}));
+    SetShort("Эдмунд");
+    SetLong("Эдмунд - студент по программе обмена из Великобритании.");
     SetLevel(5);
     SetRace("human");
     SetGender("male");
