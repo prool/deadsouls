@@ -4,11 +4,11 @@ inherit LIB_STORAGE;
 
 void create() {
     ::create();
-    SetKeyName("case");
-    SetId( ({ "case" }) );
-    SetAdjectives( ({ "mounted","wall","glass", "display" }) );
-    SetShort("a glass display case");
-    SetLong("This is a glass case designed to contain and display firearms.");
+    SetKeyName("шкаф");
+    SetId( ({ "шкаф" }) );
+    SetAdjectives( ({ "выставочный","стеклянный" }) );
+    SetShort("выставочный стеклянный шкаф");
+    SetLong("Это стеклянный шкаф, предназначенный для размещения и отображения огнестрельного оружия.");
     SetInventory(([
                 "/domains/default/weap/m16rifle" : 1,
                 "/domains/default/weap/9mil" : 1,
@@ -28,10 +28,10 @@ void init(){
 
 int CanReceive(object ob) {
     if(!inherits(LIB_FIREARM,ob)) {
-        write("This is a case for firearms only.");
+        write("Этот шкаф только для огнестрельного оружия.");
         return 0;
     }
     else return 1;
 }
 
-mixed CanGet(object ob) { return "The case does not budge.";}
+mixed CanGet(object ob) { return "Дверца не открывается.";}

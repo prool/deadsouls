@@ -4,14 +4,14 @@ inherit LIB_BOOK;
 
 void create(){
     ::create();
-    SetKeyName("creator's manual");
-    SetId( ({"manual", "book", "creators manual"}) );
-    SetAdjectives( ({"creator", "creators", "coder", "coders"}) );
-    SetShort("a Creator's Manual");
-    SetLong("This is a manual for creators and admins. "
-            "To read it, you must read the chapters in it. For example, \"read "
-            "chapter 1 in manual\".\n If you are new to coding, you should "
-            "start with chapter 31.");
+    SetKeyName("инструкция билдера");
+    SetId( ({"manual", "инструкция", "инструкция билдера"}) );
+    SetAdjectives( ({"creator", "билдера", "coder", "coders"}) );
+    SetShort("Инструкция билдера");
+    SetLong("Это инструкция для билдеров и администраторов. "
+            "Чтобы читать его, вы должны выбрать определенную главу. Например, \"read "
+            "chapter 1 in manual\".\n Если вы новичок в программировании, вы должны "
+            "начать с chapter 31.");
     SetNoCondition(1);
     SetProperties(([
                 "no steal" : 1,
@@ -19,12 +19,12 @@ void create(){
     SetMass(20);
     SetBaseCost("silver",10);
     SetVendorType(VT_TREASURE);
-    SetTitle("The Coder's Manual");
+    SetTitle("Инструкция билдера");
     SetSource("/doc/manual");
-    SetDefaultRead("Try \"read chapter 1 in manual\" or "
+    SetDefaultRead("Попробуйте \"read chapter 1 in manual\" или "
             "\"read index in manual\"\n"
-            "New creators should especially read the Quick Creation "
-            "System documentation, starting in chapter 31");
+            "Новички рекомендуется ознакомиться с Quick Creation "
+            "System, описанной в chapter 31");
 }
 void init(){
     ::init();

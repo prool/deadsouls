@@ -4,11 +4,11 @@ inherit LIB_BOOK;
 
 void create(){
     ::create();
-    SetKeyName("builder's guidebook");
-    SetId( ({"text","guidebook", "book", "guide", "builders guide", "builders guidebook"}) );
-    SetAdjectives( ({"builder's", "builder", "builders", "reference"}) );
-    SetShort("a Builder's Guidebook");
-    SetLong("This is a reference text for Dead Souls builders.");
+    SetKeyName("справочник билдера");
+    SetId( ({"текст","путеводитель", "книга", "справочник", "справочник билдера"}) );
+    SetAdjectives( ({"билдера", "билдер"}) );
+    SetShort("Справочник билдера");
+    SetLong("Это справочник по чудесному миру AncestryMUD для билдеров.");
     SetNoCondition(1);
     SetSource("/doc/bguide");
     SetMass(20);

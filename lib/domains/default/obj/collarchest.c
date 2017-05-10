@@ -10,15 +10,15 @@ inherit LIB_STORAGE;
 
 void create() {
     ::create();
-    SetKeyName("chest");
-    SetId(({"chest"}));
-    SetAdjectives(({"medical","metal","stainless","steel"}));
-    SetShort("a stainless steel chest");
-    SetLong("This is a chest used to store medical tools.");
+    SetKeyName("ящик");
+    SetId(({"ящик"}));
+    SetAdjectives(({"медицинский","металлический","нержавеющей","стальной"}));
+    SetShort("ящик из нержавеющей стали");
+    SetLong("Этот ящик используется для хранения медицинских принадлежностей.");
     SetMass(274);
     SetDollarCost(50);
     SetMaxCarry(500);
-    SetPreventPut("You cannot put this in there!");
+    SetPreventPut("Вы не можете положить этого здесь!");
     SetInventory(([
                 "/secure/obj/medtric" : 1,
                 "/domains/default/armor/collar" : 5,
@@ -26,4 +26,4 @@ void create() {
     SetCanClose(1);
     SetClosed(1);
 }
-mixed CanGet(object ob) { return "The chest does not budge.";}
+mixed CanGet(object ob) { return "Крышка ящика не открывается.";}

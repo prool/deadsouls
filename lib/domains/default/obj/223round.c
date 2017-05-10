@@ -5,13 +5,13 @@ inherit LIB_ROUND;
 
 void create(){
     round::create();
-    SetKeyName("223round");
-    SetId(({"round","bullet"}));
+    SetKeyName("патрон .223");
+    SetId(({"патрон","гильза"}));
     SetAdjectives(({".223","caliber","rifle","m16","M16","m-16","M-16"}));
-    SetShort("a .223 caliber rifle round");
-    SetLong("This is a .223 caliber rifle round, probably for an M-16 assault rifle. "+
-            "It is not very wide, but contains a large powder charge. It is no doubt a powerful "+
-            "piece of ammunition. It has not been fired.");
+    SetShort("патрон калибра .223");
+    SetLong("Это патрон калибра .223, вероятно от шутрмовой винтовки M-16. "+
+            "Небольших размеров, он содержит мощный заряд. Несомненно, "+
+            "что он обладает большой убойной силой.");
     SetCaliber(223);
     SetFirearmType("auto");
     SetAmmoType("nato");

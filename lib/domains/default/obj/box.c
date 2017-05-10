@@ -4,11 +4,11 @@ inherit LIB_STORAGE;
 
 void create() {
     ::create();
-    SetKeyName("box");
-    SetId( ({ "box" }) );
-    SetAdjectives( ({ "small", "plastic","green", "a" }) );
-    SetShort("a small plastic box");
-    SetLong("It is a simple plastic box used to hold things.");
+    SetKeyName("ящик");
+    SetId( ({ "ящик" }) );
+    SetAdjectives( ({ "маленький", "пластиковый" }) );
+    SetShort("маленький пластиковый ящик");
+    SetLong("Это маленький пластиковый ящик для хранения вещей.");
     SetMass(274);
     SetMaxCarry(500);
 }

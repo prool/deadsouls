@@ -4,12 +4,12 @@ inherit LIB_CLIP;
 
 void create(){
     clip::create();
-    SetKeyName("9mm clip");
-    SetId(({"clip","magazine"}));
-    SetAdjectives(({"9mm","ammunition","ammo","9 millimeter","pistol"}));
-    SetShort("a 9 millimeter pistol ammunition clip");
-    SetLong("This is a slender, spring-loaded metal container designed "+
-            "to feed a 9 millimeter pistol with bullets.");
+    SetKeyName("патроны 9мм");
+    SetId(({"патроны","магазин"}));
+    SetAdjectives(({"9мм","девяти","девяти милиметрового"}));
+    SetShort("патроны для девяти милиметрового пистолета");
+    SetLong("Это магазин с металлическими патронами "+
+            "готовый для вставки в пистолет калибра 9мм.");
     SetMillimeter(9);
     SetMaxAmmo(15);
     SetAmmoType("acp");

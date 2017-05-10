@@ -9,23 +9,23 @@ string LongDesc(){
     string ret;
     Tracked = ([]);
     if(creatorp(this_player())){
-        ret = "This small electronic appliance is designed to "+
-            "provide information, if available, regarding your location "+
-            "in the world. Commands: coord, prox";
+        ret = "Это маленькое устройство создано чтобы "+
+            "обеспечивать вас информацией о вашем местоположении в мире, "+
+            "если это возможно. Команды: coord, prox";
     }
     else {
-        ret = "This is a device creators use to analyze their "+
-            "position in relation to the mud.";
+        ret = "Это устройство билдеров для определения "+
+            "их местоположения в мире.";
     }
     return ret;
 }
 
 void create(){
     ::create();
-    SetKeyName("GPS device");
-    SetAdjectives( ({"gps", "global positioning", "system", "small"}) );
-    SetId( ({"gps", "device", "appliance"}) );
-    SetShort("a GPS device");
+    SetKeyName("GPS навигатор");
+    SetAdjectives( ({"gps", "global positioning", "system", "маленькое"}) );
+    SetId( ({"gps", "устройство", "навигатор"}) );
+    SetShort("GPS навигатор");
     SetLong( (: LongDesc :) );
     SetNoCondition(1);
     SetMass(20);
@@ -47,8 +47,8 @@ int GetCoord(){
     ret = ROOMS_D->GetCoordinates(environment(this_player()));
     if(!sizeof(ret) || ROOMS_D->GetGrid(ret)["room"] != 
             base_name(environment(this_player()))){
-        ret = "It seems you are unable to receive positioning "+
-            "data about your location at the moment.";
+        ret = "Кажется сейчас вы не можете получить "+
+            "информацию о вашем местоположении.";
     }
     else{
         mixed foo = ROOMS_D->GetGrid(ret);
@@ -69,8 +69,8 @@ int GetProx(int i){
     if(!sizeof(coords) || ROOMS_D->GetGrid(coords)["room"] !=
             base_name(environment(this_player())) || 
             sscanf(coords,"%d,%d,%d",x,y,z) != 3){
-        ret = "It seems you are unable to receive proximity "+
-            "data about your location at the moment.";
+        ret = "Кажется сейчас вы не можете получить "+
+            "полную информацию о вашем местоположении.";
     }
     else{
         if(ROOMS_D->GetGrid(x+","+(y+1)+","+z)["room"])
@@ -104,10 +104,10 @@ int StartTrack(string str){
         mark = find_player(str);
     }
     if(!mark){
-        write("That living thing could not be found.");
+        write("Это существо не может быть найдено.");
         return 1;
     }
-    write("Starting to track "+capitalize(mark->GetKeyName())+".");
+    write("Начато выслеживание "+capitalize(mark->GetKeyName())+".");
     TRACKER_D->AddTrack(mark, this_object());
     Tracked[str] = mark;
     return 1;
@@ -116,10 +116,10 @@ int StartTrack(string str){
 int StopTrack(string str){
     object mark;
     if(!Tracked[str]){         
-        write("This device wasn't tracking that living thing.");
+        write("Это устройство не отслеживало это живое существо.");
         return 1;     
     }
-    write("Stopping the track of "+
+    write("Закончено выслеживание "+
             capitalize(Tracked[str]->GetKeyName())+".");     
     TRACKER_D->RemoveTrack(mark, this_object());
     Tracked[str] = 0;
@@ -129,7 +129,7 @@ int StopTrack(string str){
 int ReceiveTrackingData(mapping data){
     object env = environment();
     if(!env) return 0;
-    tell_object(env, "The GPS device chirps: Tracking data received for "+
+    tell_object(env, "GPS навигатор сообщил: Получены следующие данные слежения "+
             data["object"]->GetShort()+": "+identify(data));
     return 1;
 }
@@ -164,6 +164,6 @@ int GetShell(string str){
         }
         Shell[i] = distinct_array(Shell[i]);
     }
-    write("Rooms at distance "+shell+": "+identify(Shell[shell]));
+    write("Комнаты на расстоянии "+shell+": "+identify(Shell[shell]));
     return 1;
 }

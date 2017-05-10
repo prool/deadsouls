@@ -4,11 +4,11 @@ inherit LIB_ITEM;
 
 void create(){
     ::create();
-    SetKeyName("hand grenade spoon");
-    SetId(({"lever","spoon"}));
-    SetAdjectives(({"grenade","hand grenade","metal","small"}));
-    SetShort("a small metal lever");
-    SetLong("This is the fuse lever, or spoon, for a hand grenade.");
+    SetKeyName("чека от гранаты");
+    SetId(({"чека","рычажок"}));
+    SetAdjectives(({"гранаты","ручной гранаты","маленькая","металлическая"}));
+    SetShort("маленькая металлическая чека");
+    SetLong("Это чека от ручной гранаты.");
     SetMass(1);
     SetDollarCost(0);
     SetVendorType(VT_TREASURE);

@@ -4,10 +4,10 @@ inherit LIB_STORAGE;
 
 void create() {
     ::create();
-    SetKeyName("chest");
-    SetId(({"chest","wooden chest"}));
-    SetShort("a wooden chest");
-    SetLong("This is a sturdy wooden chest used to store valuable items.");
+    SetKeyName("сундук");
+    SetId(({"сундук","деревянный сундук"}));
+    SetShort("деревянный сундук");
+    SetLong("Это крепкий деревянный сундук, используемый для хранения ценных предметов.");
     SetInventory(([
                 "/domains/default/obj/meter" : 1,
                 "/secure/obj/staff" : 1,
@@ -28,11 +28,11 @@ void create() {
     SetMass(2000);
     SetBaseCost(50);
     SetMaxCarry(10000);
-    SetPreventPut("You cannot put this in there!");
+    SetPreventPut("Вы не можете положить это сюда!");
     SetCanClose(1);
     SetClosed(1);
 }
-mixed CanGet(object ob) { return "The chest does not budge.";}
+mixed CanGet(object ob) { return "Крышка не открывается."}
 void init(){
     ::init();
 }

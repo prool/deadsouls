@@ -4,11 +4,11 @@ inherit LIB_STORAGE;
 
 void create() {
     ::create();
-    SetKeyName("bin");
-    SetAdjectives( ({"tall", "metal", "javelin","spear"}) );
-    SetId( ({"javelin bin"}) );
-    SetShort("a tall metal bin");
-    SetLong("This tall container is meant to hold javelins.");
+    SetKeyName("колчан");
+    SetAdjectives( ({"высокий", "metal", "javelin","spear"}) );
+    SetId( ({"контейнер"}) );
+    SetShort("колчан с копьями");
+    SetLong("Этот высокий контейнер нужен, чтобы хранить в нем копья.");
     SetInventory(([
                 "/domains/town/weap/javelin" : ({ 1200, 10 }),
                 ]));
@@ -24,11 +24,11 @@ void init(){
     ::init();
 }
 
-mixed CanGet(object ob) { return "The bin does not budge.";}
+mixed CanGet(object ob) { return "Колчан не открывается.";}
 
 int CanReceive(object ob) {
     if(!answers_to("javelin",ob)) {
-        write("This is a bin for javelins only.");
+        write("Этот колчан только для копий.");
         return 0;
     }
     else return 1;
