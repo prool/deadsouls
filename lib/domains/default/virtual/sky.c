@@ -34,7 +34,7 @@ varargs static void create(int x, int y, int z) {
     SetClimate("temperate");
     SetAmbientLight(30);
     SetLongAndItems(x, y, z);
-    SetShort("The sky above a flat plain");
+    SetShort("Небеса над плоской равниной.");
     if( x == max_east ) e = "sky/" + (x) + "," + y + "," + z;
     else e = "sky/" + (x+1) + "," + y + "," + z;
     if( x == max_west ) w = "sky/" + (x) + "," + y + "," + z;
@@ -53,7 +53,7 @@ varargs static void create(int x, int y, int z) {
     sw = "sky/" + LimitTravel(x - 1, max_west, 1) + "," + LimitTravel(y-1, max_south, 1)+ "," + z;
     se = "sky/" + LimitTravel(x + 1, max_east) + "," + LimitTravel(y-1, max_south, 1)+ "," + z;
 
-    SetGoMessage("You can't travel in that direction.");
+    SetGoMessage("Вы не можете переместиться туда.");
 
     if( n ) AddExit("north", __DIR__ + n);
     if( s ) AddExit("south", __DIR__ + s);
@@ -101,38 +101,38 @@ varargs void SetLongAndItems(int x, int y, int z) {
     ::SetLongAndItems(x, y, z);
 
     inv = ([]);
-    str = "You are in the air above a large flat plain, bordered on all sides "
-        "by stone walls, forming a large arena for heavy weapons and "
-        "mounted combat.";
-    if(query_night()) str += " The stars of the night sky glitter overhead.";
-    if(x == 1) str += " A stone wall prevents further travel west.";
-    if(x == 10) str += " A stone wall prevents further travel east.";
-    if(y == 1) str += " A stone wall prevents further travel south.";
-    if(y == 10) str += " A stone wall prevents further travel north.";
-    if(x == 5 && y == 1) str += "\n%^GREEN%^There is a sign here you can read.%^RESET%^";
+    str = "Вы в небе над огромной плоской равниной, окруженной со всех сторон "
+        "каменными стенами. Это похоже на большую арену для схваток между пешими "
+        "и верховыми противниками.";
+    if(query_night()) str += " Звезды ночного неба сверкают над головой.";
+    if(x == 1) str += " Каменная стена не дает переместиться дальше на запад.";
+    if(x == 10) str += " Каменная стена не дает переместиться дальше на восток.";
+    if(y == 1) str += " Каменная стена не дает переместиться дальше на юг.";
+    if(y == 10) str += " Каменная стена не дает переместиться дальше на север.";
+    if(x == 5 && y == 1) str += "\n%^GREEN%^Здесь есть табличка, которую вы можете прочесть.%^RESET%^";
 
-    SetItems( ([ "arena" : "A place of violent death and great destruction.",
+    SetItems( ([ "арена" : "Место насильственной смерти и великого разрушения.",
                 ]) );
 
     if(y == 10) {
-        AddItem( ({ "rock wall","wall","stone wall"}), 
-                "This vast stone wall prevents further travel north." );
+        AddItem( ({ "каменная стена","стена","огромная стена"}), 
+                "Эта огромная каменная стена препятствует дальнейшему путешествию на север." );
     }
     else if(y == 1) {
-        AddItem( ({ "rock wall","wall","stone wall"}),
-                "This vast stone wall prevents further travel south." );
+        AddItem( ({ "каменная стена","стена","огромная стена"}),
+                "Эта огромная каменная стена препятствует дальнейшему путешествию на юг." );
     }
 
     if(x == 10) {
-        AddItem( ({ "rock wall","wall","stone wall"}),
-                "This vast stone wall prevents further travel east." );
+        AddItem( ({ "каменная стена","стена","огромная стена"}),
+                "Эта огромная каменная стена препятствует дальнейшему путешествию на восток." );
     }
     if(x == 1) {
-        AddItem( ({ "rock wall","wall","stone wall"}),
-                "This vast stone wall prevents further travel west." );
+        AddItem( ({ "каменная стена","стена","огромная стена"}),
+                "Эта огромная каменная стена препятствует дальнейшему путешествию на запад." );
     }
-    AddItem( ({ "walls","rock walls","stone walls" }),
-            "Large walls form the bounds of this killing field." );
+    AddItem( ({ "стены","каменные стены","огромные стены" }),
+            "Большие стены образуют границы этого убийственного поля." );
     SetLong(str);
     SetDayLight(30);
     SetNightLight(30);
