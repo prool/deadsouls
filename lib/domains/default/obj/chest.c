@@ -32,7 +32,7 @@ void create() {
     SetCanClose(1);
     SetClosed(1);
 }
-mixed CanGet(object ob) { return "Крышка не открывается."}
+mixed CanGet(object ob) { return "Крышка не открывается.";}
 void init(){
     ::init();
 }
