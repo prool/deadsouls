@@ -151,6 +151,8 @@ int Setup(){
         log_file("enter", GetCapName()+" (enter): "+ctime(time())+"\n");
         CHAT_D->eventSendChannel("SYSTEM","connections","[" + 
                 GetCapName() + " logs into "+mud_name()+"]",0);
+	debug_message(ctime(time())+" "+GetCapName()+" enter to MUD");
+	log_file("prool.log",ctime(time())+" "+GetCapName()+" enter to MUD\n");
     }
 
     if(!catch(mp = FOLDERS_D->mail_status(GetKeyName()))){
@@ -179,6 +181,8 @@ static void net_dead(){
                 "a sea of irreality.", MSG_ENV, this_object());
         CHAT_D->eventSendChannel("SYSTEM","connections","[" + 
                 GetCapName() + " goes net-dead on "+mud_name()+"]",0);
+                debug_message(ctime(time())+" "+GetCapName() + " disconnected");
+                log_file("prool.log",ctime(time())+" "+GetCapName() + " disconnected\n");
     }
     SNOOP_D->ReportLinkDeath(this_object()->GetKeyName());
     eventMove(ROOM_FREEZER);
@@ -198,6 +202,8 @@ void eventReconnect(){
                 GetCapName() + " has rejoined " + mud_name() + "]",0);
         environment()->eventPrint(GetCapName() + " has rejoined this reality.",
                 MSG_ENV, this_object());
+                debug_message(ctime(time())+" "+GetCapName()+" relogin");
+                log_file("prool.log",ctime(time())+" "+GetCapName()+" relogin\n");
     }
     if( NetDiedHere ) eventMove(NetDiedHere);
     else eventMove(ROOM_START);
@@ -300,6 +306,8 @@ int cmdQuit(){
         if(env) message("environment", tmp, env, ({this_object()}));
         CHAT_D->eventSendChannel("SYSTEM","connections","[" + 
                 GetCapName() + " quits "+mud_name()+"]",0);
+                debug_message(ctime(time())+" "+GetCapName()+ " quits");
+                log_file("prool.log",ctime(time())+" "+GetCapName()+ " quits\n");
     }
     if(in_edit()){
         ed_cmd(".");
