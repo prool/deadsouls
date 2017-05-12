@@ -17,6 +17,8 @@
 #include "eval.h"
 #include "console.h"
 
+#include "prool.h"
+
 #ifndef ENOSR
 #define ENOSR 63
 #endif
@@ -395,6 +397,7 @@ void ipc_remove()
     }
 
     debug_message("closed external ports\n");
+prool_log("MUD shutdown");
 }
 
 void init_addr_server (char * hostname, int addr_server_port)

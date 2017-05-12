@@ -19,6 +19,9 @@
 #include "add_action.h"
 #include "object.h"
 #include "eval.h"
+
+#include "prool.h"
+
 #ifdef DTRACE
 #include <sys/sdt.h>
 #else
@@ -1582,10 +1585,13 @@ void fatal (const char *fmt, ...)
   signal(SIGIOT, SIG_DFL);
 #endif
 
+prool_log("fatal quit");
+
 #if !defined(DEBUG_NON_FATAL) || !defined(DEBUG)
   abort();
 #endif
   in_fatal = 0;
+
 }
 
 static int num_error = 0;

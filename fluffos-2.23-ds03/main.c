@@ -15,6 +15,8 @@
 #include "master.h"
 #include "eval.h"
 
+#include "prool.h" // prool
+
 port_def_t external_port[5];
 
 static int e_flag = 0;    /* Load empty, without preloads. */
@@ -86,6 +88,9 @@ int main (int argc, char ** argv)
     int dtablesize;
 #endif
     error_context_t econ;
+
+printf("prooltest. main() start\n"); // prool
+prool_log("MUD start"); // prool
 
 #ifdef PROTO_TZSET
     void tzset();
