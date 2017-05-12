@@ -4,8 +4,8 @@
 inherit LIB_FISHING;
 
 varargs string readSign() {
-    string ret = "WARNING! Orcs, dwarves, and some other races cannot "+
-    "swim! If you jump into the sea you will sink and drown!";
+    string ret = "ВНИМАНИЕ! Некоторые расы не могут плавать! "+
+    "Если вы прыгнете в воду, то пойдете ко дну!";
     return ret;
 }
 
@@ -13,25 +13,23 @@ static void create() {
     fishing::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("Dock of the Bay");
-    SetNightLong("This is an area comprised of a raised wooden platform over the beach that allows folks to walk around enjoying the view and perhaps visiting the local commercial establishments. To the west is Harry's Pub. North is the town dock. A great sea stretches out into the eastern horizon. A lone lamp post lights this area. \n%^GREEN%^There is a sign here you can read.%^RESET%^");
-    SetDayLong("This is an area comprised of a raised wooden platform over the beach that allows folks to walk around enjoying the view and perhaps visiting the local commercial establishments. To the west is Harry's Pub. North is the town dock. A great sea stretches out into the eastern horizon. \n%^GREEN%^There is a sign here you can read.%^RESET%^");
+    SetShort("Бухта");
+    SetNightLong("Вы находитесь на приподнятой над водой деревянной платформе, по которой можно спокойно прогуливаться и наслаждаться окружающим видом. Она освещена одиноким фонарем. На западе вы видите паб 'У Гарри', на севере городскую пристань. Все пространство на востоке занимает великое море. \n%^GREEN%^Здесь есть табличка, которую вы можете прочесть.%^RESET%^");
+    SetDayLong("Вы находитесь на приподнятой над водой деревянной платформе, по которой можно спокойно прогуливаться и наслаждаться окружающим видом. На западе вы видите паб 'У Гарри', на севере городскую пристань. Все пространство на востоке занимает великое море. \n%^GREEN%^Здесь есть табличка, которую вы можете прочесть.%^RESET%^");
     SetItems( ([
-        "establishment":"A pub west of here.",
-        "local establishment":"A pub west of here.",
-        "commercial establishment":"A pub west of here.",
-        "sign":"A sign on the ground. To read it, 'read sign'.",
-        "platform":"The local surface.",
-        "raised wooden platform":"The local surface.",
-        "wooden platform":"The local surface.",
-        "raised platform":"The local surface.",
-        "horizon":"Where the sky loves the sea.",
-        "beautiful horizon":"Where the sky loves the sea.",
-        "town":"A population center to the northwest.",
-        "boardwalk":"Where people can stably walk and enjoy the view.",
-        "view":"A beautiful horizon to the east.",
-        "dock":"What boats do north of here.",
-        "shoreline":"The demarcator of discontinuity between land and sea.",
+        "паб":"Паб находится на западе отсюда.",
+        "у гарри":"Паб находится на западе отсюда.",
+        "табличка":"Здесь установлена табличка. Чтобы прочитать ее, наберите 'read табличка'.",
+        "платформа":"Вы на ней стоите.",
+        "деревянная платформа":"Вы на ней стоите.",
+        "приподнятая платформа":"Вы на ней стоите.",
+        "горизонт":"Там море и небеса тесно прижались друг к другу.",
+        "пространство":"Там море и небеса тесно прижались друг к другу.",
+        "город":"Населенный пункт находится на северо-западе.",
+        "настил":"Здесь люди могут спокойно прогуливаться и наслаждаться видом.",
+        "вид":"Вы видите прекрасный горизонт на востоке.",
+        "пристань":"Чуть севернее пришвартованы лодки.",
+        "берег":"Берег - это место между водой и сушей.",
       ]) );
     SetExits( ([
         "north" : "/domains/town/room/docks",
@@ -45,10 +43,10 @@ static void create() {
         "/domains/town/meals/herring" : 2,
       ]) );
     SetActionsMap( ([ 
-        "A soft breeze cools your brow." : 5,
-        "You briefly hear seagulls far in the distance." : 7,
-        "A cool breeze flows in from the east, " +
-          "bringing with it the bracing salty smells of the sea.": 2,
+        "Мягкий ветерок охлаждает ваше лицо." : 5,
+        "Вдалеке слышатся пронзительные крики чаек." : 7,
+        "С востока дует прохладный ветерок, " +
+          "приносящий с собой соленые запахи моря.": 2,
       ]) );
     SetInventory( ([
         "/domains/town/obj/seawater" : 1,
@@ -59,10 +57,10 @@ static void create() {
 
 void init(){
     ::init();
-    add_action("enjoy","enjoy");
+    add_action("enjoy","наслаждаться");
 }
 
 int enjoy(string foo){
-    write("Mmmm!");
+    write("Ммммм!");
     return 1;
 }
