@@ -4,8 +4,8 @@
 inherit LIB_FISHING;
 
 varargs string readSign() {
-    string ret = "WARNING! Orcs, dwarves, and some other races cannot "+
-    "swim! If you jump into the sea you will sink and drown!";
+    string ret = "ВНИМАНИЕ! Некоторые расы не могут плавать! "+
+    "Если вы прыгнете в воду, то пойдете ко дну!";
     return ret;
 }
 
@@ -13,27 +13,26 @@ static void create() {
     fishing::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("Dock of the Bay");
-    SetNightLong("This is an area comprised of a raised wooden platform that extends into the water so that folks with boats can conveniently enter and exit their vehicles. The dock runs south along the shoreline, turning into a boardwalk. The town shore is north. A great sea stretches out into the eastern horizon. A lone lamp post lights this area. \n%^GREEN%^There is a sign here you can read.%^RESET%^");
-    SetDayLong("This is an area comprised of a raised wooden platform that extends into the water so that folks with boats can conveniently enter and exit their vehicles. The dock runs south along the shoreline, turning into a boardwalk. The town shore is north. A great sea stretches out into the eastern horizon. \n%^GREEN%^There is a sign here you can read.%^RESET%^");
+    SetShort("Доки");
+    SetNightLong("Вы находитесь на приподнятой над водой деревянной платформе, так чтобы к ней было удобно причаливать лодкам. Доки тянутся на юг вдоль берега, переходя в дощатый настил. На севере вы замечаете город, а все пространство на востоке занято морем. Посреди доков горит одинокий фонарь. \n%^GREEN%^Здесь установлена табличка с предостережением.%^RESET%^");
+    SetDayLong("Вы находитесь на приподнятой над водой деревянной платформе, так чтобы к ней было удобно причаливать лодкам. Доки тянутся на юг вдоль берега, переходя в дощатый настил. На севере вы замечаете город, а все пространство на востоке занято морем. \n%^GREEN%^Здесь установлена табличка с предостережением.%^RESET%^");
     SetItems( ([
-        "sign":"A sign on the ground. To read it, 'read sign'.",
-        "platform":"The local surface.",
-        "raised wooden platform":"The local surface.",
-        "wooden platform":"The local surface.",
-        "raised platform":"The local surface.",
-        "horizon":"Where the sky loves the sea.",
-        "town":"A population center to the northwest.",
-        "boardwalk":"Leads south from here.",
-        "dock":"What boats do here.",
-        "shoreline":"The demarcator of discontinuity between land and sea.",
+        "табличка":"Табличка воткнута в землю. Чтобы прочитать ее, наберите 'read табличка'.",
+        "платформа":"Вы на ней стоите.",
+        "приподнятая деревянная платформа":"Вы на ней стоите.",
+        "деревянная платформа":"Вы на ней стоите.",
+        "приподнятая платформа":"Вы на ней стоите.",
+        "горизонт":"Там море и небеса тесно прижались друг к другу.",
+        "город":"Населенный пункт находится на северо-западе.",
+        "дощатый настил":"Находится на юге отсюда.",
+        "берег":"Берег - это место между водой и сушей.",
       ]) );
     SetExits( ([
         "north" : "/domains/town/room/shore",
         "south" : "/domains/town/room/bwalk1.c",
       ]) );
     SetProperty("dock", 1);
-    SetRead("sign", (: readSign :) );
+    SetRead("табличка", (: readSign :) );
     SetFrequency(5);
     SetChance(90);
     SetFish( ([
@@ -41,10 +40,10 @@ static void create() {
         "/domains/town/meals/herring" : 20,
       ]) );
     SetActionsMap( ([ 
-        "A soft breeze cools your brow." : 5,
-        "You briefly hear seagulls far in the distance." : 7,
-        "A cool breeze flows in from the east, " +
-          "bringing with it the bracing salty smells of the sea.": 2,
+        "Мягкий ветерок охлаждает ваше лицо." : 5,
+        "Вдалеке слышатся пронзительные крики чаек." : 7,
+        "С востока дует прохладный ветерок, " +
+          "приносящий с собой соленые запахи моря.": 2,
       ]) );
     SetInventory( ([
         "/domains/town/obj/seawater" : 1,

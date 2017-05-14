@@ -6,8 +6,8 @@ static void create() {
     SetTown("town");
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Town Clerk");
-    SetLong("This small office is where people come to conduct their official public business. The main area of the town hall is south.");
+    SetShort("Городской клерк");
+    SetLong("В этот небольшой офис люди приходят, чтобы оформлять свои официальные сделки. На юге вы видите главную площадь ратуши.");
     SetProperties (([
                 "no attack":1, 
                 "no bump":1, 
