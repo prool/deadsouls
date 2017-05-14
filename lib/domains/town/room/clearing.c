@@ -7,19 +7,19 @@ static void create() {
     SetAmbientLight(40);
     SetNightLight(10);
     SetDayLight(30);
-    SetShort("Forest Clearing");
-    SetLong("This is a small clearing in a path through the forest. The path leads west into a small valley, and northeast toward a forest and a bridge.");
+    SetShort("Лесная поляна");
+    SetLong("Вы находитесь на небольшой поляне в лесу, через которую проходит тропа. Она ведет на запад в небольшую долину и на северо-восток к лесу и мосту.");
     SetItems( ([
-        "clearing" : "An area with few trees.",
-        "path" : "This forest path runs east "
-        "and west. A small trail goes north of here.",
-        ({"forest","wood","woods"}) : "This is a "
-        "dark, creepy forest. You are standing on a "
-        "path in a clearing, so it's a bit brighter here.",
-        ({ "small trail","trail"}) : "A small trail leading into the depths "
-        "of the forest to the north.",
-        "valley" : "A valley is west of here.",
-        "town" : "A town, far in the eastern distance."
+        "поляна" : "Здесь всего несколько деревьев.",
+        "тропа" : "Лесная тропа тянется с востока на "
+        "запад. На севере вы замечаете чьи-то следы.",
+        ({"лес","чаща","деревья"}) : "Это "
+        "темный мрачный лес. Но, так как вы остановились "
+        "посреди поляны. света здесь немного побольше.",
+        ({ "тропинка","следы"}) : "Узкая тропинка ведет на "
+        "север, вглубь леса.",
+        "долина" : "Долина на западе отсюда.",
+        "город" : "Вы видите город в далеке, на северо-востоке."
       ]) );
     SetSkyDomain("town");
     SetExits( ([ 

@@ -9,11 +9,11 @@ static void create() {
     string privs;
     privs = query_privs();
     if( privs ) privs = capitalize(privs);
-    else privs = "a creator";
+    else privs = "билдер";
     room::create();
     SetClimate("indoors");
     SetAmbientLight(40);
-    SetShort("Conference Room");
+    SetShort("Приватная комната");
     SetLong((: ExtraDesc :));
     SetInventory(([
                 "/domains/town/obj/chair" : 4,
@@ -37,7 +37,7 @@ static void create() {
 }
 
 int AutoDeactivate(){
-    message("info","%^RED%^The privacy field shuts off.%^RESET%^", this_object());
+    message("info","%^RED%^Приватность нарушена!%^RESET%^", this_object());
     timer = 0;
     privacy = 0;
     return 1;
@@ -45,9 +45,9 @@ int AutoDeactivate(){
 
 void init(){
     ::init();
-    add_action("privacy","privacy");
-    add_action("privacy","priv");
-    add_action("report_time","timer");
+    add_action("privacy","приватность");
+    add_action("privacy","приват");
+    add_action("report_time","таймер");
 }
 
 void heart_beat(){
@@ -58,23 +58,23 @@ int report_time(){
     int secs = time() - timer;
 
     if(!timer){
-        write("Privacy field is not active.");
+        write("Приватность не активирована.");
         return 0;
     }
 
-    write("Elapsed seconds: "+secs);
-    write("Elapsed minutes: "+(secs/60));
+    write("Осталось секунд: "+secs);
+    write("Осталось минут: "+(secs/60));
     return secs;
 }
 
 int CanReceive(object ob) {
     if(privacy){
         if(!interactive(ob)) { 
-            message("info","\n\nPRIVACY WARNING: "+ob->GetName()+" has entered the room.\n\n",this_object() );
+            message("info","\n\nПРЕДУПРЕЖДЕНИЕ: "+ob->GetName()+" вошел в комнату.\n\n",this_object() );
         }
         else if(!archp(ob)){
-            message("info","You bounce off the conference room privacy shield.", ob);
-            message("info",ob->GetName()+" bounced off the privacy shield.",this_object());
+            message("info","Вас не пускает в приватную комнату.", ob);
+            message("info",ob->GetName()+" не пускает в приватную комнату.",this_object());
             if(!environment(ob)) ob->eventMoveLiving(ROOM_START);
             return 0;
         }
@@ -85,8 +85,8 @@ int CanReceive(object ob) {
 
 int set_privacy(int i){
     if(environment(this_player()) != this_object() && !archp(this_player())) {
-        write("You lack the adequate privileges to do that.");
-        say(this_player()->GetName()+" is trying to mess around with the privacy shield system.");
+        write("У вас нет достаточных привилегий для этого.");
+        say(this_player()->GetName()+" пытается войти в приватную комнату.");
         return 1;
     }
     privacy=i;
@@ -95,30 +95,30 @@ int set_privacy(int i){
 
 int privacy(string str){
     if(environment(this_player()) != this_object() && !archp(this_player())) {
-        write("You lack the adequate privileges to do that.");
-        say(this_player()->GetName()+" is trying to muck around with the privacy shield system.");
+        write("У вас нет достаточных привилегий для этого.");
+        say(this_player()->GetName()+" пытается подслушать происходящее.");
         return 1;
     }
 
-    if(str=="on" || str == "1"){
+    if(str=="вкл" || str == "1"){
         this_object()->set_privacy(1);
-        write("You enable the privacy shield.\n");
-        say(this_player()->GetName()+" enables a privacy force field around the room.");
+        write("Вы активировали защиту от прослушивания.\n");
+        say(this_player()->GetName()+" активировал защиту от прослушивания.");
         timer = time();
         return 1;
     }
-    if(str=="off" || str == "0"){
+    if(str=="выкл" || str == "0"){
         this_object()->set_privacy(0);
-        write("You disable the privacy shield.\n");
-        say(this_player()->GetName()+" disables a privacy force field around the room.");
+        write("Вы деактивировали защиту от прослушивания.\n");
+        say(this_player()->GetName()+" деактивировал защиту от прослушивания.");
         timer = 0;
         return 1;
     }
 }
 
 string ExtraDesc(){
-    string extra = "%^YELLOW%^A privacy force field is active around this room.%^RESET%^";
-    string desc = "This is an enchanted room, with the magical power to prevent uninvited people from entering. It is used for meetings where three or more people need to share information without interruption or privately. To enable privacy, 'privacy on'. To disable it, 'privacy off'. The privacy field automatically deactivates after approximately 20 minutes.\n";
+    string extra = "%^YELLOW%^Защита от прослушивания активна.%^RESET%^";
+    string desc = "Эта комната зачарована так, что препятствует проникновению незванных людей. Она используется когда трем и более людям необходимо обсудить что-то без лишних ушей. Чтобы активировать эту функцию наберите 'приватность вкл', деактивировать - 'приватность выкл'. Защитное поле автоматически деактивируется примерно через 20 минут.\n";
     if(privacy) return desc+extra;
-    else return desc+"%^RED%^The privacy field is DISABLED.";
+    else return desc+"%^RED%^Защита от прослушивания неактивна.";
 }

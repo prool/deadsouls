@@ -7,16 +7,16 @@ static void create() {
     SetAmbientLight(30);
     SetNightLight(10);
     SetDayLight(30);
-    SetShort("Mansion Garden");
-    SetLong("This is what is left of what was once a beautiful, "
-      "if simple, garden. It is now badly overgrown with "
-      "weeds, and it is clear that foraging animals long "
-      "ago ate the delicate flowers and vegetables that "
-      "once grew here. The gardener's shack is north.");
+    SetShort("Сад особняка");
+    SetLong("Это все, что осталось от некогда красивого "
+      "сада. Теперь он сильно зарос сорняками, а дикие "
+      "животные сожрали изысканные цветы и декоративные овощи, "
+      "которые росли здесь раньше. "
+      "На севере вы замечаете лачугу садовника.");
     SetItems(([
-        ({ "flowers", "vegetables", "flowers and vegetables" }) : "If they were once here, they certainly no longer are.",
-        ({ "shack", "wooden shack" }) : "A beaten-up old wooden shack is north.",
-        "garden" : "A mess of weeds and dirt.",
+        ({ "цветы", "овощи", "цветы и овощи" }) : "Хотя они росли здесь раньше, сейчас от них ничего не осталось.",
+        ({ "лачуга", "деревянная лачуга" }) : "На севере находится полуразвалившаяся деревянная лачуга.",
+        "сад" : "Он весь зарос сорняками.",
       ]));
     SetSkyDomain("town");
     SetExits( ([

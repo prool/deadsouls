@@ -35,7 +35,7 @@ static void create() {
         "north" : "/domains/town/room/docks",
         "west" : "/domains/town/room/hp.c",
       ]) );
-    SetRead("sign", (: readSign :) );
+    SetRead("табличка", (: readSign :) );
     SetFrequency(5);
     SetChance(90);
     SetFish( ([

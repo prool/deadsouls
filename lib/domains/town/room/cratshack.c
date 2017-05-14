@@ -5,14 +5,14 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("north of house");
-    SetLong("The thick woods give way to a small clearing here, where an old house, painted white, stands. The front porch of the house is south. A narrow trail leads into the woods to the north.");
+    SetShort("Около дома");
+    SetLong("Здесь густые леса уступают место маленькой поляне, где стоит старый дом, окрашенный в белый цвет. На юге находится его крыльцо, от него на север в лес отходит узкая тропинка.");
     SetItems(([
-        ({ "forest", "wood", "vegetation" }) : "All around is vegetation growing so incredibly dense that it is impossible to wander off the path.",
-        ({ "porch", "front porch" }) : "The wooden front porch of an old white house.",
-        ({ "trail", "path" }) : "To the north, a narrow path leads into the woods.",
-        ({ "clearing", "woods" }) : "As if by powerful magic, the woods clear here, where the house stands.",
-        ({ "house", "white house", "old house" }) : "The house looks weatherbeaten, ill maintained, and rather old. Its construction is of an archaic design no longer used. Despite its abused appearance, the house seems to have a quiet dignity about it, as if many people had been its friends over the years, and it simply waited for their return.",
+        ({ "лес", "леса", "растительность" }) : "Растительность вокруг такая плотная, что сойти с тропы не получится при всем желании.",
+        ({ "крыльцо", "переднее крыльцо" }) : "Вы видите деревянное крыльцо старого белого дома..",
+        ({ "тропа", "путь" }) : "На север, в глубь леса, ведет узкий путь.",
+        ({ "поляна", "просека" }) : "Как будто по магии деревья отошли от дома на безопасное расстояние.",
+        ({ "дом", "белый дом", "старый дом" }) : "Дом выглядит обветшалым, плохо сохранившимся и очень старым. Дома такого типа уже давно не строят. Несмотря на заброшенность, дом сохранил некоторый шарм и уют, как будто он ждет возвращения жителей.",
       ]));
     SetSkyDomain("town");
     SetExits( ([
