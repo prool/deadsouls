@@ -5,8 +5,8 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Healer's Guild Storeroom");
-    SetLong("This blank room is where the guild keeps their junk.");
+    SetShort("Кладовая гильдии лекарей");
+    SetLong("В этой небольшой комнате содержатся припасы гильдии.");
     SetInventory(([
                 "/domains/town/meals/claritin" : 20,
                 "/domains/town/obj/slip_heal" : 100,
@@ -24,7 +24,7 @@ int CanReceive(object sneak) {
     foreach(object ob in living_stack){
         if(living(ob) && !creatorp(ob) &&
                 !member_group(ob,"TEST")) {
-            message("info","The storeroom is for guild officers only.", ob);
+            message("info","Эта кладовая только для членов гильдии лекарей.", ob);
             return 0;
         }
     }

@@ -3,21 +3,21 @@ inherit LIB_SHOP;
 inherit LIB_AMBIANCE;
 
 int ReadList(){
-    write("AVAILABLE PROCEDURES:\n"
-            "\thealing, cost 200:\t\tfacilitate rapid recovery from wounds\n"
-            "\tregeneration, cost 1200:\tgrow back severed limbs\n"
-            "\texcision, cost 700:\t\tremove bullets\n"
-            "\tpoison antidote, cost 200:\tmitigate the effects of poisoning\n"
-            "\tclaritin, cost 10:\t\talleviate cold symptoms\n"
+    write("ДОСТУПНЫЕ ПРОЦЕДУРЫ:\n"
+            "\tлечение, стоимость 200:\t\tспособствует быстрому выздоровлению от ран\n"
+            "\tрегенерация, стоимость 1200:\tотрастание оторванных конечностей\n"
+            "\tвырезание, стоимость 700:\t\tудаление пуль\n"
+            "\tантидот, стоимость 200:\tустраняет последствия отравления\n"
+            "\tкларитин, стоимость 10:\t\tоблегчает симптомы простуды\n"
             "\n"
-            "Example: If you are badly hurt and need healing:\n\n"
-            "\"buy healing slip from james\"\n"
+            "Пример: Если вы сильно пострадали и нуждаетесь в исцелении:\n\n"
+            "\"buy лечение\"\n"
             "\n"
-            "If you've been poisoned: \n\n"
-            "\"buy antidote from james\"\n"
+            "Если вас отравили: \n\n"
+            "\"buy антидот\"\n"
             "\n"
-            "Once you have your slip, go west to see the doctor and "
-            "give the slip to him.\n"
+            "Как только вы получили направление на лечение, идите на запад "
+            "чтобы увидеть доктора и отдать направление ему.\n"
 
          );
     return 1;
@@ -26,20 +26,20 @@ static void create() {
     ::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("The Healers Guild");
-    SetLong("You are in the Healer's Guild. People come "
-            "here when they have medical problems, and "
-            "for a price, they are helped. "
-            "It seems that the doctor's work area is "
-            "west of here. Saquivor Road is east."
-            "\n%^GREEN%^There is a list here you can read.%^RESET%^");
+    SetShort("Гильдия лекарей");
+    SetLong("Вы находитесь в гильдии лекарей. Люди приходят "
+            "сюда с медицинскими проблемами, и за "
+            "определенную цену им тут помогают. "
+            "Кажется, кабинет доктора на западе "
+            "отсюда. А на востоке вы видите широкую дорогу."
+            "\n%^GREEN%^Здесь есть список, который вы можете прочесть.%^RESET%^");
     SetItems( ([
-                ({"list","list on the wall"}) : "A list of available procedures",
-                "wall" : "A flat, vertical structure supporting the ceiling.",
-                ({"work area","doctor's work area"}) : "It is west of here.",
-                ({"road","tavern road"}) : "The road is outside, east of here."
+                ({"список","список на стене"}) : "Список доступных услуг.",
+                "стена" : "Это плоская вертикальная конструкция, поддерживающая потолок.",
+                ({"рабочая зона","кабинет доктора"}) : "Находится на западе.",
+                ({"дорога","дорога к таверне"}) : "Дорога проходит рядом с этим зданием, на востоке."
                 ]) );
-    SetRead( ({"list","list on wall"}) , (: ReadList :) );
+    SetRead( ({"список","список на стене"}) , (: ReadList :) );
     SetInventory(([
                 "/domains/town/obj/bbucket" :1,
                 "/domains/town/npc/james" : ({60, 1})
