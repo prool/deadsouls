@@ -5,18 +5,17 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Mansion Foyer");
-    SetLong("This is the foyer of a grand, majestic mansion. Strangely, "
-            "there is dust everywhere, but the place looks "
-            "beautiful all the same. A hallway runs south "
-            "from here."); 
+    SetShort("Фойе особняка");
+    SetLong("Вы в фойе огромного, величественного особняка. "
+            "Хотя здесь повсюду толстый слой пыли, это место все равно выглядит красиво. "
+            "На юге вы замечаете коридор."); 
     SetItems( ([
-                "foyer" : "This is the interior entry area of the "
-                "mansion, where the front door is.",
-                ({"hall","hallway"}) : "A wide corridor "
-                "leading south to the rest of the mansion.",
-                "dust" : "Tiny particulate material dispersed "
-                "on visible surfaces."
+                "фойе" : "Здесь находится входная дверь "
+                "особняка.",
+                ({"коридор","прихожая"}) : "Широкий коридор "
+                "ведет на юг вглубь особняка.",
+                "пыль" : "Серая, жирная на ощупь пыль "
+                "покрывает все вокруг."
                 ]) );
     SetExits( ([
                 "north" : "/domains/town/room/mansion_ext",
