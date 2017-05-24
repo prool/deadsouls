@@ -5,8 +5,8 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("The Magic Shop Storeroom");
-    SetLong("This is the storeroom where magical items are kept."); 
+    SetShort("Кладовая магической лавки");
+    SetLong("Здесь хранятся магические вещи для продажи."); 
     SetInventory(([
                 "/domains/town/obj/scroll_raise_dead" : 5,
                 "/domains/town/meals/potion_bigheal" : 2,
@@ -29,7 +29,7 @@ int CanReceive(object sneak) {
     foreach(object ob in living_stack){
         if(living(ob) && !creatorp(ob) && 
                 !member_group(ob,"TEST")) {
-            message("info","Oana's back room area is for authorized personnel only.", ob);
+            message("info","Задняя комната магической лавки только для авторизованного персонала.", ob);
             return 0;
         }
     }

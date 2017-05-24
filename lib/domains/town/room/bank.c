@@ -6,32 +6,32 @@ static void create() {
     bank::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("First Village Bank");
-    SetLong("This simple place is the hub of financial activity for the village. Though not at all a fancy institution, this bank is trusted by the citizenry as being as safe as it gets for keeping their money.\n%^GREEN%^A sign you can read hangs here.%^RESET%^");
+    SetShort("Первый Деревенский Банк");
+    SetLong("Это неказистое место является центром финансовой деятельности всей округи. Хотя это и не самое привлекательное учреждение, этому банку доверяют местные жители, которые хранят здесь свои сбережения.\n%^GREEN%^На стене перед вами висит табличка.%^RESET%^");
     SetInventory( ([
         "/domains/town/npc/zoe" : ({60, 1})
       ]) );
     SetItems( ([
-        "sign" : "A sign you can read.",
-        ({"bank","First Village Bank"}) : "The primary financial "
-        "institution in town.",
+        "табличка" : "Эту табличку вы можете прочесть.",
+        ({"банк","ервый Деревенский Банк"}) : "Это основное финансовое учреждение "
+        "города.",
       ]) );
     SetExits( ([
         "west" : "/domains/town/room/mountain_road.c",
       ]) );
-    SetRead( ({"sign","sign hanging here"}) , (: ReadSign :) );
+    SetRead( ({"табличка","табличку"}) , (: ReadSign :) );
     SetProperty("no attack", 1);
 }
 int ReadSign(){
     write( @EndText
-- This bank requires a minimum balance to open an account.
-To use any of the bank's services, you must first open an
-account (see below as to how).
+- Чтобы открыть здесь счет вам понадобятся минимальные вложения.
+Чтобы пользоваться любой услугой банка, вам понадобится сначала
+открыть здесь счет (читайте ниже, как это сделать).
 
-- This bank charges for certain transactions, such as
-currency exchange.
+- Этот банк предоставляет определенные услуги, такие как, например,
+обмен валюты.
 
-To conduct business here:
+Чтобы вести здесь бизнес:
 
 request account from TELLER
 request balance from TELLER
@@ -39,7 +39,7 @@ ask TELLER to deposit AMOUNT CURRENCY
 ask TELLER to withdraw AMOUNT CURRENCY
 ask TELLER to exchange AMOUNT CURRENCY for CURRENCY
 
-examples:
+Примеры:
 
 request account from zoe
 request balance from zoe

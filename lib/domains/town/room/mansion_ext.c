@@ -6,24 +6,18 @@ static void create() {
     SetClimate("outdoors");
     SetAmbientLight(40);
     SetShort("Mansion Exterior");
-    SetNightLong("You are standing outside a large, beautiful mansion to the south, illuminated by lamplight. It towers over you and overhead you can see one of the second floor windows is open. The grass seems a bit wild around here, and the lawn continues west into the darkness. The mansion gate is north.");
-    SetDayLong("You are standing outside a large, beautiful mansion to the south. It towers over you and overhead you can see one of the second floor windows is open. The grass seems a bit wild around here, and the lawn continues west into an overgrown garden. The mansion gate is north.");
-    SetLong("You are standing outside a large, beautiful mansion "
-      "that stands south of you. It towers over you and "
-      "overhead you can see one of the second floor "
-      "windows is open. The grass seems a bit wild "
-      "around here, and the lawn continues west into "
-      "an overgrown garden. The mansion gate is north.");
+    SetNightLong("Вы стоите рядом с большим красивым особняком на юге, освещенном лампами. Он возвышается над вами, и наверху вы можете видеть, что одно из окон второго этажа открыто. Трава кажется немного дикой здесь, и газон продолжается на запад в темноту. Ворота особняка находятся на севере.");
+    SetDayLong("Вы стоите рядом с большим красивым особняком на юге, освещенном лампами. Он возвышается над вами, и наверху вы можете видеть, что одно из окон второго этажа открыто. Трава кажется немного дикой здесь, и газон продолжается на запад в заросший сад. Ворота особняка находятся на севере.");
+    SetLong("Вы стоите рядом с большим красивым особняком на юге, освещенном лампами. Он возвышается над вами, и наверху вы можете видеть, что одно из окон второго этажа открыто. Трава кажется немного дикой здесь, и газон продолжается на запад в заросший сад. Ворота особняка находятся на севере.");
     SetItems( ([
-        ({"house","mansion"}) : "A stately pleasure dome.",
-        ({"window","second floor window"}) : "This is "
-        "an open window, high above you. If you had a ladder, you "
-        "might be able to climb up enough to enter.",
-        ({"grass","lawn","garden"}) : "Rather unkempt "
-        "greenery. Looks like the gardener's been on "
-        "vacation.",
-        ({"gate","mansion gate"}) : "The entry point into "
-        "the estate on which you now stand."
+        ({"дом","особняк"}) : "Вы видите величественное здание.",
+        ({"окно","окно второго этажа"}) : "Вы видите "
+        "открытое окно выше вас. Если бы у вас была лестница, "
+        "вы смогли бы туда забраться.",
+        ({"трава","газон","сад"}) : "Довольно неопрятная зелень. "
+        "Похоже, что садовник в отпуске.",
+        ({"ворота","ворота особняка"}) : "Вход в "
+        "имение, в котором вы сейчас находитесь."
       ]) );
     SetSkyDomain("town");
     SetExits( ([

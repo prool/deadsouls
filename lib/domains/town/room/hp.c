@@ -3,24 +3,24 @@
 inherit LIB_ROOM;
 
 varargs string readMenu() {
-    string ret = "\tStein of Guinness\t\t\t1 gold\n"+
-    "\tBottle of wine\t\t\t\t2 gold\n"+
-    "\tBottle of whiskey\t\t\t3 gold\n";
+    string ret = "\tБутылка пива\t\t\t1 gold\n"+
+    "\tБутылка вина\t\t\t\t2 gold\n"+
+    "\tБутылка виски\t\t\t3 gold\n";
     return ret;
 }
 
 void create(){
     ::create();
     SetAmbientLight(30);
-    SetShort("Harry's Pub");
-    SetLong("Harry's Pub is a simple place where lonely sailors pass the time away and talk about their homes. Known to serve some mean drinks and customers, the place is clean and spare, with few things to break over someone's head. A menu on the wall lists the available refreshments. There appears to be some kind of back room to the west.");
+    SetShort("Паб Гарри");
+    SetLong("Паб Гарри - это обычный портовый бар, в котором собираются моряки чтобы выпить и порассказывать байки. На одной из стен висит меню, в котором перечислены доступные напитки. На западе вы замечаете заднюю комнату.");
     SetClimate("indoors");
     SetItems( ([
-        ({"wall", "walls"}) : "If only they could speak, eh?",
-        "menu" : "A menu you can read. Oddly it has as its logo a severed "+
-        "wolf's head on a stick.",
-        ({"room","back room"}) : "Perhaps a storage area.",
-        "harry" : "Nobody's seen Harry since the jive ring thing.",
+        ({"стена", "стены"}) : "Если бы они могли говорить, то рассказали бы немало удивительного.",
+        "меню" : "Вы можете прочесть меню. На нем есть логотип в виде "+
+        "волчьей головы на палке.",
+        ({"комната","задняя комната"}) : "Возможно, там кладовая.",
+        "гарри" : "Гарри никто не видел уже довольно давно.",
       ]) );
     SetSkyDomain("town");
     SetRead("menu", (: readMenu :) );

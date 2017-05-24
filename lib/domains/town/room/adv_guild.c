@@ -11,17 +11,17 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("The Adventurers' Guild");
-    SetLong("This small building is where adventurers can record their adventures and leave messages and announcements for other brave souls. This is also the place one can seek advancement, so if you deserve to be a higher level adventurer, asking the guild master for it will make it so. A scroll lists quests one may perform, and a sign contains some instructions. The Creator's Hall is south of here. A special skills training area is upstairs. A conference room is east, where folks can discuss things in privacy.");
+    SetShort("Гильдия авантюристов");
+    SetLong("Это маленькое здание, где искатели приключений могут записывать свои приключения и оставлять сообщения и объявления другим храбрецам. Здесь также можно повысить уровень и если вы заслуживаете, то попросите об этом гильдмастера. Вы видите здесь также список заданий и табличку с инструкциями. На юге расположены Залы билдеров, а вверху тренировочная комната, где вы можете выучить умения. На востоке находится приватная комната, где вы можете обсуждать разные вещи без лишних ушей.");
     SetItems( ([
-                ({ "list","scroll"}) : "A scroll hangs from the wall, listing "
-                "some adventures you can perform which may have rewards "
-                "for you.",
-                ({"sign","instructions"}) : "This sign contains some "
-                "general instructions on how to gain experience and "
-                "attain advancement.",
-                ({"building","small building","here"}) : "You are in the "
-                "Adventurers' Guild.",
+                ({ "list","список"}) : "Список прикреплен к одной из стен, в нем перечислены "
+                "некоторые задания, за выполнение которых вы можете получить "
+                "награду.",
+                ({"табличка","инструкции"}) : "На этой табличке выбиты "
+                "основные инструкции о том, как повысить опыт и "
+                "получить повышение.",
+                ({"здание","маленькое здание","здесь"}) : "Вы в "
+                "Гильдии авантюристов.",
                 ]) );
     SetExits( ([
                 "north" : "/domains/town/room/vill_road2",
@@ -35,17 +35,17 @@ static void create() {
                 "/domains/town/npc/dirk" : ({60, 1})
                 ]));
     SetRead( ([
-                ({"list","scroll"}) : (: ReadScroll :),
-                ({"instructions","sign"}) : (: ReadSign :)
+                ({"list","список"}) : (: ReadScroll :),
+                ({"инструкции","табличка","табличку"}) : (: ReadSign :)
                 ]) );
 
     SetProperty("no attack", 1);
     ob = new(LIB_BOARD);
-    ob->SetKeyName("chalkboard");
-    ob->SetId( ({ "board", "chalkboard", "dusty board", "dusty chalkboard" }) );    
+    ob->SetKeyName("доска объявлений");
+    ob->SetId( ({ "доска", "доска объявлений", "пыльная", "пыльная доска" }) );    
     ob->set_board_id("adv_guild_board");
     ob->set_max_posts(30);
-    ob->SetShort("a dusty chalkboard");
+    ob->SetShort("пыльная доска объявлений");
     ob->eventMove(this_object());
     SetNoClean(1);
 }
@@ -58,7 +58,7 @@ mixed ReadSign(){
         ret +=  sprintf("%:-3s     %:-28s %:-12s %:16s\n", i+"",
                 Levels[i]["title"], Levels[i]["xp"]+"", (Levels[i]["qp"] || "none")+"");
     }
-    ret += "\nTo advance, ask the guildmaster.\nExample:\n\n";
+    ret += "\nДля повышения попросите гильдмастера.\nНапример:\n\n";
     ret += "ask dirk to advance";
     return this_player()->eventPage(({ret}));
 }

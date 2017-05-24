@@ -7,8 +7,8 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Church Elevator");
-    SetLong("This is the elevator in the village church. The elevator door is on the east wall. Two buttons are set into the wall next to the door, labeled '1' and 'b'.");
+    SetShort("Церковный лифт");
+    SetLong("Вы находитесь в лифте деревенской церкви. Его дверь находится в западной стене. Рядом с дверью вы видите две кнопки, помеченные буквами '1' и 'b'.");
     floor=1;
     moving = 0;
     closed=1;
@@ -19,9 +19,9 @@ static void create() {
     SetItems(([
                 //new("/domains/town/obj/ebutton1") : 1,
                 //new("/domains/town/obj/ebutton2") : 1,
-                "elevator" : "A means of vertical indoors transportation.",
-                "wall" : "The buttons are on the wall.",
-                ({"elevator door","door"}) : "The door to the outside."
+                "лифт" : "Он может перемещаться вверх и вниз.",
+                "стена" : "В стене вы видите две кнопки.",
+                ({"дверь лифта","дверь"}) : "Через нее можно выйти наружу."
                 ]) );
     AddItem(new("/domains/town/obj/ebutton2"));
     AddItem(new("/domains/town/obj/ebutton1"));
@@ -49,13 +49,13 @@ int SetDoorClosed(int i){
     if(floor == 1) floorname = "/domains/town/room/church";
     if(floor == 2) floorname = "/domains/town/room/basement";
     if(closed < 1){
-        tell_room(this_object(),"The elevator door opens.");
-        tell_room(load_object(floorname),"The elevator door opens.");
+        tell_room(this_object(),"Двери лифта открылись.");
+        tell_room(load_object(floorname),"Двери лифта открылись.");
         doorcounter = 10;
     }
     if(closed > 0) {
-        tell_room(this_object(),"The elevator door closes.");
-        tell_room(load_object(floorname),"The elevator door closes.");
+        tell_room(this_object(),"Двери лифта закрылись.");
+        tell_room(load_object(floorname),"Двери лифта закрылись.");
         doorcounter = 0;
     }
     return closed;
@@ -72,7 +72,7 @@ int CanReceive(object ob) {
 #if 1
     if(living(ob) && closed > 0 && query_verb() != "goto" &&
             query_verb() != "trans"  ){
-        message("info","The elevator door is closed.", ob);
+        message("info","Двери лифта закрыты.", ob);
         return 0;
     }
 #endif
@@ -80,12 +80,12 @@ int CanReceive(object ob) {
 }
 int CanRelease(object ob){
     if(archp(ob)) {
-        tell_object(ob,"%^RED%^As archwizard, you are permitted to "
-                "exit the elevator at any time. Normal creators and "
-                "players cannot do this.%^RESET%^\n");
+        tell_object(ob,"%^RED%^Как администратору, вам разрешено "
+                "выходить из лифта в любое время. Обычные билдеры и "
+                "игроки не могут сделать это.%^RESET%^\n");
     }
     if(closed > 0 && query_verb() == "go" ){
-        message("info","The elevator door is closed.", ob);
+        message("info","Двери лифта закрыты.", ob);
         return 0;
     }
     return 1;
@@ -104,21 +104,21 @@ void heart_beat(){
     }
 
     if(moving == 0 && closed == 1 && callfloor > 0){
-        tell_room(this_object(),"The elevator lurches into motion.");
+        tell_room(this_object(),"Лифт пришел в движение.");
         eventRoll();
     }
 
     if(moving && moving > 0){
         my_counter--;
         if(my_counter % 5  == 0) {
-            tell_room(this_object(),"The elevator continues...");
+            tell_room(this_object(),"Лифт движется...");
         }
 
         if(my_counter < 2) {
             my_counter = 0;
             moving = 0;
             SetFloor(callfloor);
-            tell_room(this_object(),"The elevator arrives at its destination.");
+            tell_room(this_object(),"Лифт прибыл в место назначения.");
             SetDoorClosed(0);
             callfloor = 0;
         }

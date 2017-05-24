@@ -11,14 +11,14 @@ int PreExit(){
       (!this_player()->GetInvis() && !creatorp(this_player()) &&
         !present("testchar badge",this_player()))){
         if(guard && living(guard)){
-            present("gate guard",this_object())->eventForce("say You're too big to slip by me now. You're not going to the mansion any more.");
+            present("gate guard",this_object())->eventForce("say Ты слишком большой, чтобы проскользнуть мимо меня. Ты больше не попадешь в особняк.");
             return 0;
         }
     }
     if((newbiep(this_player()) || this_player()->GetLevel() <= maxnoob)
       && guard && living(guard)){
-        tell_object(this_player(),"You are such a newbie that the gate guard doesn't even notice you slip by him.");
-        tell_room(this_object(),this_player()->GetName()+" sneaks past the gate guard.",({ this_player() }) );
+        tell_object(this_player(),"Вы такой новичок, что охранник ворот даже не замечает, как вы проскользнули мимо него.");
+        tell_room(this_object(),this_player()->GetName()+" проник мимо стража ворот.",({ this_player() }) );
     }
     return 1;
 }	
@@ -27,32 +27,27 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("Mansion Gate");
-    SetLong("You are standing just north of the gate to a large, "+
-      "beautiful mansion, which stands to the south. The "+
-      "Corinthian capitals on the front pillars bespeak "+
-      "of the wealth and importance of the person who "+
-      "lives here. Lush ivy wraps around the gate and the "+
-      "brick wall surrounding the estate.");
+    SetShort("Ворота особняка");
+    SetLong("Вы остановились к северу от ворот огромного, "+
+      "красивого особняка, который гордо возвышается на юге. "+
+      "Изящные колонны крыльца особняка говорят о "+
+      "богатстве и важности тех, кто живет "+
+      "здесь. Густой плющ покрывает ворота и кирпичные стены, "+
+      "окружающие имение.");
     SetItems( ([
-        "gate" : "A handsome, wrought-iron entry control point.",
-        ({"estate", "mansion"}) : "The grounds of a mansion are to the south.",
-        ({"capital","capitals","corinthian capital","corinthian capitals"}) :
-        "These are the headpieces of the pillars supporting the "
-        "mansion's front overhang. The beautifully detailed "
-        "carvings of encanthus leaves distinguish them as "
-        "Corinthian.",
-        ({"overhang","front overhang"}) : "A fancy and unnecessary "
-        "structure in front of the mansion supported by "
-        "columns.",
-        ({"pillar","pillars","column","columns"}) : "Load-bearing "
-        "structures supporting the mansion's front overhang.",
-        ({"ivy","lush ivy"}) : "Vines of the ivy plant run "
-        "over and along the walls and gate, so thickly that "
-        "they nearly obscure them.",
-        ({"wall","walls"}) : "Architectural features which prevent "
-        "casual entry. They are made of brick and appear old "
-        "and strong.",
+        "ворота" : "Вы видите красивые ворота ручной работы.",
+        ({"имение", "особняк"}) : "Земли этого имения на юге.",
+        ({"колонна","колонны","изящные колонны"}) :
+        "Колонны поддерживают переднюю часть фасада здания. "
+        "Они покрыты резьбой в виде "
+        "переплетенных листьев и лоз, что показывает "
+        "их изысканность.",
+        ({"плющ","густой плющ"}) : "Лозы плюща "
+        "покрывают кирпичные стены и ворота толстым слоем, "
+        "так что их сложно разглядеть под ним.",
+        ({"стена","стены"}) : "Это архитектурное сооружение, которое"
+        "препятствует проникновению внутрь нежеланных гостей. Они сделаны из кирпича и "
+        "кажутся старыми, но прочными.",
       ]) );
     SetSkyDomain("town");
     SetExits( ([

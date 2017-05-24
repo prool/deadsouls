@@ -5,26 +5,26 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("Humpbacked bridge");
-    SetNightLong("This is an old, humpbacked bridge, lit by a lamp post. It's seen better days, though it appears still quite stable enough. Some peculiar writing is scrawled on the bridge. A town is east of here. To the west is darkness. There is an unlit path leading down below the bridge.");
-    SetDayLong("This is an old, humpbacked bridge. It's seen better days, though it appears still quite stable enough. Some peculiar writing is scrawled on the bridge. The bridge spans a river below. A town is east of here, and a dark forest looms west. There is a small path leading down below the bridge.");
+    SetShort("Горбатый мост");
+    SetNightLong("Вы находитесь на старом, горбатом мосте, освещенном фонарным столбом. Хотя мост видел лучшие дни, он все еще надежен, кажется. На одном периле что-то нацарапано. На востоке вы видите город, а на западе - темноту. Также тут есть спуск вниз, под мост.");
+    SetDayLong("Вы находитесь на старом, горбатом мосте, освещенном фонарным столбом. Хотя мост видел лучшие дни, он все еще надежен, кажется. На одном периле что-то нацарапано. На востоке вы видите город, а на западе - темный лес. Также тут есть спуск вниз, под мост.");
     SetItems( ([
-        ({"cracks","surface","bridge"}) : "The bridge "
-        "surface has a few cracks, but they seem old "
-        "and minor...mostly signs of how long the "
-        "structure has withstood the the elements.",
-        ({"span","river","stream","bank"}) : "Below "
-        "you is a small river with a powerful, "
-        "swift current. You might be able to climb "
-        "down the bridge to get to the riverbank "
-        "below.",
-        "town" : "A small town lies east of here.",
-        ({"writing","scrawl","grafitti","grafitto"}):
-        "Grafitti is written here, in an odd and "
-        "uncertain hand, as if unused to the effort "
-        "of writing.",
-        ({"path","forest","dark forest"}) : "West of the "
-        "bridge is a path going into a dark forest."
+        ({"трещины","поверхность","мост"}) : "Поверхность "
+        "моста испещрена трещинами, они кажутся старыми и "
+        "не очень большими. Они в основном сигнализируют "
+        "о древности моста.",
+        ({"пролет","река","поток","отмель"}) : "Под вами "
+        "находится маленькая речка с бурным, "
+        "быстрым потоком. Чтобы попасть туда, "
+        "вам нужно спуститься с "
+        "моста.",
+        "город" : "На востоке вы видите маленький городок.",
+        ({"послание","царапины","граффити","grafitto"}):
+        "Вы видите странное послание, нацарапанное здесь "
+        "дрожащей рукой, которая как-будто не привычна "
+        "к письму.",
+        ({"тропа","лес","темный лес"}) : "На западе от "
+        "моста вы замечаете тропу, ведущую в темный лес."
       ]) );
     SetSkyDomain("town");
     SetExits( ([
@@ -32,7 +32,7 @@ static void create() {
         "west" : "/domains/town/room/forest_path1",
         "down" : "/domains/town/room/riverbank",
       ]) );
-    SetRead(({"writing","scrawl","grafitti","grafitto"}),"HVMANES EVNT DOMVS");
+    SetRead(({"послание","царапины","граффити","grafitto"}),"ЧЕЛОВЕКИ ПРОЧЬ");
     AddItem(new("/domains/town/obj/lamp"));
 }
 void init(){

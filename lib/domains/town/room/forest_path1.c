@@ -7,18 +7,18 @@ static void create() {
     SetAmbientLight(30);
     SetNightLight(10);
     SetDayLight(30);
-    SetShort("Forest Path");
-    SetLong("You are in a forest outside the town. To the southwest the path continues toward a clearing. To the east it leads to a bridge over a river toward a town. Trees and bushes of various kinds border the path making it impossible to go south but to the north the vegetation is less dense.");
+    SetShort("Лесная тропа");
+    SetLong("Вы находитесь в лесу за городом. На юго-западе она ведет к поляне, а на востоке к мосту у города. На юге путь преграждает густая поросль из деревьев и кустарников, но на севере вы видите небольшие просветы между ними.");
     SetItems( ([
-        "forest" : "You are on a path in a dark, creepy forest. The "
-        "vegetation is thick and feels somehow oppressive.",
-        ({"plants","bushes","vegetation","tree","trees","bush"}) : 
-        "The plants, bushes, and trees grow thick and wild "
-        "here, limiting visibility beyond the path.",
-        "bridge" : "An old bridge is east of here.",
-        "clearing" : "It looks like there is a clearing in the "
-        "forest to the west.",
-        "path" : "You are on a path in a forest."
+        "лес" : "Вы находитесь на тропе в темном мрачном лесу. "
+        "Густая растительность вокруг выглядит как-то угнетающе.",
+        ({"растения","кустарники","растительность","дерево","деревья","куст"}) : 
+        "Растения, кустарники и деревья растут тут очень густо "
+        "и ограничивают видимость за пределами тропы.",
+        "мост" : "Вы видите старый мост на востоке.",
+        "поляна" : "На западе вы видите просвет среди деревьев. "
+        "Вероятно это лесная поляна.",
+        "тропа" : "Вы остановились на тропе посреди леса."
       ]) );
     SetSkyDomain("town");
     SetExits( ([
@@ -38,7 +38,7 @@ int CanReceive(object ob){
     }
     if(living(ob) && !interactive(ob) &&
       (!ob->GetRiders() || !sizeof(ob->GetRiders()))){
-        ob->eventPrint("You find yourself unable to leave the forest.");
+        ob->eventPrint("Почему-то вы не можете покинуть этот лес.");
         return 0;
     }
     return ::CanReceive();

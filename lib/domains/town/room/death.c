@@ -12,7 +12,7 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("off the mortal coil");
+    SetShort("В пустоте");
     SetLong( (:FunkyPic:) );
     SetObviousExits("no exit");
     set_heart_beat(10);
@@ -21,8 +21,8 @@ static void create() {
 
 void init(){
     ::init();
-    add_action("regenerate","regenerate");
-    add_action("wander","wander");
+    add_action("regenerate","восстановиться");
+    add_action("wander","блуждать");
     this_object()->CheckChat();
 }
 
@@ -31,33 +31,33 @@ string FunkyPic(){
 }
 
 int regenerate(){
-    write("With a great rush of matter and energy, you rematerialize "+
-            "into a corporeal state, and find yourself in a familiar place...");
+    write("Вас окатила волна огромной энергии и воссоединила вас "+
+            "с вашим телом, вы восскресли в знакомом месте...");
     this_player()->eventRevive();
     this_player()->eventMoveLiving(ROOM_START);
     return 1;
 }
 
 int wander(){
-    write("There is a strange, hollow vibration all around you, and you "+
-            "realize that some force is compelling your ethereal form elsewhere..."+
-            "you find yourself in a place that is known to you, yet oddly new.");
+    write("Клокочущий хаос вокруг выталкивает вас отсюда, как будто бы "+
+            "вы здесь совершенно чужой... "+
+            "Вы обнаруживаете себя в знакомом месте, хотя оно выглядит немного по другому.");
     this_player()->eventMoveLiving(ROOM_START);
     return 1;
 }
 
 void heart_beat(){
-    tell_room(this_object(), "A voice whispers: \" You may choose to "+
-            "regenerate into a new body here.\"");
+    tell_room(this_object(), "Голоса шепчут: \" Ты можешь "+
+            "восстановиться здесь в новое тело.\"");
     return;
 }
 
 
 int CanRelease(object ob){
     if(userp(ob) && ob->GetGhost() && environment(ob) == this_object()) {
-        tell_player(ob,"\n%^RED%^Your undead spirit is recalled and as you leave "+
-                "the underworld a new body regenerates around you. "+
-                "You live again!%^RESET%^\n");
+        tell_player(ob,"\n%^RED%^Ваш бессмертный дух призван и вы покидаете "+
+                "мир мертвых, новое тело восстанавливается вокруг вас. "+
+                "Вы снова живы!%^RESET%^\n");
         ob->eventRevive();
     }
     return 1;

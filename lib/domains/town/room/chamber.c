@@ -5,23 +5,23 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("The Healing Chamber");
-    SetLong("This is the work chamber of Clepius the healer. "
-            "This is where he performs medical procedures on "
-            "his customers. A desk in the corner overflows with "
-            "notes and books. The reception and waiting area is "
-            "east of here.");
+    SetShort("Лечебница");
+    SetLong("Это рабочее помещение лекаря Клепиуса. "
+            "Здесь он оказывает медицинские услуги "
+            "клиентам. В углу вы замечаете полный книг и "
+            "свитков шкаф. Приемная лечебницы на "
+            "востоке.");
     SetItems( ([
-                "desk" : "This is where Clepius does "
-                "paperwork and research.",
-                ({"notes","books","notes and books"}) : "These "
-                "are the contents of the doctor's desk.",
-                "corner" : "Location of the desk."
+                "шкаф" : "Здесь Клепиус хранит "
+                "медицинские руководства и справочники.",
+                ({"свитки","книги","книг и свитков"}) : "Это "
+                "содержимое шкафа лекаря Клепиуса.",
+                "угол" : "Здесь находится шкаф."
                 ]) );
     SetExits( ([ 
                 "east" : "/domains/town/room/healer",
                 ]) );
-    SetRead( ({"notes","books","notes and books"}) , "That belongs to Clepius and it's private." ); 
+    SetRead( ({"свитки","книги","книг и свитков"}) , "Они принадлежат Клепиусу и он не разрешает читать их кому попало." ); 
     SetProperty("no attack", 1);
     SetInventory(([
                 "/domains/town/obj/bbucket" :1,
@@ -32,8 +32,8 @@ static void create() {
 }
 int CanReceive(object ob) {
     if(playerp(ob) && !creatorp(ob) && GetProperty("busy") == 1){
-        message("info","The doctor is with a patient right now. Please "+
-                "wait until you are called.",ob);
+        message("info","Лекарь сейчас занят другим пациентом. Пожалуйста, "+
+                "подождите пока он с ним закончит.",ob);
         return 0;
     }
     return 1;

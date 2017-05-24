@@ -26,7 +26,7 @@ int PreExit(mixed arg1, mixed arg2){
     object ob = this_player();
     if(!ob) return 0;
     if(ob->GetPosition() != POSITION_FLYING){
-        write("You are not flying!");
+        write("Вы не летите!");
         return 0;
     }
     return 1;
@@ -45,7 +45,7 @@ varargs static void create(int x, int y) {
     SetClimate("temperate");
     SetAmbientLight(30);
     SetLongAndItems(x, y);
-    SetShort("a flat plain");
+    SetShort("плоская равнина");
     if( x == max_east ) e = "arena/" + (x) + "," + y;
     else e = "arena/" + (x+1) + "," + y;
     if( x == max_west ) w = "arena/" + (x) + "," + y;
@@ -64,7 +64,7 @@ varargs static void create(int x, int y) {
     //SetFlyRoom(__DIR__+fly);
     SetSkyDomain("town");
 
-    SetGoMessage("You can't travel in that direction.");
+    SetGoMessage("Вы не можете переместиться туда.");
     if( n ) AddExit("north", __DIR__ + n);
     if( s ) AddExit("south", __DIR__ + s);
     if( e ) AddExit("east", __DIR__ + e);
@@ -100,8 +100,8 @@ varargs static void create(int x, int y) {
     if(x == 5005 && y == 4999){
         RemoveExit("west");
         AddExit("west","/domains/default/room/wiz_corr_east3");
-        AddItem("sign" , "This is a sign planted on the ground.");
-        SetRead( ({"sign"}) , "Wiz labs west of here.");
+        AddItem("табличка" , "Эта табличка воткнута в землю.");
+        SetRead( ({"табличка"}) , "Лаборатории билдеров к западу отсюда.");
     }
 }
 
@@ -111,38 +111,38 @@ varargs void SetLongAndItems(int x, int y, int z) {
     ::SetLongAndItems(x, y, z);
 
     inv = ([]);
-    str = "You are on a large flat plain, bordered on all sides "
-        "by stone walls, forming a large arena for heavy weapons and "
-        "mounted combat.";
-    if(query_night()) str += " The stars of the night sky glitter overhead.";
-    if(x == max_west && y != max_north) str += " A stone wall prevents further travel west.";
-    if(x == max_east) str += " A stone wall prevents further travel east.";
-    if(y == max_south ) str += " A stone wall prevents further travel south.";
-    if(y == max_north) str += " A stone wall prevents further travel north.";
-    if(x == max_west && y == max_north) str += "\n%^GREEN%^There is a sign here you can read.%^RESET%^";
+    str = "Вы на огромной плоской равнине, окруженной со всех сторон "
+        "каменными стенами. Это похоже на большую арену для схваток между пешими "
+        "и верховыми противниками.";
+    if(query_night()) str += " Звезды ночного неба сверкают над головой.";
+    if(x == max_west && y != max_north) str += " Каменная стена не дает переместиться дальше на запад.";
+    if(x == max_east) str += " Каменная стена не дает переместиться дальше на восток.";
+    if(y == max_south ) str += " Каменная стена не дает переместиться дальше на юг.";
+    if(y == max_north) str += " Каменная стена не дает переместиться дальше на север.";
+    if(x == max_west && y == max_north) str += "\n%^GREEN%^Здесь есть табличка, которую вы можете прочесть.%^RESET%^";
 
-    SetItems( ([ "arena" : "A place of violent death and great destruction.",
+    SetItems( ([ "арена" : "Место насильственной смерти и великого разрушения.",
                 ]) );
 
     if(y == max_north) {
-        AddItem( ({ "rock wall","wall","stone wall"}), 
-                "This vast stone wall prevents further travel north." );
+        AddItem( ({ "каменная стена","стена","огромная стена"}), 
+                "Эта огромная каменная стена препятствует дальнейшему путешествию на север." );
     }
     else if(y == max_south) {
-        AddItem( ({ "rock wall","wall","stone wall"}),
-                "This vast stone wall prevents further travel south." );
+        AddItem( ({ "каменная стена","стена","огромная стена"}),
+                "Эта огромная каменная стена препятствует дальнейшему путешествию на south." );
     }
 
     if(x == max_east) {
-        AddItem( ({ "rock wall","wall","stone wall"}),
-                "This vast stone wall prevents further travel east." );
+        AddItem( ({ "каменная стена","стена","огромная стена"}),
+                "Эта огромная каменная стена препятствует дальнейшему путешествию на east." );
     }
     if(x == max_west) {
-        AddItem( ({ "rock wall","wall","stone wall"}),
-                "This vast stone wall prevents further travel west." );
+        AddItem( ({ "каменная стена","стена","огромная стена"}),
+                "Эта огромная каменная стена препятствует дальнейшему путешествию на west." );
     }
-    AddItem( ({ "walls","rock walls","stone walls" }),
-            "Large walls form the bounds of this killing field." );
+    AddItem( ({ "стены","каменные стены","огромные стены" }),
+            "Большие стены образуют границы этого убийственного поля." );
     SetLong(str);
     SetDayLight(30);
     SetNightLight(30);
