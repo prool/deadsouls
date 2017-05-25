@@ -5,8 +5,8 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Secret Room");
-    SetLong("You are in a small, cramped room.");
+    SetShort("Секретная комната");
+    SetLong("Вы находитесь в маленькой захламленной комнате.");
     SetExits( ([
                 "out" : "/domains/town/room/mansion_mbdroom",
                 "north" : "/domains/town/room/mansion_mbdroom"
