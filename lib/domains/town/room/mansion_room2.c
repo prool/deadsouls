@@ -5,32 +5,32 @@ int found;
 string SearchFun(){
     string result;
     if(found == 0){
-        result="You search the room and find a gold ring!";
+        result="Вы обыскали комнату и нашли золотое кольцо!";
         tell_room(this_object(),this_player()->GetName()+ 
-          " searches the room and finds something ",
+          " обыскал комнату и нашел что-то. ",
           ({ this_player() }) );
         if(!new("/domains/town/armor/newbie_ring")->eventMove(this_player()))
             new("/domains/town/armor/newbie_ring")->eventMove(this_object());
         found = 1;
         return result;
     }
-    return "You find nothing special.";
+    return "Вы не нашли ничего необычного.";
 }
 static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Mansion Guest Room West");
-    SetLong("You are in the west upstairs guest room of the mansion. "
-      "The room is sumptuously appointed and furnished. "
-      "It looks as though nobody has dusted here in a "
-      "very long time. ");
+    SetShort("Гостевая комната, западная часть");
+    SetLong("Вы находитесь в западной части гостевой комнаты особняка. "
+      "Эта комната роскошно обставлена и меблирована. "
+      "Хотя похоже, что здесь уже очень давно никто "
+      "не прибирался. ");
     SetExits( ([
         "east" : "/domains/town/room/mansion_uhall1"
       ]) );
     SetItems( ([ 
-        ({"here","area","place","room"}) : "A guest room in the mansion.",
-        "dust" : "There's some dust here, a bit more than one might expect in such a nice place.",
+        ({"тут","место","помещение","комната"}) : "Вы в гостевой комнате особняка.",
+        "пыль" : "Все здесь покрыто пылью, что несколько неожидано для такого красивого места.",
       ]) );
     SetInventory(([
         "/domains/town/obj/gbed" : 1,
@@ -43,5 +43,5 @@ static void create() {
 }
 void init(){
     ::init();
-    AddSearch( ({"here","area","place","room"})  , (: SearchFun :)  );
+    AddSearch( ({"тут","место","помещение","комната"})  , (: SearchFun :)  );
 }

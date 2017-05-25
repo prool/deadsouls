@@ -5,21 +5,21 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Dining Room");
-    SetLong("This large room is rectangular in shape, "
-            "and evidently is used as a formal "
-            "dining room. Beautiful tapestries and "
-            "paintings decorate the walls, and there "
-            "is a sense of dignified majesty about "
-            "this place.");
+    SetShort("Столовая");
+    SetLong("Эта огромная комната имеет прямоугольную форму "
+            "и используется, вероятно, для званых "
+            "ужинов и обедов. "
+            "Стены здесь украшены красивыми картинами и гобеленами, "
+            "создающими величественную обстановку "
+            "этого места.");
     SetItems( ([
-                ({"tapestry","tapestries"}) : "Fascinating "
-                "tapestries here apear to document the conquest "
-                "of Anglia by a Norman king.",
-                ({"painting","paintings"}) : "These are "
-                "extraordinary oil portraits of renaissance "
-                "nobility, and they are rendered with an "
-                "eerily lifelike realism.",
+                ({"гобелен","гобелены"}) : "На гобеленах "
+                "изображены сцены из жизни древних королей "
+                "и их завоеваний.",
+                ({"картина","картины"}) : "Вы видите "
+                "восхитительные и очень реалистичные картины, "
+                "на которых изображены знатные господа. "
+                "Они написаны маслянными красками.",
                 ]) );
     SetInventory( ([ 
                 "/domains/town/obj/dining_table" : 1,

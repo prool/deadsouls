@@ -6,9 +6,9 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Secret Chamber");
-    SetLong("You are in a secret underground chamber beneath the "
-            "mansion.");
+    SetShort("Секретная комната");
+    SetLong("Вы находитесь в секретной подземной палате под "
+            "особняком.");
     SetExits( ([
                 "up" : "/domains/town/room/mansion_room9"
                 ]) );
@@ -25,14 +25,14 @@ void init(){
 int CheckQuest(object ob){
     string *quests;
     quests = ob->GetQuests();
-    if(!ob->GetQuest("Newbie Mansion Chamber Quest")){
-        ob->AddQuest("the Finder of Hidden Chambers","Newbie Mansion Chamber Quest");
-        write("%^BOLD%^%^RED%^\n\nCONGRATULATIONS!\n%^RESET%^");
-        write("%^BOLD%^%^RED%^You have solved the secret quest of the "+
-                "Hidden Mansion Chamber. You have "+
-                "earned 2 quest points, and 1500 experience "+
-                "points. Nice job!\n\n%^RESET%^");
-        say(this_player()->GetName()+" solves newbie quest 1.");
+    if(!ob->GetQuest("Простое задание в секретной комнате")){
+        ob->AddQuest("Поиск скрытых комнат","Простое задание в секретной комнате");
+        write("%^BOLD%^%^RED%^\n\nПОЗДРАВЛЕНИЯ!\n%^RESET%^");
+        write("%^BOLD%^%^RED%^Вы разгадали секретный квест в "+
+                "секретной комнате. Вы получили "+
+                "2 quest points и 1500 очков опыта. "+
+                "Отличная работа!\n\n%^RESET%^");
+        say(this_player()->GetName()+" разгадал секретное задание 1.");
         ob->AddQuestPoints(2);
         ob->AddExperiencePoints(1500);
         return 1;
