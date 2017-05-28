@@ -5,11 +5,10 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Servants' Quarters");
-    SetLong("You are in the spartan quarters of the on-duty "
-      "staff. From the lack of personalization, "
-      "it seems that the servants probably rotate "
-      "after-hours duty.");
+    SetShort("Комната прислуги");
+    SetLong("В этой комнате царит спартанская пустота. "
+      "Видимо прислуга сменялась каждые несколько часов "
+      "и подолгу тут не задерживалась.");
     SetInventory( ([
         "/domains/town/obj/cot" :1,
       ]) );
