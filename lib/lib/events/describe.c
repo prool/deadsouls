@@ -14,6 +14,8 @@ void eventDescribeEnvironment(int brief){
     string *shorts;
     string altern_obvious = "";
 
+/* write("prool debug lbl #1"); */
+
     if(!(env = environment(this_object()))){
         this_object()->eventPrint("You are nowhere.", MSG_ROOMDESC);
         return;
@@ -48,6 +50,7 @@ void eventDescribeEnvironment(int brief){
     }
     if( !brief ){
         if( i == VISION_CLEAR ){
+    	    /*write("prool debug lbl #2"); */
             desc = env->GetObviousExits() || "";
             if(desc && desc != "" && !(env->GetNoObviousExits()))
                 desc = capitalize(env->GetShort() || "")
@@ -56,9 +59,10 @@ void eventDescribeEnvironment(int brief){
             if(!NM_STYLE_EXITS){
                 desc = capitalize(env->GetShort()+"\n" || "\n");
                 if(!(env->GetNoObviousExits())){
-                    altern_obvious = "Obvious exit$Q: "+env->GetObviousExits() || "none";
+                    altern_obvious = "Выходы$Q: "+env->GetObviousExits() || "none";
                 }
             }
+        /* write("prool debug lbl #3"); */
         }
         else desc = "\n";
         if( i == VISION_CLEAR || i == VISION_LIGHT || i == VISION_DIM ){
@@ -74,6 +78,7 @@ void eventDescribeEnvironment(int brief){
             }
 #endif
             desc += env->GetLong();
+            /*write("prooldebug lbl #4"); */
         }
         if(functionp(tmp = env->GetSmell("default")))
             tmp = (*tmp)("default");
@@ -94,7 +99,7 @@ void eventDescribeEnvironment(int brief){
                     desc += " [" + tmp + "]";
                 else desc += "\n";
             }
-            else altern_obvious = "Obvious exits: "+env->GetObviousExits() || "none";
+            else altern_obvious = "Выходы: "+env->GetObviousExits() || "none";
         }
         else desc = "\n";
     }
@@ -118,10 +123,12 @@ void eventDescribeEnvironment(int brief){
                     return 0;
                     if(ob->GetDoor() && load_object(ob->GetDoor())->GetHiddenDoor()) return 0;
                     if( ob->isFreshCorpse() ) return 0;
+			/*write ("[===]");*/ /* prool */
                     return 1;
                     }), (: $1->GetShort() :));
         foreach(string s in shorts){
             if( s ){
+		/* write(s); */ /* prool */
                 lying[s]++;
             }
         }
@@ -129,6 +136,8 @@ void eventDescribeEnvironment(int brief){
             string key = replace_string(shorts[i],"%^RESET%^",
                     "%^RESET%^MAGENTA%^");
             int val = lying[shorts[i]];
+
+		/*write(shorts[i]);*/ /* prool */
 
             if( val < 2 ){
                 if( !desc ) desc = "%^MAGENTA%^" +
@@ -156,7 +165,7 @@ void eventDescribeEnvironment(int brief){
                 }
             }
             else desc += ", ";
-        }
+        } /* end for */
     }
     i = this_object()->GetEffectiveVision(env);
     if( i == VISION_CLEAR || i == VISION_LIGHT || i == VISION_DIM ){
