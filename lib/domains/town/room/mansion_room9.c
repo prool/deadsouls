@@ -3,9 +3,9 @@ inherit LIB_ROOM;
 
 int revealed;
 int PreExit(){
-    object ob = present("thief in a bathtowel",this_object());
+    object ob = present("вор в полотенце",this_object());
     if(ob && base_name(ob) != "/lib/std/corpse"){
-        write("The wet thief bars your way!");
+        write("Что-то преградило вам дорогу!");
         return 0;
     }
     return 1;
@@ -14,15 +14,15 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Sitting Room");
-    SetLong("You are in a luxurious sitting room, decorated "
-            "and furnished with the same excellent taste and "
-            "attention to detail as the rest of the "
-            "mansion.");
+    SetShort("Гостиная");
+    SetLong("Вы находитесь в роскошной гостиной, украшенной  "
+            "и обставленной с таким же отличным вкусом и вниманием  "
+            "к деталям, как и остальная часть "
+            "особняка.");
     SetItems( ([
-                ({"furniture","furnishings","decorations"}) :
-                "You see evidence of a refined aesthetic "
-                "sensibility."
+                ({"мебель","обстановка","украшения"}) :
+                "Тут все свидетельствует об утонченном "
+                "эстетическом чувстве."
                 ]) );
     SetExits( ([
                 "west" : "/domains/town/room/mansion_int.c",
@@ -39,12 +39,12 @@ int TellRevealed(){
 }
 int RevealDoor(){
     if(revealed == 1) {
-        tell_room(this_object(),"The trapdoor is already visible.");	
+        tell_room(this_object(),"Потайная дверь уже видна.");	
         return 1;
     }
     revealed = 1;
 
-    tell_room(this_object(),"A trapdoor is revealed!");
+    tell_room(this_object(),"Вы обнаружили потайную дверь!");
     AddExit("down","/domains/town/room/mansion_room12", (: PreExit :));
     SetDoor("down","/domains/town/doors/trapdoor");
     return 1;

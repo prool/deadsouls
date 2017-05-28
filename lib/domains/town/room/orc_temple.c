@@ -5,24 +5,24 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(15);
-    SetShort("The Orc Fortress");
-    SetLong("You are deep in the orc stronghold. Like the rest of the fortress you have seen, this looks hastily put together and rather clumsily built, with poor maintenance besides. This is some kind of ceremonial chamber or temple. Dried blood surrounds a raised altar, and skulls of various types adorn the walls. The rest of the fort is east of here.");
+    SetShort("Орочья крепость");
+    SetLong("Вы находитесь внутри орочьей крепости. Все вокруг выглядит очень грубо и устрашающе. В этой части крепости находится что-то вроде храма или святилища. В центре помещения стоит окровавленный алтарь, а у стен вы видите груды черепов. Выход отсюда находится на востоке.");
     SetItems(([
-                ({ "skull","skulls" }) : "You see some skulls whose race you "+
-                "recognize, but most you don't. There is at least one "+
-                "human skull here. Some of them are so fresh they are "+
-                "still wet and have tissue hanging from them.",
-                ({"chamber","ceremonial chamber","temple"}) : "A place "+
-                "where orcish rituals are performed.",
-                ({"blood","dried blood"}) : "Evidently the ground around "+
-                "the altar has collected blood from whatever happens on "+
-                "the altar.",
-                ({"wall","walls"}) : "Rough-hewn walls of earth and wood.",
+                ({ "череп","черепа" }) : "Некоторые черепа вам известны, "+
+                "но большинство из них принадлежало непонятно кому. "+
+                "Здесь есть как минимум один человеческий череп. Некоторые из "+
+                "них совсем свежие, на них видны клочья кожи..",
+                ({"святилище","церемониальная","храм"}) : "Здесь "+
+                "проводятся орочьи ритуалы.",
+                ({"кровь","окровавленный"}) : "Вокруг алтаря заметны "+
+                "пятна высохшей крови. Видимо здесь орки проводят обряды "+
+                "жертвоприношения.",
+                ({"стена","стены"}) : "Стены сложены из неотесанного дерева, а зазоры между ними замазаны землей.",
                 ]) );
     SetExits( ([ 
                 "east" : "/domains/town/room/orc_fortress",
                 ]) );
-    SetSmell( ([ "default" : "The stench of garbage and animal waste hangs here."]) );
+    SetSmell( ([ "default" : "Здесь витает зловоние мусора и экскрементов животных."]) );
     SetInventory(([
                 "/domains/town/obj/altar" : 1,
                 "/domains/town/npc/orc_shaman" : 1,

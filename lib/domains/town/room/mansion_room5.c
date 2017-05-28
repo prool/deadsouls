@@ -5,12 +5,12 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("The Study");
-    SetLong("You are in the study of the master of the house. "+
-      "This room is a shambles! It appears to have "+
-      "been ransacked in great haste. If there "+
-      "ever was anything of value here, it's "+
-      "probably long gone.");
+    SetShort("Кабинет");
+    SetLong("Вы зашли в кабинет хозяина особняка. "+
+      "Здесь царит страшный беспорядок. Кажется, что "+
+      "эту комнату разграбили в большой спешке. "+
+      "Если тут и было что-нибудь ценное, то теперь "+
+      "тут этого нет.");
     SetExits( ([
         "west" : "/domains/town/room/mansion_uhall3"
       ]) );
