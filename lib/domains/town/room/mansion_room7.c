@@ -5,10 +5,10 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("kitchen");
-    SetLong("This is a very large kitchen designed to "
-            "accommodate dozens of cooks. It looks like nobody "
-            "has prepared a meal here in quite some time.");
+    SetShort("Кухня");
+    SetLong("Вы находитесь в очень большой кухне, в которой "
+            "с легкостью поместится дюжина поваров. Но, похоже, "
+            "что еду готовили тут уже очень давно.");
     SetExits( ([
                 "west" : "/domains/town/room/mansion_dhall2.c",
                 ]) );

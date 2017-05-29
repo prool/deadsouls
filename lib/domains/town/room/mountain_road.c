@@ -6,15 +6,15 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("Fort Road");
-    SetNightLong("You are on a road at the northern edge of the village. To the south is the heart of the town. The First Village Bank stands here on the east side of the road. To the west is the post office.");
-    SetDayLong("You are on a road running north and south. To the south is the heart of the town. To the north the road runs along a narrow ridge, leading up to what looks like a fortress. The First Village Bank stands here on the east side of the road. To the west is the post office.");
+    SetShort("Дорога к крепости");
+    SetNightLong("Вы находитесь на дороге, ведущей на север от города. На востоке вы видите вывеску местного банка, а на западе здание почты.");
+    SetDayLong("Вы находитесь на дороге, ведущей на север от города к мрачной крепости. На востоке вы видите вывеску местного банка, а на западе здание почты.");
     SetItems( ([
-        ({"rubble","stone","stones","road"}) : "Looks like "
-        "the road is still being built. Further travel north "
-        "is impossible.",
-        ({"mountains","beautiful","snow-capped mountains"}) : "Beautiful "
-        "mountains, far off in the northern distance."
+        ({"дорога"}) : "Похоже, что "
+        "дорога еще не достроена. Дальнейшее путешествие на север "
+        "невозможно.",
+        ({"горы","гора"}) : "Горизонт на севере "
+        "закрывают величественные горы со снежными шапками."
       ]) );
     SetSkyDomain("town");
     SetExits( ([

@@ -6,13 +6,13 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Mansion Master Bedroom");
-    SetLong("You are in the master bedroom. The decor here is "
-      "beautiful, ornate, and extravagant. It is obvious that "
-      "the people who live here are rich and possess great "
-      "taste. ");
+    SetShort("Спальня владельца особняка");
+    SetLong("Вы зашли в спальню владельца особняка. "
+      "Декор здесь красивый, богато украшенный и экстравагантный. "
+      "Очевидно, что живущие здесь люди очень богаты и обладают отличным "
+      "вкусом. ");
     SetItems( ([
-        "decor" : "Impressive, ornate, and beautiful.",
+        "декор" : "Впечатляющий, богато украшенный и изысканный.",
       ]) );
     SetInventory( ([
         "/domains/town/obj/bed" : 1,
@@ -29,12 +29,12 @@ static void create() {
 int OpenPassage(){
     string desc;
     if(open == 1) return 1;
-    tell_room(environment(this_player()),"A secret passageway is revealed!");
+    tell_room(environment(this_player()),"Открылся секретный проход!");
     open = 1;
     desc = GetLong();
-    desc += "\n%^MAGENTA%^There is a newly-opened secret passageway here. %^RESET%^";
+    desc += "\n%^MAGENTA%^Здесь находится недавно открытый секретный проход. %^RESET%^";
     SetLong(desc);
-    AddItem(({"secret passageway","passageway"}) , "A passageway you can enter.");
+    AddItem(({"секретный проход","проход"}) , "Этот проход куда-то ведет.");
     SetEnters(([ 
         "passageway" : "/domains/town/room/mansion_room11",
         "secret passageway" : "/domains/town/room/mansion_room11"

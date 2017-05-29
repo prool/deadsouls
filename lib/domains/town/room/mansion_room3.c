@@ -5,14 +5,14 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Upstairs Bathroom");
-    SetLong("You are in a bathroom. It is rather ordinary, "
-      "for such a grand mansion, but it appears "
-      "quite functional and mostly clean. There is "
-      "a shower stall here you can enter.");
+    SetShort("Верхняя ванная");
+    SetLong("Вы зашли в ванную комнату. Она выглядит слишком, "
+      "обычной для такого шикарного особняка, но кажется "
+      "чистой и исправной. Здесь есть также "
+      "душевая кабинка.");
     SetItems( ([
-        ({"stall","shower stall","shower" })  : "A shower stall.",
-        ({"sink","bathroom sink" })  : "An ordinary sink.",
+        ({"кабинка","душевая кабинка","душ" })  : "Самая обычная душевая кабинка.",
+        ({"раковина","умывальник" })  : "Здесь умываются.",
       ]) );
     SetExits( ([
         "west" : "/domains/town/room/mansion_uhall2"
@@ -22,9 +22,9 @@ static void create() {
         "/domains/town/obj/mat" : 1
       ]) );
     SetEnters( ([
-        "stall" : "/domains/town/room/shower",
-        "shower stall" : "/domains/town/room/shower",
-        "shower" : "/domains/town/room/shower"
+        "кабинка" : "/domains/town/room/shower",
+        "душевая кабинка" : "/domains/town/room/shower",
+        "душ" : "/domains/town/room/shower"
       ]) );
 
     SetDoor("west", "/domains/town/doors/m3.c");

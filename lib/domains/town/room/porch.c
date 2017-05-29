@@ -5,14 +5,14 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("front porch");
-    SetLong("This is the rickety front porch of an old house. The front door is south. To the north is a clearing in the woods, and a path leading away.");
+    SetShort("У крыльца");
+    SetLong("Вы видите шаткое крыльцо старого дома и дверь внутрь на юге. На севере, напротив дома поляна в лесу и тропинка, ведущая вглубь леса.");
     SetItems(([
-                ({ "forest", "wood", "vegetation" }) : "All around is vegetation growing so incredibly dense that it is impossible to wander off the path.",
-                ({ "porch", "front porch" }) : "The wooden front porch of an old white house.",
-                ({ "trail", "path" }) : "To the north, a narrow path leads into the woods.",
-                ({ "clearing", "woods" }) : "As if by powerful magic, the woods clear here, where the house stands.",
-                ({ "house", "white house", "old house" }) : "The house looks weatherbeaten, ill maintained, and rather old. Its construction is of an archaic design no longer used. Despite its abused appearance, the house seems to have a quiet dignity about it, as if many people had been its friends over the years, and it simply waited for their return.",
+                ({ "лес", "деревья", "растительность" }) : "Растительность вокруг такая плотная, что невозможно сойти с тропы.",
+                ({ "крыльцо", "шаткое крыльцо" }) : "Это деревянное крыльцо старого белого дома.",
+                ({ "тропа", "путь" }) : "На севере вы видите тропу ведущую в глубь леса.",
+                ({ "поляна", "просвет" }) : "Словно по волшебству деревья здесь раступились около дома.",
+                ({ "дом", "белый дом", "старый дом" }) : "Дом выглядит заброшенным и очень старым, но вас все-равно не покидает ощущение, что его хозяева вот-вот готовы вернуться.",
                 ]));
     SetInventory(([
                 "/domains/town/obj/rocking_chair" : 2,
