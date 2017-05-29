@@ -21,13 +21,13 @@ static void create(){
     Doors = ([]);
     Obvious = "";
     Dir = "/" + implode(explode(file_name(), "/")[0..<2], "/");
-    GoMessage = "You go nowhere at all.\n";
-    EnterMessage = "You can't enter that!\n";
+    GoMessage = "Вы никуда не переместились\n";
+    EnterMessage = "Вы не можете туда войти!\n";
 }
 
 mixed CanGo(object who, string str){
     int noclip;
-    if( who->GetParalyzed() ) return "You are unable to move.";
+    if( who->GetParalyzed() ) return "Вы не можете двигаться";
     noclip = who->GetProperty("noclip");
     if( !noclip && !Exits[str] && str != "up" && str != "down" &&
             !(sizeof(this_object()->GetFlyRoom())) &&
@@ -41,7 +41,7 @@ mixed eventGo(object who, string str){
     int noclip = who->GetProperty("noclip");
     if(query_verb() == "go" && interactive(who) && !noclip){	
         if( who->GetPosition() != POSITION_STANDING ){  
-            write("You are not standing.");
+            write("Вы не стоите");
             switch(who->GetPosition()){
                 case POSITION_LYING : write("Try: crawl "+str);break; 
                 case POSITION_SITTING : write("Try: crawl "+str);break; 
@@ -99,7 +99,7 @@ mixed eventGo(object who, string str){
             return 1;
         }
         if(!noclip){ 
-            write("You can't go that way.");
+            write("Вы не можете двигаться в этом направлении");
             return 0;
         }
     }

@@ -5,7 +5,7 @@ inherit LIB_ROOM;
 
 string LongDesc(){
     string desc = "Пустая комната с белыми стенами\nНа одной из стен написано Это 2-я комната, созданная Прулём\n";
-	desc += "Имя файла этой комнаты написано кириллицей в кодировке UTF-8";
+	desc += "Имя файла этой комнаты и описание написано кириллицей в кодировке UTF-8";
     return desc;
 }
 
@@ -19,10 +19,13 @@ static void create() {
     SetProperty("no attack", 1);
     SetProperty("nopeer",1);
     SetInventory(([
-			"/obj/meal" : 1
+			"/obj/meal2" : 1
 		]));
     SetExits( ([
                 "east" : "/domains/default/room/wiz_hall_prool",
+                "восток" : "/domains/default/room/wiz_hall_prool",
+		"west" : "/prool/rooms/r0",
+		"запад" : "/prool/rooms/r0"
                 ]) );
 }
 
