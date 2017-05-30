@@ -7,9 +7,9 @@ void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(0);
-    SetShort("the secret stash");
-    SetLong("This appears to be a secret room for saving valuables. The "+
-            "master bedroom is west.");
+    SetShort("Секретный тайник");
+    SetLong("Кажется, это секретная комната для сохранения переменных. "+
+            "Главная спальня находится на западе.");
     SetExits( ([ "west" : "/domains/town/room/mansion_mbdroom" ]) );
     SetNoClean(1);
     SetPersistent(1);

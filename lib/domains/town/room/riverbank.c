@@ -6,8 +6,8 @@ static void create() {
     SetTown("town");
     SetClimate("temperate");
     SetAmbientLight(30);
-    SetShort("riverbank");
-    SetLong("This is the bank of a narrow but swift-moving river. A steep path leads back up to the bridge. There is a cave in the steep east wall of the riverbank.");
+    SetShort("Берег реки");
+    SetLong("Вы на берегу узкой, но стремительно бегущей реки. Крутой путь наверх ведет к мосту. А, в отвесной восточной стене берега вы замечаете вход в пещеру.");
     SetProperties (([
                 "no attack":0, 
                 "no bump":0, 
@@ -16,8 +16,8 @@ static void create() {
                 "no paralyze":0, 
                 "no teleport":0]));
     SetListen(([
-                ({ "river", "water" }) : "You hear it rushing by.",
-                "default" : "You can hear the roar of the river rushing by.",
+                ({ "река", "вода" }) : "Вы слышите, как она проносится мимо.",
+                "default" : "Вы можете услышать рев реки, текущей мимо.",
                 ]));
     SetInventory(([
                 "/domains/town/npc/troll" : 1,

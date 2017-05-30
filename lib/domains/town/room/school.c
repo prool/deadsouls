@@ -6,8 +6,8 @@ static void create() {
     SetTown("town");
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Village Schoolhouse");
-    SetLong("This simple, one-room schoolhouse is not especially large but it is clean, well-maintained, and clearly an important part of village life. People come here to be taught, mostly languages, by traveling teachers and guest lecturers.");
+    SetShort("Школа");
+    SetLong("Вы зашли небольшое однокомнатное здание, играющее важную роль в жизни небольшого города. Заинтересованные люди приходят сюда узнавать новое у странствующих учителей и ученых, когда те появляются в городе.");
     SetProperties (([
                 "no attack":1, 
                 "no bump":1, 

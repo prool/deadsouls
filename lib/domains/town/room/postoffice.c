@@ -10,20 +10,19 @@ static void create(){
     SetTown("Town");
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("the town post office");
-    SetLong("This is a small office containing rows of mailboxes and "+
-            "various other postal implements. There is a sign on the wall behind the "+
-            "counter, outlining instructions for how to mail other users. "+
-            "Fort road is east of here.");
+    SetShort("Почтовое отделение");
+    SetLong("Вы зашли в небольшой офис с рядами почтовых ящиков и других почтовых принадлежностей. "+
+            "На стенде за прилавком висит табличка с инструкцией, как отправлять сообщения другим игрокам. "+
+            "Единственный выход на востоке ведет к дороге к крепости.");
     SetItems( ([ 
-                ({"box","boxes","mailboxes","mailbox"}) : "Rows of mailboxes for "+
-                "the denizens of Frontiers.",
-                "sign" : "This is a sign on the wall describing how to mail messages.",
-                ({"wall","walls"}) : "Gray-painted institutional walls of the kind you'd "+
-                "expect in a post office.",
-                "implements" : "Ink, paper, etc.",
-                "instructions" : "Try reading them.",
-                "counter" : "A counter folks use to lean on while writing messages." ]) );
+                ({"ящик","ящики","почтовый ящик","почтовые ящики"}) : "Вы видите ряды почтовых ящиков "+
+                "расставленных по алфавиту.",
+                "табличка" : "На этой табличке объяснено, как отправить сообщение другому игроку.",
+                ({"стена","стены"}) : "Стены здесь выкрашены скучной серой краской, "+
+                "что, впрочем, не удивительно.",
+                "принадлежности" : "Чернила, бумаги и так далее.",
+                "инструкции" : "Попытайтесь прочитать их.",
+                "счетчик" : "Счетчик ставится автоматически при создании письма." ]) );
     SetExits( ([
                 "east" : "/domains/town/room/mountain_road.c",
                 ]) );
@@ -31,33 +30,33 @@ static void create(){
 }
 void init(){
     ::init();
-    add_action("instr","read");
+    add_action("instr","читать");
 }
 int instr(string str){
-    if(str=="instructions"||str=="sign"){
-        write("To mail someone, type mail <person's name here>.\n"+
-                "Enter a subject line.\n"+
-                "Enter your message.\n"+
-                "Once you've finished, enter a period (.) on a blank line.\n"+
-                "Hit x, then s to send it. You're done!\n");
+    if(str=="инструкцию"||str=="табличку"){
+        write("Чтобы написать кому-нибудь, наберите mail <имя персонажа>.\n"+
+                "Введите тему сообщения.\n"+
+                "Наберите ваше сообщение.\n"+
+                "Когда закончите, введите точку (.) в новой строчке.\n"+
+                "Наберите x, затем s чтобы отправить его. Задача выполнена!\n");
         return 1;
     }
 }
 mixed CanMail(object who, string args) {
     if( !interactive(who) ) return 0;
     if( GetTown() != who->GetTown() )
-        return "Any mail you might have will be at your home post office.";
+        return "Любая полученная вами почта будет в вашем домашнем почтовом отделении.";
     return 1;
 }
 mixed eventMail(object who, string args) {
     object ob;
 
     if( !(ob = new(OBJ_POST)) ) {
-        who->eventPrint("Failed to load postal object!");
+        who->eventPrint("Не удалось найти объект назначения!");
         return 1;
     }
     if( !(ob->eventMove(who)) ) {
-        who->eventPrint("You can't seem to carry the postal object.");
+        who->eventPrint("Вы кажется не можете нести письмо.");
         return 1;
     }
     ob->start_post(args);

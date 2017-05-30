@@ -5,21 +5,20 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("North Saquivor Road");
-    SetNightLong("Illuminated by lamplight here is Saquivor road, leading north-south through the village. To the east is the village pub, the legendary watering hole used by thousands of rogues, paladins, and everyone in between. The Healers' Guild is west. To the south is a major intersection. The road continues north into the gloom.");
-    SetDayLong("You are on Saquivor road, leading north-south through the village. To the east is the village pub, the legendary watering hole used by thousands of rogues, paladins, and everyone in between. The Healers' Guild is west, and to the north you can see a road leading up to the plateau where the Fortress on the Frontiers stands. To the south is a major intersection.");
+    SetShort("Северная дорога");
+    SetNightLong("Освещенная лампами дорога тянется через город с юга с центрального перекрестка на север во мрак. На востоке находится местный бар - пристанище сотен воров и авантюристов. На западе вы видите вывеску гильдии целителей.");
+    SetDayLong("Эта дорога тянется через весь город с юга с центрального перекрестка на север к плато с огромной крепостью. На востоке находится местный бар - пристанище сотен воров и авантюристов. На западе вы видите вывеску гильдии целителей.");
     SetItems( ([
-        ({"pub","tavern","village pub"}) : "The is the town's "
-        "legendary watering hole, where refreshments are served "
-        "and tall tales are swapped.",
-        ({"guild","healers guild"}) : "In this building is "
-        "the office of the only doctor in town.",
-        "clouds" : "Little puffy clouds surround the "
-        "peaks of the northern mountains.",
-        ({"northern mountains","mountains","range","mountain range"}): 
-        "Majestic mountains are far to the north, seeming "
-        "almost purple from here.",
-        "intersection" : "The main town crossroads is south."
+        ({"бар","таверна","пивная"}) : "Здесь можно "
+        "упиться насмерть.",
+        ({"гильдия","гильдия целителей"}) : "В этом здании "
+        "находится единственный лекарь в городе.",
+        "облака" : "Маленькие пухлые облака "
+        "окружают пики северных гор.",
+        ({"северные горы","горы","гора","горная цепь"}): 
+        "Вы видите величественные горы далеко на севере, "
+        "со сверкающими снежными шапками.",
+        "перекресток" : "Центральный перекресток города находится на юге."
       ]) );
     SetSkyDomain("town");
     SetInventory(([
