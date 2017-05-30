@@ -6,15 +6,15 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("West Village road");
-    SetDayLong("This is a well-traveled road, leading east into town and west away from it. The town church is north.");
+    SetShort("Западная дорога");
+    SetDayLong("Вы находитесь на оживленной дороге ведущей из города с востока на запад. На севере вы видите здание церкви.");
     SetSkyDomain("town");
     SetExits( ([ 
         "north" : "/domains/town/room/church",
         "east" : "/domains/town/room/start",
         "west" : "/domains/town/room/road2",
       ]) );
-    SetNightLong("This is a well-traveled road, illuminated by a lamp light. It leads east into town and west away from it. The town church is north.");
+    SetNightLong("Вы находитесь на освещенной лампами дороге ведущей из города с востока на запад. На севере вы видите здание церкви.");
     AddTerrainType(T_ROAD);
     AddItem(new("/domains/town/obj/lamp"));
 }
