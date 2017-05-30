@@ -17,14 +17,14 @@ void eventDescribeEnvironment(int brief){
 /* write("prool debug lbl #1"); */
 
     if(!(env = environment(this_object()))){
-        this_object()->eventPrint("Вы находитесь нигде", MSG_ROOMDESC);
+        this_object()->eventPrint("Вы находитесь нигде.", MSG_ROOMDESC);
         return;
     }
 
     if(env->GetMount() || base_name(env) == LIB_CORPSE){ 
         env = environment(environment(this_player()));
         if(!env){
-            this_object()->eventPrint("У тебя серьезные проблемы, чувак. Звони Доктору");
+            this_object()->eventPrint("У тебя серьезные проблемы, чувак. Звони Доктору.");
             return;
         }
         i = this_object()->GetEffectiveVision(env); 
@@ -33,19 +33,19 @@ void eventDescribeEnvironment(int brief){
     else i =  this_object()->GetEffectiveVision();
     switch( i ){
         case VISION_BLIND:
-            this_object()->eventPrint("Вы слепы и ничего не видите");
+            this_object()->eventPrint("Вы слепы и ничего не видите.");
             break;
         case VISION_TOO_DARK:
-            this_object()->eventPrint("Тут слишком темно");
+            this_object()->eventPrint("Тут слишком темно.");
             break;
         case VISION_DARK:
-            this_object()->eventPrint("Тут темно");
+            this_object()->eventPrint("Тут темно.");
             break;
         case VISION_TOO_BRIGHT:
-            this_object()->eventPrint("Тут слишком ярко, чтобы что-то разглядеть: глаза слепит");
+            this_object()->eventPrint("Тут слишком ярко, чтобы что-то разглядеть: глаза слепит.");
             break;
         case VISION_BRIGHT:
-            this_object()->eventPrint("Тут слишком ярко, чтобы что-то разглядеть");
+            this_object()->eventPrint("Тут слишком ярко, чтобы что-то разглядеть.");
             break;
     }
     if( !brief ){

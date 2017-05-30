@@ -21,13 +21,13 @@ static void create(){
     Doors = ([]);
     Obvious = "";
     Dir = "/" + implode(explode(file_name(), "/")[0..<2], "/");
-    GoMessage = "Вы никуда не переместились\n";
+    GoMessage = "Вы никуда не переместились.\n";
     EnterMessage = "Вы не можете туда войти!\n";
 }
 
 mixed CanGo(object who, string str){
     int noclip;
-    if( who->GetParalyzed() ) return "Вы не можете двигаться";
+    if( who->GetParalyzed() ) return "Вы не можете двигаться.";
     noclip = who->GetProperty("noclip");
     if( !noclip && !Exits[str] && str != "up" && str != "down" &&
             !(sizeof(this_object()->GetFlyRoom())) &&
@@ -99,7 +99,7 @@ mixed eventGo(object who, string str){
             return 1;
         }
         if(!noclip){ 
-            write("Вы не можете двигаться в этом направлении");
+            write("Вы не можете двигаться в этом направлении.");
             return 0;
         }
     }
