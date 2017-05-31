@@ -106,7 +106,7 @@ void eventDescribeEnvironment(int brief){
     if( desc ) this_object()->eventPrint(desc, MSG_ROOMDESC);
     if(sizeof(altern_obvious)){
         int quant = sizeof(env->GetExits()) + sizeof(env->GetEnters());
-        if(quant > 1) altern_obvious = replace_string(altern_obvious,"$Q","s");
+        if(quant > 1) altern_obvious = replace_string(altern_obvious,"$Q",""); // prool: я удалил s из последней строки
         else altern_obvious = replace_string(altern_obvious,"$Q","");
         this_object()->eventPrint(altern_obvious,MSG_ROOMDESC);
     }
@@ -153,15 +153,15 @@ void eventDescribeEnvironment(int brief){
             }
             if( i == maxi - 1 ){
                 if( maxi > 1 || val >1 )
-                    desc += " are here.%^RESET%^\n";
-                else desc += " is here.%^RESET%^\n";
+                    desc += " лежат здесь.%^RESET%^\n";
+                else desc += " лежит здесь.%^RESET%^\n";
             }
             else if( i == maxi - 2 ){
                 if( maxi == 2 ){
-                    desc += " and ";
+                    desc += " и ";
                 }
                 else {
-                    desc += ", and ";
+                    desc += ", и ";
                 }
             }
             else desc += ", ";
@@ -289,44 +289,44 @@ void eventDescribeEnvironment(int brief){
                 sscanf(key,"%sBEGIN%*s",key);
             }
             if( val<2 )
-                desc += capitalize(key) + "%^RESET%^ is standing here.";
+                desc += capitalize(key) + "%^RESET%^ стоит здесь.";
             else desc += capitalize(consolidate(val, key)) +
-                "%^RESET%^ are standing here.";
+                "%^RESET%^ стоят здесь.";
             desc += "\n";
         }
         foreach(key, val in flying){
             if( val<2 )
-                desc += capitalize(key) + "%^RESET%^ is hovering here.";
+                desc += capitalize(key) + "%^RESET%^ летает здесь.";
             else desc += capitalize(consolidate(val, key)) +
-                "%^RESET%^ are hovering here.";
+                "%^RESET%^ летают здесь.";
             desc += "\n";
         }
         foreach(key, val in floating){
             if( val<2 )
-                desc += capitalize(key) + "%^RESET%^ is floating here.";
+                desc += capitalize(key) + "%^RESET%^ плавает здесь.";
             else desc += capitalize(consolidate(val, key)) +
-                "%^RESET%^ are floating here.";
+                "%^RESET%^ плавают здесь.";
             desc += "\n";
         }
         foreach(key, val in swimming){
             if( val<2 )
-                desc += capitalize(key) + "%^RESET%^ is swimming here.";
+                desc += capitalize(key) + "%^RESET%^ плывет здесь.";
             else desc += capitalize(consolidate(val, key)) +
-                "%^RESET%^ are swimming here.";
+                "%^RESET%^ плывут здесь.";
             desc += "\n";
         }
         foreach(key, val in kneeling){
             if( val<2 )
-                desc += capitalize(key) + "%^RESET%^ is kneeling here.";
+                desc += capitalize(key) + "%^RESET%^ сидит на корточках здесь.";
             else desc += capitalize(consolidate(val, key)) +
-                "%^RESET%^ are kneeling here.";
+                "%^RESET%^ сидят на корточках здесь.";
             desc += "\n";
         }
         foreach(key, val in null){
             if( val<2 )
-                desc += capitalize(key) + "%^RESET%^ is here.";
+                desc += capitalize(key) + "%^RESET%^ находится здесь.";
             else desc += capitalize(consolidate(val, key)) +
-                "%^RESET%^ are here.";
+                "%^RESET%^ находятся здесь.";
             desc += "\n";
         }
     }

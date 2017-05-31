@@ -38,7 +38,7 @@ mixed GoHome(string str) {
         return "\nYour workroom is broken.";
     }
     if(ob == prev)
-        return "You twitch.";
+        return "Ты подпрыгнул на месте.";
     if(who == this_player()->GetKeyName())
         if( this_player()->eventMoveLiving(ob,"$N goes home.","$N returns home.") ) {
             return 1;

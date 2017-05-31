@@ -17,12 +17,14 @@ static void create() {
     SetLong( (: LongDesc :) );
     SetProperty("no attack", 1);
     SetProperty("nopeer",1);
+    SetInventory(([
+			"/prool/objs/book" : 1
+		]));
     SetExits( ([
                 "east" : "/prool/rooms/r0",
                 "восток" : "/prool/rooms/r0"
                 ]) );
 }
-
 
 int CanReceive(object ob) {
     return room::CanReceive();
