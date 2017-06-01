@@ -406,6 +406,11 @@ varargs string conjunction(mixed expressions, string coordinator) {
     }
 }
 
+string consolidate(int x, string str) { /* prool */
+return sprintf("%i экз. предмета '%s'", x, str);
+}
+
+/*
 string consolidate(int x, string str) {
     string array words;
     string tmp;
@@ -450,6 +455,7 @@ string consolidate(int x, string str) {
                 ({"a", "an", "the", "one"}) ) > -1 ) words = words[1..];
     return (cardinal(x) + " " + pluralize(implode(words, " ")));
 }
+*/
 
 varargs int ordinalp(string str, int parseflag){
     string *ords = ({ "first", "second", "third", "fourth", "fifth",
