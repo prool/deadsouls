@@ -23,9 +23,7 @@ static void create() {
 		]));
     SetExits( ([
                 "east" : "/domains/default/room/wiz_hall_prool",
-                "восток" : "/domains/default/room/wiz_hall_prool",
-		"west" : "/prool/rooms/r0",
-		"запад" : "/prool/rooms/r0"
+                "восток" : "/domains/default/room/wiz_hall_prool"
                 ]) );
 }
 
