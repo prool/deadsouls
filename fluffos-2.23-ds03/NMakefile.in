@@ -61,7 +61,7 @@ SRC=grammar$(TAB_EXT).c lex.c main.c rc.c interpret.c simulate.c file.c object.c
   socket_efuns.c socket_ctrl.c qsort.c eoperators.c socket_err.c md.c \
   disassembler.c binaries.c $(STRFUNCS) \
   replace_program.c ccode.c cfuns.c compile_file.c master.c function.c \
-  debug.c crypt.c applies_table.c add_action.c
+  debug.c crypt.c applies_table.c add_action.c prool.c
 
 all: utils cc.h files main_build
 
@@ -81,6 +81,7 @@ OBJ=$(OBJDIR)\grammar$(TAB_EXT).obj $(OBJDIR)\lex.obj $(OBJDIR)\main.obj $(OBJDI
 	$(OBJDIR)\disassembler.obj $(OBJDIR)\binaries.obj $(OBJDIR)\add_action.obj \
 	$(OBJDIR)\replace_program.obj $(OBJDIR)\ccode.obj $(OBJDIR)\cfuns.obj $(OBJDIR)\compile_file.obj \
 	$(OBJDIR)\crypt.obj $(OBJDIR)\debug.obj $(OBJDIR)\master.obj $(OBJDIR)\function.obj $(OBJDIR)\applies_table.obj
+	$(OBJDIR)\prool.obj
 
 .c{$(OBJDIR)/}.obj:
 	$(CC) $(CFLAGS) $(OPTIMIZE) -Fo$(OBJDIR)\ -c $<
