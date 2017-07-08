@@ -90,7 +90,7 @@ int main (int argc, char ** argv)
     error_context_t econ;
 
 printf("prooltest. main() start\n"); // prool
-prool_log("MUD start"); // prool
+prool_log("Ancestry MUD start"); // prool
 
 #ifdef PROTO_TZSET
     void tzset();

@@ -151,8 +151,8 @@ int Setup(){
         log_file("enter", GetCapName()+" (enter): "+ctime(time())+"\n");
         CHAT_D->eventSendChannel("SYSTEM","connections","[" + 
                 GetCapName() + " logs into "+mud_name()+"]",0);
-	debug_message(ctime(time())+" "+GetCapName()+" enter to MUD");
-	log_file("prool.log",ctime(time())+" "+GetCapName()+" enter to MUD\n");
+	debug_message(ctime(time())+" "+GetCapName()+" enter to Ancestry MUD");
+	log_file("prool.log",ctime(time())+" "+GetCapName()+" enter to Ancestry MUD\n");
     }
 
     if(!catch(mp = FOLDERS_D->mail_status(GetKeyName()))){

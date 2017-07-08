@@ -5,7 +5,7 @@
 
 #include "prool.h"
 
-#define PROOL_LOG "/home/prool/DeadSouls/lib/log/prool.log"
+#define PROOL_LOG "/home/prool/deadsouls/lib/log/prool.log"
 
 char *ptime(void) // Возвращаемое значение: ссылка на текстовую строку с текущим временем
 	{
@@ -25,7 +25,7 @@ void prool_log(char *str)
 {
 FILE *fp;
 fp=fopen(PROOL_LOG,"a");
-if (fp==NULL) return;
+if (fp==NULL) {printf("Can't write to logfile '%s'\n",PROOL_LOG); return;}
 fprintf(fp,"%s %s\n",ptime(),str);
 fclose(fp);
 fflush(0);
