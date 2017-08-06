@@ -5,10 +5,10 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(0);
-    SetShort("Water Tunnel");
-    SetLong("This dark tunnel appears roughly carved into the bedrock, and slopes downward to the west. It seems as though this is the way for an underground spring to feed the town well. The tunnel ends in doors at both the east and west.");
+    SetShort("Сырой туннель");
+    SetLong("Этот темный туннель глубоко врезается в скалу и ведет вниз к подземному источнику, который питает город. На востоке и западе туннель перекрыт решетчатыми дверями.");
     SetItems(([
-                ({ "rock", "bedrock" }) : "This is dense, hard stuff deep underground.",
+                ({ "скала", "порода" }) : "Это плотный, твердый материал глубоко под землей.",
                 ]));
     SetExits( ([
                 "east" : "/domains/town/room/well1",

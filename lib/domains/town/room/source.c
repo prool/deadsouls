@@ -5,15 +5,15 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(0);
-    SetShort("a dark tunnel");
-    SetLong("This tunnel has very smooth stone walls and leads east. There is also an opening in the ceiling above.");
+    SetShort("Темный туннель");
+    SetLong("У этого ведущего на восток туннеля очень гладкие стены. В его потолке вы завечаете ведущий наружу люк.");
     SetItems(([
-                ({ "hole", "holes", "floor" }) : "These holes appear to be where spring water enters to flood the chamber and fill the well east of here. ",
-                ({ "dirt", "dust" }) : "There's plenty of that here. Empty wells rarely get much priority on cleaning day.",
-                ({ "bottom", "well" }) : "Dirty, musty, and unpleasant.",
-                ({ "vermin", "rats", "bugs" }) : "Looks like they're hiding from you at the moment.",
-                "haven" : "A nice place for vermin.",
-                ({ "rock", "bedrock" }) : "This is dense, hard stuff deep underground.",
+                ({ "люк", "отверстие", "потолок" }) : "Кажется, что люк образовался естественным образом, в результате движения подземных вод. ",
+                ({ "грязь", "пыль" }) : "Этого здесь полно, вряд ли сюда приходит уборщик.",
+                ({ "дно", "колодец" }) : "Грязный, затхлый и неприятный.",
+                ({ "паразиты", "крысы", "насекомые" }) : "Кажется, они попрятались сейчас от вас.",
+                "убежище" : "Отличное место для паразитов.",
+                ({ "скала", "порода" }) : "Это плотный, тяжелый материал глубоко под землей.",
                 ]));
     SetFlowLimit(40);
     SetInventory( ([

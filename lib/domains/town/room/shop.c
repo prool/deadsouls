@@ -6,11 +6,11 @@ static void create() {
     ::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("The General Store");
-    SetLong("This is the local general store. You can buy or sell items here. A sign on the wall hangs here, explaining how things work. Try 'read sign'. East Village Road is south of here. The storeroom is below.");
+    SetShort("Бакалея");
+    SetLong("Вы зашли в местный бакалейный магазин, где можете продать или купить товары первой необходимости. Висящая на стене табличка объясняет как это сделать. Наберите 'читать табличку'. К югу отсюда находится Восточная деревенская дорога. Внизу под прилавком вы замечаете лестницу в кладовую.");
     SetItems(([
-        ({"store","shop","place"}) : "This is the local store.",
-        ({ "sign" ,"sign on the wall" }): "A sign on the wall, meant for reading.",
+        ({"бакалея","магазин","место"}) : "Вы находитесь в местном магазине.",
+        ({ "табличка" ,"табличка на стене" }): "Вы видите на стене табличку, которую можно прочесть.",
       ]));
     SetExits( ([
         "south" : "/domains/town/room/vill_road2",
@@ -20,19 +20,19 @@ static void create() {
         "/domains/town/obj/bbucket" : 1,
         "/domains/town/npc/otik" : ({60, 1}),
       ]));
-    SetRead("sign", (: read_sign :) );
+    SetRead("табличку", (: read_sign :) );
 
     SetDoor("down", "/domains/town/doors/otik_d.c");
 
 }
 int read_sign(){
-    write("HOW TO CONDUCT BUSINESS HERE\n");
-    write("list : Get a list of all the items Otik has for sale");
-    write("appraise <item> : Ask Otik to tell you how much he would pay you for your item");
-    write("price <item> : Ask Otik the price of his item");
-    write("show <item> : Ask Otik for a closer look at his item\n");
-    write("\nbuy <item> from otik\nsell <item> to otik\n");
-    write("Cash only!");
+    write("ИНСТРУКЦИЯ\n");
+    write("список : выводит список вещей на продажу");
+    write("оценить <item> : выводит цену, которую Отик предложит за ваш предмет");
+    write("цена <item> : выводит цену предмета из магазина");
+    write("показать <item> : более подробная информация о предмете\n");
+    write("\nкупить <item> у отика\nпродать <item> отику\n");
+    write("Только наличные!");
     return 1;
 }
 void init(){

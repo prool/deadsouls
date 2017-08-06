@@ -6,14 +6,9 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("West Village road");
-    SetNightLong("This is a well-traveled road, illuminated by a lamp light. It leads east into town and west toward an old, humpbacked bridge. A grand mansion is south.");
-    SetDayLong("This is a well-traveled road, leading east into town and west away from it. An old, humpbacked bridge is west of here. A grand mansion is south.");
-    SetItems(([
-        ({ "fort", "fortress", "fortress in the distance" }) : "It can't be seen well from here, but far north is what appears to be a large fortress built on a high plateau.",
-        ({ "road", "roads" }) : "This is a simple east-west road that goes east into town and west away from it. Another road, paved with cobblestones, intersects here to the north and leads high toward a fortress in the distance.",
-        "cobblestone road" : "This is where a cobblestone road begins that is built on an steep incline and rises up as it leads north to a high plateau.",
-      ]));
+    SetShort("Западная дорога");
+    SetNightLong("Вы находитесь на оживленной дороге, освещенной лампами. Она ведет с востока из города на запад к старому горбатому мосту. На севере вы видите здание большого особняка.");
+    SetDayLong("Вы находитесь на оживленной дороге, ведущей с востока из города на запад к старому горбатому мосту. На севере вы видите здание большого особняка.");
     SetSkyDomain("town");
     SetExits( ([
         "east" : "/domains/town/room/road1",

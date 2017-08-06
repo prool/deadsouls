@@ -5,8 +5,8 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Otik's storage room");
-    SetLong("This is a small, bare room where Otik keeps his goods. The main store is above.");
+    SetShort("Кладовая Отика");
+    SetLong("Вы находитесь в небольшой темной комнате, где Отик хранит свои товары. Основной магазин выше.");
     SetInventory(([
         "/domains/town/weap/sword" : 30,
         "/domains/town/obj/rucksack" : 10,

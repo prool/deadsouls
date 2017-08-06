@@ -3,18 +3,18 @@ inherit LIB_ROOM;
 int humidity = 0;
 
 string GetDryDesc(){
-    string ret = "This is the bottom of the old town well. It is quite dark "+
-        "and unpleasant down here. Years of disuse have provided a haven for "+
-        "vermin, dirt, and dust here. A service door of some kind is set in "+
-        "the west wall here.\n%^GREEN%^There is a lever set in the wall here."+
+    string ret = "Вы находитесь на дне старого городского колодца. Здесь царят "+
+        "кромешный мрак и сырость. Годы запустения позволили тут размножиться "+
+        "насекомым, грязи и пыли. В западной стене вы замечаете дверь - "+
+        "служебный выход отсюда.\n%^GREEN%^Рядом с дверью вы замечаете также рычаг."+
         "%^RESET%^";
     return ret;
 }
 
 string GetWetDesc(){
-    string ret = "This is the bottom of the old town well. It is quite dark "+
-        "and humid down here. A service door of some kind is set in "+
-        "the west wall here.\n%^GREEN%^There is a lever set in the wall here."+
+    string ret = "Вы находитесь на дне старого городского колодца. Здесь царят "+
+        "кромешный мрак и сырость. В западной стене вы замечаете дверь - "+
+        "служебный выход отсюда.\n%^GREEN%^Рядом с дверью вы замечаете также рычаг."+
         "%^RESET%^";
     return ret;
 }
@@ -30,18 +30,18 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(0);
-    SetShort("Town Well");
+    SetShort("Городской колодец");
     SetLong( (: GetWellDesc :) );
     SetItems( ([
-                ({ "bottom","well" }) : "Dirty, musty, "
-                "and unpleasant.",
+                ({ "дно","колодец" }) : "Тут грязно, сыро "
+                "и мерзко.",
                 "haven" : "A nice place for vermin.",
-                ({"dirt","dust"}) : "There's plenty of that "
-                "here. Empty wells rarely get much "
-                "priority on cleaning day.",
-                ({"vermin","rats","bugs"}) : "Looks "
-                "like they're hiding from you at the "
-                "moment."
+                ({"грязь","пыль"}) : "Здесь этого предостаточно."
+                "Похоже, пустые колодцы не так уж часто "
+                "чистят.",
+                ({"паразиты","крысы","насекомые"}) : "При вашем "
+                "виде они разбежались и попрятались "
+                "по углам."
                 ]) );
     SetInventory(([
                 "/domains/town/obj/well_lever" : 1,
@@ -61,12 +61,12 @@ void init(){
 int eventCompleteQuest(object ob){
     string *quests;
     quests = ob->GetQuests();
-    if(ob && !ob->GetQuest("Town Well Quest")){
-        ob->AddQuest("the Plumber","Town Well Quest");
-        tell_player(ob, "%^BOLD%^%^RED%^You have solved the Town Well Quest.");
-        tell_player(ob, "%^BOLD%^%^RED%^Congratulations!");
-        tell_player(ob, "%^BOLD%^%^RED%^You are awarded 7 quest points and "+
-                "1500 experience points.");
+    if(ob && !ob->GetQuest("Задание в городском колодце")){
+        ob->AddQuest("Водопроводчик","Задание в городском колодце");
+        tell_player(ob, "%^BOLD%^%^RED%^Вы разгадали задание в городском колодце.");
+        tell_player(ob, "%^BOLD%^%^RED%^Поздравляем!");
+        tell_player(ob, "%^BOLD%^%^RED%^Вы получаете 7 квестовых очков и "+
+                "1500 очков опыта.");
         ob->AddQuestPoints(7);
         ob->AddExperiencePoints(1500);
     }

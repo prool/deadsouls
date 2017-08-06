@@ -5,11 +5,10 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Village Stables");
-    SetLong("These are the village stables. Townsfolk come here and leave their mounts in the care of Ingrid, the local horse girl. The place is orderly, if a bit stinky, and it's clear Ingrid runs a professional outfit.");
+    SetShort("Конюшни");
+    SetLong("Вы зашли в местные конюшни, где жители города оставляют своих лошадей на попечение Ингрид. Хотя тут немного воняет, в конюшнях царит чистота и порядок.");
     SetItems(([
-                ({ "building", "schoolhouse", "school", "village school", "village schoolhouse" }) : "A small but well-kept wooden building where townsfolk and their children go to acquire knowledge.",
-                ({ "building", "buildings" }) : "Structures designed for human occupancy.",
+                ({ "здание", "здания" }) : "В этих сооружениях живут люди.",
                 ]));
     SetProperties(([
                 "no attack" : 1,
