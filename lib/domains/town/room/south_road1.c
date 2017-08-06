@@ -6,22 +6,22 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("Saquivor Road");
-    SetLong("This is a cobblestone road, leading "+
-      "north into town. "+
-      "The magic "+
-      "shop is to the west. "+
-      "\n%^GREEN%^An old well stands by the "+
-      "side of the road.%^RESET%^");
+    SetShort("Мощеная дорога");
+    SetLong("Вы находитесь на мощеной дороге ведущей "+
+      "на север в город. "+
+      "На западе вы замечаете "+
+      "магический магазин. "+
+      "\n%^GREEN%^Рядом с дорогой стоит "+
+      "старый колодец.%^RESET%^");
     SetItems( ([
-        ({"well","old well","dry well"}) : "This "
-        "looks like the sort of system used to "
-        "provide water before the town implemented "
-        "more modern waterworks. It looks long dry "
-        "and abandoned.",
-        "bank" : "The First Village Bank",
-        ({"road","cobblestone road"}) : "A "
-        "cobblestone road running north and south."
+        ({"колодец","старый колодец","высохший колодец"}) : "Похоже, "
+        "что его раньше использовали для добычи воды, "
+        "пока в городе не сделали более современное "
+        "водоснабжение. Он выглядит высохшим и заброшенным "
+        "длительное время.",
+        "банк" : "Первый Деревенский банк",
+        ({"дорога","мощеная дорога"}) : "Мощеная дорога "
+        "ведет прямо с севера на юг."
       ]) );
     SetSkyDomain("town");
     SetExits( ([ 

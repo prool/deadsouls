@@ -27,8 +27,8 @@ int ActionFunction(){
 }
 
 varargs string readSign() {
-    string ret = "WARNING! Orcs, dwarves, and some other races cannot "+
-    "swim! If you jump into the sea you will sink and drown!";
+    string ret = "Внимание! Некоторые расы не могут плавать! "+
+    "И если они прыгнут в море, то утонут!";
     return ret;
 }
 
@@ -52,21 +52,21 @@ static void create() {
     fishing::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("Shore Edge");
-    SetNightLong("You are on the shore, at the far eastern end of town. A road travels west into the heart of town. A great sea stretches out into the eastern horizon. A lone lamp post lights this area. \n%^GREEN%^There is a sign here you can read.%^RESET%^");
-    SetDayLong("You are on the shore, at the far eastern end of town. A road travels west into the heart of town. A great sea stretches out into the eastern horizon. \n%^GREEN%^There is a sign here you can read.%^RESET%^");
+    SetShort("Береговая линия");
+    SetNightLong("Вы находитесь на берегу моря в восточной части города, туда ведет западная дорога. Эта часть берега освещена одиноким фонарным столбом. \n%^GREEN%^Здесь есть табличка, которую можно прочесть.%^RESET%^");
+    SetDayLong("Вы находитесь на берегу моря в восточной части города, туда ведет западная дорога. С востока накатывают спокойные волны моря, простирающееся до горизонта. \n%^GREEN%^Здесь есть табличка, которую можно прочесть.%^RESET%^");
     SetItems( ([
-        "sign":"A sign on the ground. To read it, 'read sign'.",
-        "ground":"The local surface.",
-        "horizon":"Where the sky loves the sea.",
-        "town":"A population center to the west.",
-        "road":"Leads west, to the town.",
+        "табличка":"В землю воткнута табличка, чтобы прочитать ее попробуйте 'читать табличку'.",
+        "земля":"Чистый белый песок.",
+        "горизонт":"Оттуда каждое утро появляется солнце.",
+        "город":"Город находится к западу отсюда.",
+        "дорога":"Ведет на запад к городу.",
       ]) );
     SetExits( ([
         "west" : "/domains/town/room/vill_road4",
         "south" : "/domains/town/room/docks.c",
       ]) );
-    SetRead("sign", (: readSign :) );
+    SetRead("табличку", (: readSign :) );
     //SetFrequency determines how often the room checks 
     //whether it should perform an action. If it is set
     //at 1, it checks approximately every second. The
@@ -79,8 +79,8 @@ static void create() {
     //element is picked from the array at random. If it is a string,
     //that string is displayed to the living things in the room.
     //If it is a function, that function is evaluated.
-    SetAction(2, ({"A cool breeze flows in from the east, "
-        "bringing with it the bracing salty smells of the sea.",
+    SetAction(2, ({"Холодный ветер дует с востока, "
+        "донося до вас соленый запах моря.",
         (: ActionFunction :) }) );
     SetChance(90);
     SetFish( ([
@@ -90,8 +90,8 @@ static void create() {
     //This is a function that allows for a set of actions
     //with different trigger frequencies.
     SetActionsMap( ([ 
-        "A soft breeze cools your brow." : 5,
-        "You briefly hear seagulls far in the distance." : 7,
+        "Холодный ветер дует вам в лицо." : 5,
+        "Вы слышите резкие вскрики чаек вдали." : 7,
         (: ActionFunction2 :) : 2,
       ]) );
     SetInventory( ([

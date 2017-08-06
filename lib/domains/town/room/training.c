@@ -5,15 +5,15 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("the training area");
-    SetLong("You are in a large room with a very high ceiling, mirrored walls, and a hardwood floor. This area is designed for skills training, though at the moment no workshops are scheduled. The rest of the Adventurers' Guild is downstairs.");
+    SetShort("Тренировочный зал");
+    SetLong("Вы находитесь в большой комнате с очень высоким потолком, зеркальными стенами и паркетным полом. Это помещение предназначено для обучения умениям, хотя на данный момент никаких занятий не проводится. Остальная часть гильдии находится внизу.");
     SetItems( ([
-                ({"wall","walls"}) : "The walls have mirrors set into them.",
-                ({"mirror","mirrors"}) : "Peekaboo!",
-                ({"hardwoord floor", "floor"}) : "The floor is made of polished wood, and is "+
-                "reminiscent of what you might expect in a dancing school.",
-                ({"ceiling","high ceiling"}) : "The high, vaulted ceiling "+
-                "provides plenty of headroom." 
+                ({"стена","стены"}) : "Стены покрыты зеркалами.",
+                ({"зеркало","зеркала"}) : "Ну и урод в зеркале!",
+                ({"паркетный пол", "пол"}) : "Пол покрыт отполированным паркетом, "+
+                "как будто вы находитесь в танцевальной школе.",
+                ({"потолок","высокий потолок"}) : "Высокий сводчатый потолок "+
+                "обеспечивает достаточный запас высоты." 
                 ]) );
     SetExits( ([ 
                 "down" : "/domains/town/room/adv_guild",

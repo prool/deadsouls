@@ -11,11 +11,11 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("Village Road Intersection");
-    SetNightLong("You are in the main intersection of the village, lit by a town lamp post. Saquivor road extends north and south, intersected east to west by a road that leads west toward a wilderness, and east toward shore.\n%^GREEN%^There is a sign here you can read.%^RESET%^");
-    SetDayLong("You are in the main intersection of the village. Saquivor road extends north and south, intersected east to west by a road that leads west toward a wilderness, and east toward shore.\n%^GREEN%^There is a sign here you can read.%^RESET%^");
+    SetShort("Большой перекресток");
+    SetNightLong("Вы вышли на большой перекресток, освещенный фонарным столбом. Главная дорога тянется с севера на юг и пересекается с дорогой ведущей с востока с побережья на запад в пустошь. \n%^GREEN%^Здесь есть табличка, которую можно прочесть.%^RESET%^");
+    SetDayLong("Вы вышли на большой оживленный перекресток. Главная дорога тянется с севера на юг и пересекается с дорогой ведущей с востока с побережья на запад в пустошь.\n%^GREEN%^Здесь есть табличка, которую можно прочесть.%^RESET%^");
     SetItems( ([
-        "sign":"A large sign on the road. To read it, 'read sign'.",
+        "табличка":"У перекрестка установлена большая табличка. Чтобы прочесть ее, попробуйте 'читать табличку'.",
       ]) );
     SetSkyDomain("town");
     SetExits( ([
@@ -31,7 +31,7 @@ static void create() {
       ]));
     SetEnters( ([
       ]) );
-    SetRead("sign", (: readSign :) );
+    SetRead("табличку", (: readSign :) );
     AddItem(new("/domains/town/obj/lamp"));
 }
 
