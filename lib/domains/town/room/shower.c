@@ -4,9 +4,9 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Shower Stall");
-    SetLong("You are standing in a shower stall. People come "
-            "here to get clean.");
+    SetShort("Душевая кабинка");
+    SetLong("Вы зашли в душевую кабинку. "
+            "Здесь моются люди.");
     SetExits( ([
                 "out" : "/domains/town/room/mansion_room3"
                 ]) );

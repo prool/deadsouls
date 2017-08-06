@@ -6,19 +6,19 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("East Village Road");
-    SetNightLong("You are on a long road, lit by a lamp post. The general store is north. The road stretches east and west through the town. The Adventurers' Guild is south.");
-    SetDayLong("You are on a long road. The general store is north. The road stretches east and west through the town. The Adventurers' Guild is south.");
+    SetShort("Восточная дорога");
+    SetNightLong("Вы находитесь на длинной дороге, освещенной фонарным столбом. На севере вы замечаете магазин разнообразных товаров, а на юге гильдию авантюристов. Дорога же тянется с запада на восток.");
+    SetDayLong("Вы находитесь на длинной дороге, тянущейся с запада на восток. На севере вы замечаете магазин разнообразных товаров, а на юге гильдию авантюристов.");
     SetItems( ([
-        ({"adventurers guild","guild"}) : "This small "
-        "building on the southern side of the road is where "
-        "adventurers, great and small, come to record "
-        "their exploits and seek advancement.",
-        ({"shop","store","general store"}) : "This is the "
-        "general store, where almost anything can be "
-        "bought or sold.",
-        ({"road","long road"}) : "An east-west cobblestone "
-        "road through town.",
+        ({"гильдия авантюристов","гильдия"}) : "В этом небольшом "
+        "здании к югу от дороги "
+        "авантюристы всех мастей "
+        "хвалятся своими подвигами и повышают свой уровень.",
+        ({"магазин","магазин разнообразных товаров","бакалея"}) : "В этом "
+        "магазинчике можно купить или продать все, "
+        "что может пригодиться в путешествии.",
+        ({"дорога","длинная дорога"}) : "Вы находитесь на мощеной дороге, "
+        "проходящей через город.",
       ]) );
     SetSkyDomain("town");
     AddTerrainType(T_ROAD);

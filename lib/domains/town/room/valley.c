@@ -7,8 +7,8 @@ static void create() {
     SetAmbientLight(30);
     SetNightLight(10);
     SetDayLight(30);
-    SetShort("Orc Valley");
-    SetLong("You are in a small valley below the sheer cliffs to the west. A band of orcs appears to have made this place their home, and you can see their ramshackle fortress toward the north. A well-traveled path leads east into a forest. A narrow path snakes its way southwest into the woods.");
+    SetShort("Долина орков");
+    SetLong("Вы находитесь в небольшой долине ниже скалистых утесов на западе. Кажется, в этих местах обосновалась банда орков, вы видите их ветхую крепость на севере. Также здесь вы видите две тропы ведущие в лес на восток и юго-запад.");
     SetSkyDomain("town");
     SetExits( ([
         "east" : "/domains/town/room/clearing",

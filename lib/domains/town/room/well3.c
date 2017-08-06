@@ -5,15 +5,14 @@ static void create() {
     room::create();
     SetClimate("indoors");
     SetAmbientLight(0);
-    SetShort("Dry Spring");
-    SetLong("This small, dark chamber appears to have been carved out of the bedrock, and contains a hole bored into the floor. Considering the difficulty of digging into such solid stuff, this wellwater system must have taken a fortune and a vast amount of labor to construct. A door leads east to the water tunnel and the well.");
+    SetShort("Высохший источник");
+    SetLong("Похоже, что эта маленькая темная камера была вырезана в скале. В центре помещения вы замечаете высверленное отверстие, откуда поступает вода. Учитывая твердость окружающих пород, сооружение этого источника потребовало кучи сил и людей. Выйти отсюда можно через дверь на востоке.");
     SetItems(([
-                ({ "hole", "floor" }) : "This hole appears to be where spring water enters to flood the chamber and fill the well east of here. ",
-                ({ "dirt", "dust" }) : "There's plenty of that here. Empty wells rarely get much priority on cleaning day.",
-                ({ "bottom", "well" }) : "Dirty, musty, and unpleasant.",
-                ({ "vermin", "rats", "bugs" }) : "Looks like they're hiding from you at the moment.",
-                "haven" : "A nice place for vermin.",
-                ({ "rock", "bedrock" }) : "This is dense, hard stuff deep underground.",
+                ({ "дыра", "пол" }) : "Через это отверстие поступает из подземного источника питающая колодец вода. ",
+                ({ "грязь", "пыль" }) : "Здесь этого полно. Уборка тут бы не помешала.",
+                ({ "дно", "колодец" }) : "Тут грязно, сыро и неприятно.",
+                ({ "паразиты", "крысы", "насекомые" }) : "Похоже, что они сейчас от вас попрятались.",
+                ({ "скала", "порода" }) : "Скала очень плотная и прочная, пробить такую не просто.",
                 ]));
     SetFlowLimit(3);
     SetExits( ([

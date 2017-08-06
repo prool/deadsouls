@@ -6,13 +6,13 @@ static void create() {
     room::create();
     SetClimate("outdoors");
     SetAmbientLight(30);
-    SetShort("Village Path");
-    SetNightLong("Still illuminated by lamp post, Village Road becomes less of a road here and more of a dirt path. The shore of the eastern sea is almost visible from here. The village schoolhouse is north, and the shore is east. The village stables are south.");
-    SetDayLong("As it travels from west to east, Village Road becomes less of a road here and more of a dirt path. The shore of the eastern sea is almost visible from here. The village schoolhouse is north, and the shore is east. The village stables are south.");
+    SetShort("Грязная дорога");
+    SetNightLong("Слабо освещенная лампой дорога здесь переходит в самую обычную грязную тропу. На востоке отсюда видно побережье, а на севере здание школы. То, что напоминает конюшни, находится на юге.");
+    SetDayLong("Здесь ведущая из города дорога переходит в самую обычную грязную тропу. На востоке отсюда видно побережье, а на севере здание школы. То, что напоминает конюшни, находится на юге.");
     SetItems(([
-        ({ "building", "schoolhouse", "school", "village school", "village schoolhouse" }) : "A small but well-kept wooden building where townsfolk and their children go to acquire knowledge.",
-        ({ "building", "buildings" }) : "Structures designed for human occupancy.",
-        ({ "shore", "village shore" }) : "The shore of the eastern sea is east of here.",
+        ({ "здание", "здание школы", "школа", "village school", "village schoolhouse" }) : "Вероятно там местные жители и их дети получают знания.",
+        ({ "здания", "строения" }) : "Там обитают люди.",
+        ({ "берег", "побережье" }) : "Побережье восточного моря к востоку отсюда.",
       ]));
     SetSkyDomain("town");
     AddTerrainType(T_ROAD);
