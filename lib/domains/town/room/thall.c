@@ -6,8 +6,8 @@ static void create() {
     SetTown("town");
     SetClimate("indoors");
     SetAmbientLight(30);
-    SetShort("Town Hall");
-    SetLong("This is the modest foyer of this village's Town Hall. It's a simple affair, really, in keeping with the down-to-earth spirit of the town. The office of the clerk and notary is north, and the Mayor's office is upstairs. Village road is south. The registrar of voters is northeast.");
+    SetShort("Ратуша");
+    SetLong("Вы зашли в небольшое скромное помещение - ратушу этого города. Офисы клерка и нотариуса находятся на севере, а комната мэра - наверху. На юге вы видите широкую дорогу, а на северо-востоке - регистратора избирателей.");
     SetProperties (([
                 "no attack":1, 
                 "no bump":1, 

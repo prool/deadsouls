@@ -6,8 +6,8 @@ inherit LIB_ROOM;
 void create() {
     room::create();
     SetAmbientLight(30);
-    SetShort("the void");
-    SetLong("The void.  Go down to get out.");
+    SetShort("Ничто");
+    SetLong("Вы нигде.  Идите вниз, чтобы выйти отсюда.");
     SetExits( ([ "down" : ROOM_START ]) );
     SetNoModify(1);
 }
