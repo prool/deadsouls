@@ -84,6 +84,7 @@ void perfreport(){
         ret += " (Performance score: " + (RateScore(PerformanceScore))+")\n";
     }
     debug_message(ret);
+    debug_message("Ancestry MUD start time "+ctime(time())); /* prool */
 }
 
 static void create() {
