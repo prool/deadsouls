@@ -193,10 +193,10 @@ mixed votemode(){
 
 void init(){
     ::init();
-    add_action("результаты","tally");
-    add_action("следующий день","nextday");
-    add_action("начать голосование","startvote");
-    add_action("закончить голосование","endvote");
-    add_action("статус голосования","votestatus");
-    add_action("режим голосования","votemode");
+    add_action("tally","результаты");
+    add_action("nextday","следующий день");
+    add_action("startvote","начать голосование");
+    add_action("endvote","закончить голосование");
+    add_action("votestatus","статус голосования");
+    add_action("votemode","режим голосования");
 }

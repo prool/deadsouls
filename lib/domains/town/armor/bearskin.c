@@ -5,19 +5,19 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("bearskin");
-    SetId(({"bearskin","bear skin"}));
-    SetAdjectives(({"thick","shaggy"}));
-    SetShort("a thick, shaggy bearskin");
-    SetLong("This is a thick bearskin which can be worn "+
-            "as armor. Unfortunately the hide "+
-            "has not been tanned, so it's rather "+
-            "foul-smelling.");
+    SetKeyName("мудвежья шкура");
+    SetId(({"медвежья шкура","шкура"}));
+    SetAdjectives(({"толстая","лохматая"}));
+    SetShort("медвежья шкура");
+    SetLong("Эту толстую медвежью шкуру можно носить, "+
+            "как доспех. К сожалению, она практически "+
+            "не обработана и испускает неприятный "+
+            "запах.");
     SetItems( ([
-                "hide" : "It is untanned and subject "+
-                "to natural decomposition."
+                "кожа" : "Она не обработана и начинает "+
+                "разлагаться."
                 ]) );
-    SetSmell( ([ "default" : "It reeks of death." ]) );
+    SetSmell( ([ "default" : "Пахнет смертью." ]) );
     SetMass(75);
     SetBaseCost("silver",10);
     SetProtection(BLADE,5);
@@ -27,7 +27,7 @@ static void create(){
 
 string GetAffectLong(object ob) {
     if(!ob || !living(ob)) return 0;
-    return ob->GetName() + " reeks of death and decay.";
+    return ob->GetName() + " исходит запах смерти и разложения.";
 }
 
 void init(){

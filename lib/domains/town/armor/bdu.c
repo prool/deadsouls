@@ -4,13 +4,13 @@
 inherit LIB_ARMOR;
 static void create(){
     armor::create();
-    SetKeyName("battle dress uniform");
-    SetId(({"uniform","bdu","bdu's","fatigues"}));
-    SetAdjectives(({"camouflage","battle","dress","combat"}));
-    SetShort("a battle dress uniform");
-    SetLong("This uniform consists of a camouflage blouse and "+
-            "pants. It is green with mottled brown and black camouflage patterns, "+
-            "and probably provides excellent concealment in a wooded environment.");
+    SetKeyName("боевая униформа");
+    SetId(({"униформа","боевая","bdu's","fatigues"}));
+    SetAdjectives(({"камуфляжная","battle","dress","combat"}));
+    SetShort("боевая униформа");
+    SetLong("Эта униформа состоит из камуфляжной футболки и "+
+            "штанов. Она зеленого цвета с черными и коричневыми пятнами, "+
+            "одевший ее будет практически незаметен в лесу.");
     SetMass(10);
     SetBaseCost("silver",100);
     SetDamagePoints(100);

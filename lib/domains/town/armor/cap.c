@@ -5,12 +5,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("baseball cap");
-    SetAdjectives( ({"red", "old", "greasy", "dirty", "baseball", "cat"}) );
+    SetKeyName("кепка");
+    SetAdjectives( ({"красная", "старая", "пыльная", "грязная", "baseball", "cat"}) );
     SetId( ({"cap", "hat", "cover"}) );
-    SetShort("a red baseball cap");
-    SetLong("A greasy, old, dirty baseball cap that was once mostly red, with "
-            "the word 'CAT' on the front.");
+    SetShort("красная кепка");
+    SetLong("Вы видите старую грязную кепку красного цвета с непонятной "
+            "надписью над козырьком.");
     SetMass(5);
     SetBaseCost("silver",1);
     SetArmorType(A_HELMET);
