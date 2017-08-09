@@ -4,19 +4,19 @@
 inherit "/domains/default/armor/breather";
 
 string LongD(){
-    string ret = "This remarkably small device fits over the "+
-        "wearer's mouth, and provides a long supply of oxygenated "+
-        "air. Its current charge level is "+
-        to_int(percent(charge,maxcharge))+" percent.";
+    string ret = "Это замечательное небольшое устройство вставляется в "+
+        "рот и обеспечивает носящего его постоянным притоком свежего "+
+        "воздуха. Его текущий заряд: "+
+        to_int(percent(charge,maxcharge))+" %.";
     return ret;
 }
 
 static void create(){
     ::create();
-    SetKeyName("breathing mask");
-    SetId(({"mask","breather","a98","apparatus","device"}));
+    SetKeyName("дыхательная маска");
+    SetId(({"маска","дыхательная","a98","apparatus","device"}));
     SetAdjectives(({"a98","breathing"}));
-    SetShort("an A98 breathing device");
+    SetShort("дыхательная маска");
     SetLong( (: LongD :) );
     SetMass(30);
     SetBaseCost("silver",900);

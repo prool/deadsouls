@@ -7,12 +7,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("a green cloak");
-    SetId(({"cloak"}));
-    SetAdjectives(({"green","elven"}));
-    SetShort("a green cloak");
-    SetLong("This is a cloak of elven design, green in color, with an attached hood. "
-            "One may \"wear hood on cloak\" with it, probably.");
+    SetKeyName("зеленая накидка");
+    SetId(({"накидка"}));
+    SetAdjectives(({"зеленая","эльфийская"}));
+    SetShort("зеленая накидка");
+    SetLong("Вы видите зеленую накидку эльфийской работы с капюшоном. "
+            "Вы можете попробовать \"wear hood on cloak\".");
     SetMass(200);
     SetBaseCost("silver",500);
     SetDamagePoints(100);

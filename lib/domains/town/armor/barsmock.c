@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("smock");
-    SetAdjectives( ({"bar workers","food worker's"}) );
-    SetId( ({"overalls", "smock", "simple"}) );
-    SetShort("a simple smock");
-    SetLong("This is a set of overalls used by food workers to keep their bodies and the food at a healthy distance.");
+    SetKeyName("халат");
+    SetAdjectives( ({"обычный","белый"}) );
+    SetId( ({"халат", "smock", "simple"}) );
+    SetShort("обычный халат");
+    SetLong("Это обычный белый халат, такие носят обычно работники пищевой промышленности.");
     SetMass(50);
     SetArmorType(A_BODY_ARMOR);
 }

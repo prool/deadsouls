@@ -7,13 +7,13 @@ object bearshadow;
 
 static void create(){
     armor::create();
-    SetKeyName("bearsuit");
-    SetId(({"costume","bear costume","suit","bear suit"}));
-    SetAdjectives(({"realistic","terrific"}));
-    SetShort("a bear costume");
-    SetLong("A terrific and very realistic suit which makes "+
-            "the wearer look like a bear. It seems to have "+
-            "been fashioned from real bear parts.");
+    SetKeyName("медвежий костюм");
+    SetId(({"костюм","медвежий","suit","медвежий костюм"}));
+    SetAdjectives(({"реалистичный","ужасающий"}));
+    SetShort("медвежий костюм");
+    SetLong("Ужасающий и очень реалистичный костюм, одевший который "+
+            "становится неотличим от медведя. Кажется, костюм "+
+            "сделан из настоящих медвежих частей тела.");
     SetMass(200);
     SetMatching(0);
     SetBaseCost("silver",800);

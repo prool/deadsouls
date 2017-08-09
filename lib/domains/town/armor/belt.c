@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("belt");
-    SetId(({"belt"}));
-    SetAdjectives(({"leather"}));
-    SetShort("a leather belt");
-    SetLong("A belt made of leather.");
+    SetKeyName("ремень");
+    SetId(({"кожаный ремень"}));
+    SetAdjectives(({"кожаный"}));
+    SetShort("кожаный ремень");
+    SetLong("Самый обычный ремень из кожи.");
     SetMass(5);
     SetBaseCost("silver",10);
     SetProtection(BLUNT,1);

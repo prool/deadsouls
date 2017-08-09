@@ -17,7 +17,7 @@ void boobytrap_me(){
     if(!clonep(this_object())) return; /* Avoids boobytrapping the blueprint ob */
 
     shadowtrap = new("/shadows/needle_trap");
-    shadowtrap->SetTrapDescription("A poison needle trap.");
+    shadowtrap->SetTrapDescription("Отравленная игла.");
     shadowtrap->SetTrapLevel(50);
     shadowtrap->SetAutoResets(0);
     shadowtrap->SetTrapType(BOOBYTRAP_WEAR);
@@ -26,20 +26,20 @@ void boobytrap_me(){
 
 static void create(){
     armor::create();
-    SetKeyName("silver_ring");
-    SetId(({"ring","silver ring"}));
-    SetAdjectives( ({"beautiful"}) );
-    SetShort("a beautiful silver ring");
-    SetLong("This is a simple but beautiful ring made of "+
-            "silver, suitable for wearing on one's finger. The ring bears an inscription.");
+    SetKeyName("серебряное_кольцо");
+    SetId(({"кольцо","серебряное кольцо"}));
+    SetAdjectives( ({"великолепное"}) );
+    SetShort("великолепное серебряное кольцо");
+    SetLong("Это самое обычное кольцо из серебра, "+
+            "которые обычно носят на пальце. Изнутри на кольцо выгравирована надпись.");
     SetMass(1);
     SetBaseCost("silver",1000);
     SetArmorType(A_RING);
     SetItems(([
-                ({"script","words","inscription","writing"}) : "Words engraved on the ring in a highly "+
-                "stylized script."
+                ({"гравировка","слова","надпись","writing"}) : "Слова выгравированы в "+
+                "таинственную надпись."
                 ]) );
-    SetRead(({"script","words","inscription","writing"}), "\"etaoin shrdlu\""  );
+    SetRead(({"гравировка","слова","надпись","writing"}), "\"etaoin shrdlu\""  );
     boobytrap_me();
 }
 
