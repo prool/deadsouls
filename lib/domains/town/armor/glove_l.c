@@ -7,11 +7,11 @@ inherit LIB_ARMOR;
 
 static void create() {
     armor::create();
-    SetKeyName("leather glove");
-    SetId( ({ "glove" }) );
-    SetAdjectives( ({ "black","leather","left" }) );
-    SetShort("a black leather glove");
-    SetLong("A black glove with five fingers designed for a left hand.");
+    SetKeyName("черная перчатка");
+    SetId( ({ "перчатка" }) );
+    SetAdjectives( ({ "черная","кожаная","левая" }) );
+    SetShort("черная кожаная перчатка");
+    SetLong("Это самая обычная перчатка из тонкой черной кожи, ее можно одеть на левую руку.");
     SetVendorType(VT_ARMOR);
     SetMass(5);
     SetBaseCost("silver",7);

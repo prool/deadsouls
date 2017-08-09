@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("sock");
-    SetId(({"sock"}));
-    SetAdjectives(({"black","nylon","knee-length","knee","knee length"}));
-    SetShort("a long black nylon sock");
-    SetLong("A long, knee-length sock, made of black nylon.");
+    SetKeyName("чулки");
+    SetId(({"чулки"}));
+    SetAdjectives(({"черные","nylon","длинные","knee","knee length"}));
+    SetShort("длинные черные чулки");
+    SetLong("Это пара длинных черных чулков, очень эротичных.");
     SetMass(5);
     SetBaseCost("silver",1);
     SetProtection(BLUNT,1);

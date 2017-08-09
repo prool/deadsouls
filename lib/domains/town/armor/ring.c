@@ -5,12 +5,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("ring");
-    SetId(({"ring","gold ring"}));
-    SetAdjectives( ({"beautiful"}) );
-    SetShort("a beautiful gold ring");
-    SetLong("This is a simple but beautiful ring made of "+
-            "gold, suitable for wearing on one's finger.");
+    SetKeyName("кольцо");
+    SetId(({"кольцо","золотое кольцо"}));
+    SetAdjectives( ({"красивое"}) );
+    SetShort("красивое золотое кольцо");
+    SetLong("Это простое, но красивое кольцо сделано из "+
+            "первоклассного золота. Его можно одеть на палец.");
     SetMass(1);
     SetBaseCost("silver",5000);
     SetArmorType(A_RING);

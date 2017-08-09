@@ -6,20 +6,20 @@ inherit "/domains/default/armor/rocketpack";
 
 
 string LongD(){
-    string ret = "This is a small device worn on the back and designed to \"boost\" " +
-        "the wearer through the air or through space. For continuous operation, "+
-        "it should probably be activated.  The fuel gauge "+
-        "reads "+to_int(percent(charge,maxcharge))+" percent.";
+    string ret = "Это небольшое устройство носится на спине и позволяет \"boost\" " +
+        "носящему взлетать в воздух. Чтобы использовать, "+
+        "его нужно сначала активировать.  Индикатор топлива "+
+        "показывает "+to_int(percent(charge,maxcharge))+" %.";
     return ret;
 }
 
 static void create(){
     ::create();
     if(!Directions) Directions = ([]);
-    SetKeyName("rocket pack");
-    SetId(({"pack","rocket","rocketpack"}));
-    SetAdjectives(({"small","rocket"}));
-    SetShort("a small rocket pack");
+    SetKeyName("ракетный ранец");
+    SetId(({"ранец","rocket","ракетный ранец"}));
+    SetAdjectives(({"small","ракетный"}));
+    SetShort("ракетный ранец");
     SetLong( (: LongD :) );
     SetMass(500);
     SetBaseCost(8000);

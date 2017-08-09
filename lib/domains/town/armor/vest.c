@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("paisley vest");
-    SetId(({"vest"}));
-    SetAdjectives(({"goofy","goofy-looking", "goofy looking", "paisley","colorful","hippie","hippy","psychedelic"}));
-    SetShort("a colorful paisley vest");
-    SetLong("A goofy-looking hippie vest with psychedelic paisley patterns on it.");
+    SetKeyName("разноцветный жилет");
+    SetId(({"жилет"}));
+    SetAdjectives(({"goofy","goofy-looking", "goofy looking", "paisley","разноцветный","hippie","hippy","psychedelic"}));
+    SetShort("разноцветный жилет");
+    SetLong("Этот жилет раскрашен каким-то ненормальным в самые ядовитые цвета. Долгое смотрение на него вызвает боль в глазах.");
     SetMass(5);
     SetBaseCost("silver",1);
     SetProtection(BLUNT,1);

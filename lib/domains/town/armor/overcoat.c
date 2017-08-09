@@ -5,12 +5,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("overcoat");
-    SetId(({"coat","overcoat"}));
-    SetAdjectives(({"heavy","woolen"}));
-    SetShort("a heavy woolen overcoat");
-    SetLong("This is a large overcoat, of fine craftsmanship. It's "+
-            "likely excellent protection against the cold.");
+    SetKeyName("пальто");
+    SetId(({"пальто","overcoat"}));
+    SetAdjectives(({"тяжелое","шерстяное"}));
+    SetShort("тяжелое шерстяное пальто");
+    SetLong("Это большое толстое пальто из медвежьей шкуры. Оно "+
+            "защитит от самой сильной стужи.");
     SetMass(60);
     SetBaseCost("silver",300);
     SetProtection(BLUNT,10);

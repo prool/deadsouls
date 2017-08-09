@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("sock");
-    SetId(({"sock"}));
-    SetAdjectives(({"white","cotton","athletic"}));
-    SetShort("a white cotton sock");
-    SetLong("An athletic sock, made of white cotton.");
+    SetKeyName("носок");
+    SetId(({"носок"}));
+    SetAdjectives(({"белый","хлопковый","athletic"}));
+    SetShort("белый хлопковый носок");
+    SetLong("Такие носки из белого хлопка носят обычно тренирующиеся спортсмены.");
     SetMass(5);
     SetBaseCost("silver",1);
     SetArmorType(A_SOCK);

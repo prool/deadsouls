@@ -5,15 +5,15 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("suit of armor");
-    SetId(({"armor","plate mail","platemail","suit","armor","suit of armor"}));
-    SetAdjectives(({"full","plate","plated","metal"}));
-    SetShort("a full suit of armor");
-    SetLong("This is a large, very heavy suit of armor, the kind "+
-            "one might expect a knight to wear. The thick "+
-            "metal plating promises extraordinary protection, "+
-            "yet the joints are so finely articulated as to "+
-            "permit great freedom of movement.");
+    SetKeyName("латный доспех");
+    SetId(({"доспех","латный доспех","platemail","suit","armor","suit of armor"}));
+    SetAdjectives(({"полный","латный","plated","metal"}));
+    SetShort("полный латный доспех");
+    SetLong("Это большой и очень тяжелый доспех, который "+
+            "только может одеть воин. Толстая "+
+            "металлическая броня обеспечивает великолепную защиту, "+
+            "а маслянная смазка сочленений практически не "+
+            "стесняет свободы движения.");
     SetMass(1000);
     SetBaseCost("silver",10000);
     SetProtection(BLUNT,60);

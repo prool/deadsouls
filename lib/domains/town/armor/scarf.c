@@ -5,12 +5,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("scarf");
-    SetId(({"scarf"}));
-    SetAdjectives( ({"handsome","tartan"}) );
-    SetShort("a handsome tartan scarf");
-    SetLong("This a handsome scarf, very comfortable and "+
-            "probably expensive as well.");
+    SetKeyName("шарф");
+    SetId(({"шарф"}));
+    SetAdjectives( ({"красивый","клетчатый"}) );
+    SetShort("клетчатый шарф");
+    SetLong("Это красивый клетчатый шарф ручной работы. "+
+            "Вероятно, стоит он очень дорого.");
     SetMass(3);
     SetBaseCost("silver", 350);
     SetArmorType(A_COLLAR);

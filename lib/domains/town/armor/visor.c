@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("goggles");
-    SetId(({"goggles"}));
-    SetAdjectives(({"clear","plastic","protective","lab","laboratory"}));
-    SetShort("clear plastic goggles");
-    SetLong("A set of protective laboratory goggles.");
+    SetKeyName("очки");
+    SetId(({"очки"}));
+    SetAdjectives(({"clear","plastic","protective","lab","лабораторные"}));
+    SetShort("очки");
+    SetLong("Такие очки носят стремящиеся выглядеть умнее ученые.");
     SetMass(5);
     SetBaseCost("silver",9);
     SetDamagePoints(1);

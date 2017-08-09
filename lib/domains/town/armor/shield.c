@@ -7,11 +7,11 @@ inherit LIB_ARMOR;
 
 static void create() {
     armor::create();
-    SetKeyName("large shield");
-    SetId( ({ "shield" }) );
-    SetAdjectives( ({ "wood", "wooden","large" }) );
-    SetShort("a large wooden shield");
-    SetLong("A large, heavy shield made of strong wood banded with iron.");
+    SetKeyName("большой щит");
+    SetId( ({ "щит" }) );
+    SetAdjectives( ({ "деревянный", "wooden","большой" }) );
+    SetShort("большой деревянный щит");
+    SetLong("Это большой деревянный щит, для прочности обитый листами железа.");
     SetVendorType(VT_ARMOR);
     SetMass(100);
     SetBaseCost("silver",250);

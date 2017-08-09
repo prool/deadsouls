@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("wizard's robe");
-    SetId(({"robe","cloak","duster"}));
-    SetAdjectives(({"wizard","wizard's","soft"}));
-    SetShort("a robe");
-    SetLong("This is a large, comfortable-looking robe, like a wizard might wear. ");
+    SetKeyName("мантия волшебника");
+    SetId(({"мантия","cloak","duster"}));
+    SetAdjectives(({"удобная","wizard's","широкая"}));
+    SetShort("мантия");
+    SetLong("Такие широкие удобные мантии часто любят носить странствующие волшебники. ");
     SetMass(200);
     SetBaseCost("silver",100);
     SetProtection(BLUNT,100);

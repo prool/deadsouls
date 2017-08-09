@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("workboot");
-    SetAdjectives( ({"strong", "brown", "leather", "work", "right", "heavy"}) );
-    SetId( ({"boot"}) );
-    SetShort("a brown leather workboot");
-    SetLong("A heavy, brown leather workboot with strong ankle and sole support. It is designed for wear on the right foot.");
+    SetKeyName("рабочий ботинок");
+    SetAdjectives( ({"strong", "brown", "кожаный", "правый", "рабочий", "тяжелый"}) );
+    SetId( ({"ботинок"}) );
+    SetShort("рабочий ботинок");
+    SetLong("Вы видите тяжелый кожаный ботинок с армированным носком. Его можно одеть на правую ногу.");
     SetMass(40);
     SetBaseCost("silver",25);
     SetProtection(BLUNT,5);

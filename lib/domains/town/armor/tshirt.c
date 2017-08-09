@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("a Def Leppard shirt");
-    SetId(({"shirt","def leppard shirt"}));
-    SetAdjectives(({"Def Leppard", "def leppard", "stupid", "black"}));
-    SetShort("a Def Leppard shirt");
-    SetLong("A stupid-looking black shirt with a ridiculous band logo on it.");
+    SetKeyName("черная футболка");
+    SetId(({"футболка","def leppard shirt"}));
+    SetAdjectives(({"Def Leppard", "def leppard", "stupid", "черная"}));
+    SetShort("черная футболка");
+    SetLong("Вы видите немного глуповатую черную футболку с пиратской эмблемой на груди.");
     SetMass(5);
     SetBaseCost("silver",1);
     SetProtection(BLUNT,1);
