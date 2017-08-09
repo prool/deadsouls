@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("leather vest");
-    SetAdjectives( ({"vest", "leather", "sturdy", "protective"}) );
-    SetId(({"vest"}));
-    SetShort("a leather vest");
-    SetLong("A sturdy leather vest that provides protection and warmth for the torso, while permitting a free range of motion for one's arms.");
+    SetKeyName("кожаный жилет");
+    SetAdjectives( ({"жилет", "кожаный", "sturdy", "protective"}) );
+    SetId(({"жилет"}));
+    SetShort("кожаный жилет");
+    SetLong("Прочный кожаный жилет, который обеспечивает защиту от повреждений и холода для туловища, не стесняя при этом движения рук.");
     SetMass(50);
     SetBaseCost("silver", 100);
     SetArmorType(A_VEST);

@@ -5,12 +5,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("hunting cap");
-    SetId(({"hat","headgear","cap"}));
-    SetAdjectives(({"soft","felt","hunting"}));
-    SetShort("a hunting cap");
-    SetLong("This is a soft, felt cap one wears when hunting. "+
-            "It has a single feather jauntily stuck to the side.");
+    SetKeyName("охотничья шапка");
+    SetId(({"шапка","headgear","cap"}));
+    SetAdjectives(({"мягкая","войлочная","охотничья"}));
+    SetShort("охотничья шапка");
+    SetLong("Это мягкая, войлочная шапка, которую можно носить при охоте. "+
+            "У нее есть также одно перо, непринужденно застрявшее в стороне.");
     SetMass(10);
     SetBaseCost("silver",50);
     SetDamagePoints(10);
@@ -19,7 +19,7 @@ static void create(){
     SetProtection(BLADE, 1);
     SetProtection(KNIFE, 1);
     SetItems( ([
-                ({"pheasant","feather"})  : "Looks like a pheasant feather.",
+                ({"pheasant","перо"})  : "Похоже на перо фазана.",
                 ]) );
 }
 

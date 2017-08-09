@@ -7,13 +7,13 @@ varargs int CheckOrc(object who, mixed where);
 
 static void create(){
     armor::create();
-    SetKeyName("orc helmet");
-    SetId(({"helmet"}));
+    SetKeyName("орочий шлем");
+    SetId(({"шлем"}));
     SetAdjectives(({"bear","bone","skull","orc"}));
-    SetShort("a bear skull helmet");
-    SetLong("This is a helmet made of the hard bone of a bear, "+
-            "treated with some sort of thick resin to "+
-            "prevent shattering.");
+    SetShort("орочий шлем");
+    SetLong("Этот шлем сделан из толстого черепа медведя. "+
+            "Внутри него мягкая подкладка для защиты головы "+
+            "от сотрясений.");
     SetMass(150);
     SetBaseCost("silver",100);
     SetArmorType(A_HELMET);
@@ -26,16 +26,16 @@ static void create(){
 varargs int CheckOrc(object who, mixed where){
     string race = who->GetRace();
     object env = environment(who);
-    if( race == "orc"  || race == "half-orc"){
-        who->eventPrint("You can almost feel the power of the bear as you "+
-                "wear its skull.");
-        if(env) tell_room(env, who->GetName()+" wears "+
+    if( race == "orc"  || race == "half-orc" || race == "орк"){
+        who->eventPrint("Надев шлем вы чувствуете вливающуюся в ваши мышцы "+
+                "медвежью силу.");
+        if(env) tell_room(env, who->GetName()+" одел "+
                 GetShort()+".", ({who}));
         return 1;
     }
     else {
-        who->eventPrint("The helmet appears designed for orcish anatomy. "+
-                "It does not fit you.");
+        who->eventPrint("Шлем сделан под орочью анатомию. "+
+                "Он не подойдет вам.");
         return 0;
     }
 }

@@ -12,11 +12,11 @@ inherit LIB_ARMOR;
 
 static void create() {
     armor::create();
-    SetKeyName("leather armor");
-    SetId( ({ "armor", "leather armor" }) );
-    SetAdjectives( ({ "leather" }) );
-    SetShort("a suit of leather armor");
-    SetLong("An ordinary suit of leather armor. It is worn on one's arms, torso and legs.");
+    SetKeyName("кожаный доспех");
+    SetId( ({ "доспех", "кожаный доспех" }) );
+    SetAdjectives( ({ "кожаный" }) );
+    SetShort("кожаный доспех");
+    SetLong("Вы видите самый обычный кожаный доспех. Он защищает одну руку, тело и часть ног.");
     SetVendorType(VT_ARMOR);
     SetMass(350);
     SetValue(150);

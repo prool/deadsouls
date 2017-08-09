@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("leather boot");
-    SetAdjectives( ({"leather", "simple", "orc", "orcish", "inelegant", "protective"}) );
-    SetId(({"boot","left boot"}));
-    SetShort("a leather boot");
-    SetLong("A leather boot of orcish design. Simple and inelegant, but quite protective. It is designed for the left foot.");
+    SetKeyName("орочий сапог");
+    SetAdjectives( ({"кожаный", "простой", "orc", "орочий", "некрасивый", "левый"}) );
+    SetId(({"сапог","левый сапог"}));
+    SetShort("орочий сапог");
+    SetLong("Это кожаный сапог работы орков. Он простой и некрасивый, но дает хорошую защиту. Его можно одеть на левую ногу.");
     SetMass(60);
     SetBaseCost("silver", 30);
     SetProtection(BLUNT,5);

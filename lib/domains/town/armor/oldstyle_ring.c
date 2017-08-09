@@ -5,11 +5,11 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("metal ring");
-    SetId(({"ring"}));
-    SetAdjectives( ({"simple","metal"}) );
-    SetShort("a simple ring");
-    SetLong("This is a simple metal ring.");
+    SetKeyName("металлическое кольцо");
+    SetId(({"кольцо"}));
+    SetAdjectives( ({"простое","металлическое"}) );
+    SetShort("простое кольцо");
+    SetLong("Вы видите саоме обычное металлическое кольцо.");
     SetMass(1);
     SetValue(100);
     SetArmorType(A_RING);

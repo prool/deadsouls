@@ -5,12 +5,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("goggles");
-    SetId(({"goggles"}));
-    SetAdjectives(({"thick","driving","protective","eyewear"}));
-    SetShort("driving goggles");
-    SetLong("A set of protective goggles for wearing during "+
-            "high-speed travel.");
+    SetKeyName("защитные очки");
+    SetId(({"защитные очки"}));
+    SetAdjectives(({"толстые","driving","защитные","eyewear"}));
+    SetShort("защитные очки");
+    SetLong("Эти очки сделаны из толстых стекол в прочной оправе, для защиты "+
+            "глаз от мелких камней и веток.");
     SetMass(5);
     SetBaseCost("silver",30);
     SetArmorType(A_VISOR);
@@ -22,8 +22,8 @@ void init(){
 
 int eventReceiveDamage(mixed agent, int type, int amt, int i, mixed array l){
     if(GetWorn()){
-        tell_object(environment(this_object()), "The goggles! They "+
-                "do nothing!");
+        tell_object(environment(this_object()), "Защитные очки! Они "+
+                "не работают!");
     }
     return ::eventReceiveDamage(agent, type, amt, i, l);          
 }

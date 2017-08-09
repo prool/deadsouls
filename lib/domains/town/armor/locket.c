@@ -5,11 +5,11 @@ inherit LIB_WORN_STORAGE;
 
 static void create(){
     ::create();
-    SetKeyName("necklace");
-    SetId(({"necklace","chain" "locket"}));
-    SetAdjectives(({"silver","braided","finest"}));
-    SetShort("a silver necklace");
-    SetLong("A braided chain, made of finest silver. A locket is on it.");  
+    SetKeyName("ожерелье");
+    SetId(({"ожерелье","chain" "locket"}));
+    SetAdjectives(({"серебряное","braided","finest"}));
+    SetShort("серебряное ожерелье");
+    SetLong("Вы видите цепь из переплетенных серебряных колец с небольшим медальоном.");  
     SetMass(50);
     SetMaxCarry(300);
     SetBaseCost("silver",1);
@@ -18,7 +18,7 @@ static void create(){
     SetProtection(KNIFE,1);
     SetArmorType(A_COLLAR);
     SetItems(([
-      ({"locket"}) : "It bears the name of the man that Brandy loved.",
+      ({"медальон"}) : "На нем выгравировано имя любимого Бранди человека.",
    ])); 
 }
 

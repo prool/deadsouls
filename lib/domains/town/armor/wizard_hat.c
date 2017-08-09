@@ -5,13 +5,13 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("wizard hat");
-    SetId(({"hat","headgear"}));
+    SetKeyName("шляпа волшебника");
+    SetId(({"шляпа","волшебника"}));
     SetAdjectives(({"wizard","wizard's"}));
-    SetShort("a wizard's hat");
-    SetLong("This is a large, floppy hat with a wide brim all "+
-            "around it, and a conical center. It is dark blue in color, "+
-            "and is decorated with pictures of yellow moons and stars.");
+    SetShort("шляпа волшебника");
+    SetLong("Это большая широкополая шляпа с высоким коническим основанием. "+
+            "Она темно синего цвета и украшена вышивками "+
+            "полумесяцев и звезд.");
     SetMass(50);
     SetBaseCost("silver",500);
     SetArmorType(A_HELMET);

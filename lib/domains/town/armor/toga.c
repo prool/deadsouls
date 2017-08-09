@@ -5,12 +5,12 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("healer's toga");
-    SetId(({"toga"}));
-    SetAdjectives(({"long","white","comfotable"}));
-    SetShort("a long, white toga");
-    SetLong("This is a comfortable, full-length toga. It is the sort of "
-            "elegant garment that ancient politicians and healers once wore.");
+    SetKeyName("тога лекаря");
+    SetId(({"тога"}));
+    SetAdjectives(({"длинная","белая","comfotable"}));
+    SetShort("длинная белая тога");
+    SetLong("Вы видите белую тогу, длинной до пола. Такие носили раньше "
+            "древние политики, сейчас же их носят разве что лекари.");
     SetMass(75);
     SetBaseCost("silver",100);
     SetProtection(BLUNT,1);

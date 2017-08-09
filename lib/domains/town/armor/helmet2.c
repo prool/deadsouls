@@ -5,13 +5,13 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("kevlar helmet");
-    SetId(({"helmet","cover","kevlar"}));
-    SetAdjectives(({"kevlar","battle","hard"}));
-    SetShort("a camouflaged kevlar helmet");
-    SetLong("This is a military helmet made of a very tough "+
-            "polymer fiber that provides excellent ballistic protection. It bears a "+
-            "mottled camouflage design to aid in woodland concealment.");
+    SetKeyName("камуфляжный шлем");
+    SetId(({"шлем","cover","kevlar"}));
+    SetAdjectives(({"камуфляжный","боевой","прочный"}));
+    SetShort("камуфляжный шлем");
+    SetLong("Этот металлический шлем покрыт дополнительно специальным "+
+            "покрытием, смягчающим удары по голове. Кроме того, "+
+            "он выкрашен в неприметный серо-зеленый цвет.");
     SetMass(50);
     SetBaseCost("silver",500);
     SetArmorType(A_HELMET);

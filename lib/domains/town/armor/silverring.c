@@ -5,20 +5,20 @@ inherit LIB_ARMOR;
 
 static void create(){
     armor::create();
-    SetKeyName("silver_ring");
-    SetId(({"ring","silver ring"}));
-    SetAdjectives( ({"beautiful"}) );
-    SetShort("a beautiful silver ring");
-    SetLong("This is a simple but beautiful ring made of "+
-            "silver, suitable for wearing on one's finger. The ring bears an inscription.");
+    SetKeyName("серебряное кольцо");
+    SetId(({"кольцо","серебряное кольцо"}));
+    SetAdjectives( ({"красивое"}) );
+    SetShort("красивое серебряное кольцо");
+    SetLong("Это простое, но красивое кольцо сделано из  "+
+            "обычного серебра. Внутри кольца вы замечаете надпись.");
     SetMass(1);
     SetBaseCost("silver",5000);
     SetArmorType(A_RING);
     SetItems(([
-                ({"script","words","inscription","writing"}) : "Words engraved on the ring in a highly "+
-                "stylized script."
+                ({"надпись","слова","гравировка","writing"}) : "Слова выгравированы в "+
+                "таинственную надпись."
                 ]) );
-    SetRead(({"script","words","inscription","writing"}), "\"etaoin shrdlu\""  );
+    SetRead(({"надпись","слова","гравировка","writing"}), "\"etaoin shrdlu\""  );
 
 }
 
