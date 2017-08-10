@@ -6,18 +6,18 @@ inherit LIB_MEAL;
 
 static void create() {
     meal::create();
-    SetKeyName("firebreather bourbon");
-    SetId( ({ "bottle", "bourbon" ,"fire","firebreather",
-                "bottle of bourbon"}) );
+    SetKeyName("огненный бурбон");
+    SetId( ({ "бутылка", "бурбон" ,"fire","огненный",
+                "бутылка бурбона"}) );
     SetAdjectives( ({ "firebreather","dark","green","bourbon"}) );
-    SetShort("a bottle of bourbon");
-    SetLong("A dark green bottle of \"Firebreather\" brand bourbon.");
+    SetShort("бутылка бурбона");
+    SetLong("Это бутылка из темного зеленого стекла с бурбоном марки 'огненный'.");
     SetMass(100);
     SetBaseCost("silver",50);
     SetMealType(MEAL_DRINK | MEAL_ALCOHOL);
     SetStrength(40);
-    SetMealMessages("You finish off the bourbon and gasp! WHOOT!! Mean stuff!",
-            "$N finishes off a bottle of Firebreather bourbon and lets loose a rebel yell!");
+    SetMealMessages("Вы опустошаете бутылку бурбона!",
+            "$N опустошает бутылку бурбона!");
 }
 
 void init(){

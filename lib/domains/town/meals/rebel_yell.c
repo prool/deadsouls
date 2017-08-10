@@ -5,11 +5,11 @@ inherit LIB_FLASK;
 
 void create(){
     ::create();
-    SetKeyName("bottle");
-    SetId( ({"whiskey","vessel","bottle of whiskey","rebel yell"}) );
+    SetKeyName("бутылка");
+    SetId( ({"виски","vessel","бутылка виски","rebel yell"}) );
     SetAdjectives( ({"whiskey","glass","rebel yell"}) );
-    SetShort("a bottle of whiskey");
-    SetLong("A bottle of whiskey.");
+    SetShort("бутылка виски");
+    SetLong("Бутылка с отличным виски.");
     SetMass(40);
     SetBaseCost("gold",3);
     SetVendorType(VT_DRINK);
@@ -19,12 +19,12 @@ void create(){
     SetMaxFlask(10); 
     SetMealType(MEAL_ALCOHOL);
     SetItems(([
-      "label" : "It is attached to the bottle and has a picture of "+
-        "a mounted soldier in a gray uniform, on a rearing horse, "+
-        "sword raised.",
+      "этикетка" : "На бутылке есть этикетка с изображением "+
+        "солдата на лошади в серой униформе "+
+        "с поднятой саблей.",
     ]));
     SetReads(([
-      "label" : "REBEL YELL",
+      "этикетка" : "REBEL YELL",
     ]));
 }
 void init(){

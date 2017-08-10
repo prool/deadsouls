@@ -8,18 +8,18 @@ int MealCure(object who);
 
 static void create() {
     meal::create();
-    SetKeyName("pill");
-    SetId(({"claritin","loratidine","dose","drug"}));
-    SetShort("a claritin pill");
-    SetAdjectives(({"10mg", "10 milligram", "non drowsy","non prescription", "prescription strength"}));
-    SetLong("A tiny, 10 milligram dose of a drug that removes cold symptoms.");
+    SetKeyName("пилюля");
+    SetId(({"кларитин","пилюля","dose","drug"}));
+    SetShort("пилюля кларитина");
+    SetAdjectives(({"10mg", "10 milligram", "небольшая","non prescription", "prescription strength"}));
+    SetLong("Небольшая пилюля с лекарством, устраняющим симптомы простуды.");
     SetMass(10);
     SetStrength(1);
     SetBaseCost("silver",10);
     SetMealType(MEAL_FOOD);
     SetMealAction((: MealCure :));
-    SetMealMessages("You swallow the pill.",
-            "$N swallows a pill.");
+    SetMealMessages("Вы проглатили пилюлю.",
+            "$N проглотил пилюлю.");
 }
 void init(){
     ::init();
@@ -39,7 +39,7 @@ int MealCure(object who){
         }
     }
     if(effect){
-        tell_player(who,"You feel a little better already.");
+        tell_player(who,"Вы почувствовали себя немного лучше.");
     }
 
     return 1;

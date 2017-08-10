@@ -7,18 +7,18 @@ inherit LIB_POTION;
 
 static void create() {
     ::create();
-    SetKeyName("javarin");
-    SetId(({"pill","stimulant"}));
-    SetShort("a javarin pill");
-    SetAdjectives(({"javarin","small","yellow"}));
-    SetLong("A small yellow stimulant.");
+    SetKeyName("жаварин");
+    SetId(({"пилюля","стимулянт"}));
+    SetShort("пилюля жаварина");
+    SetAdjectives(({"жаварин","небольшая","желтая"}));
+    SetLong("Это небольшая желтая пилюля содержащая стимулянт.");
     SetMass(1);
     SetStrength(1);
     SetBaseCost("gold",1);
     SetStrength(1);
     SetMealType(MEAL_FOOD);
-    SetMealMessages("You swallow a pill.",
-            "$N swallows a pill.");
+    SetMealMessages("Вы проглотили пилюлю.",
+            "$N проглотил пилюлю.");
     SetDuration(10);
     SetStats( ([ "speed" : 1 ]) );
     SetPoints( ([ "caffeine" : 20 ]) );

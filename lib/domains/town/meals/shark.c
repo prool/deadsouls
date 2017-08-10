@@ -13,11 +13,11 @@ inherit LIB_FISH;
 void BiteMe(object who);
 static void create() {
     fish::create();
-    SetKeyName("bull shark");
-    SetId( ({ "shark", "bull shark" }) );
-    SetShort("a bull shark");
-    SetLong("It is a huge, long fish with razor sharp teeth and a carnivorous "
-            "appetite.");
+    SetKeyName("бычья акула");
+    SetId( ({ "акула", "бычья акула" }) );
+    SetShort("бычья акула");
+    SetLong("Это огромная жирная рыбина с зубами, напоминающими кривые сабли, и "
+            "ненасытным аппетитом.");
     SetMealType(MEAL_FOOD);
     SetMass(100); 
     SetStrength(50);
@@ -30,9 +30,9 @@ int eventCatch(object who, object pole) {
     return 1;
 }
 void BiteMe(object who) {
-    who->eventPrint("The shark bites you before it dies!");
-    environment(who)->eventPrint("The shark bites " + who->GetName() +
-            " before it dies!", who);
+    who->eventPrint("Акула укусила вас перед смертью!");
+    environment(who)->eventPrint("Акула укусила " + who->GetName() +
+            " перед смертью!", who);
     who->eventReceiveDamage(this_object(), BITE, random(30), 0,
             who->GetRandomLimb("right hand"));
 }

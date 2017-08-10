@@ -6,15 +6,15 @@ inherit LIB_MEAL;
 
 static void create() {
     meal::create();
-    SetKeyName("ale");
-    SetId( ({ "bottle", "ale", "first class ale", "first-class ale" }) );
-    SetShort("a bottle of ale");
-    SetLong("A nice bottle of ale.");
+    SetKeyName("эль");
+    SetId( ({ "бутылка", "эль", "первоклассный эль", "великолепный" }) );
+    SetShort("бутылка эля");
+    SetLong("Это бутылка великолепного эля.");
     SetMass(60);
     SetMealType(MEAL_DRINK | MEAL_ALCOHOL);
     SetStrength(5);
-    SetMealMessages("You drink a bottle of ale.",
-            "$N drinks a bottle of ale.");
+    SetMealMessages("Вы выпили бутылку эля.",
+            "$N выпил бутылку эля.");
     SetBaseCost("silver",10);
 }
 void init(){

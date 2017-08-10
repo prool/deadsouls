@@ -5,11 +5,11 @@ inherit LIB_FLASK;
 
 void create(){
     ::create();
-    SetKeyName("bottle");
-    SetId( ({"vessel","winebottle","bottle of wine","nouveau"}) );
-    SetAdjectives( ({"wine","glass","nouveau"}) );
-    SetShort("a bottle of wine");
-    SetLong("A bottle of something or other Nouveau. The label is too stained to read.");
+    SetKeyName("бутылка");
+    SetId( ({"vessel","бутылка","бутылка вина","nouveau"}) );
+    SetAdjectives( ({"вино","glass","nouveau"}) );
+    SetShort("бутылка вина");
+    SetLong("Это бутылка дешевого вина. Ее этикетка слишком грязная, чтобы на ней можно было что-нибудь разобрать.");
     SetMass(40);
     SetBaseCost("gold",2);
     SetVendorType(VT_DRINK);
@@ -19,10 +19,10 @@ void create(){
     SetMaxFlask(10); 
     SetMealType(MEAL_ALCOHOL);
     SetItems(([
-      "label" : "It is attached to the bottle and is meant to be read.",
+      "этикетка" : "Она приклеена к бутылке и ее можно прочесть.",
     ]));
     SetReads(([
-      "label" : "It's too stained to read, all right.",
+      "этикетка" : "Она слишком грязная, ее не получается прочесть.",
     ]));
 }
 void init(){

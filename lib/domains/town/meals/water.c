@@ -6,17 +6,17 @@ inherit LIB_MEAL;
 
 static void create()  {
     meal::create();
-    SetKeyName("water");
-    SetId(({ "bottle","water"}));
-    SetAdjectives(({"fresh","spring"}));
-    SetShort("a bottle of water");
-    SetLong("This is a little bottle of fresh spring water.");
+    SetKeyName("вода");
+    SetId(({ "бутылка","вода"}));
+    SetAdjectives(({"чистая","родниковая"}));
+    SetShort("бутылка воды");
+    SetLong("Это бутылка с чистой родниковой водой.");
     SetMass(10);
     SetMealType(MEAL_DRINK);
     SetStrength(10);
     SetBaseCost("silver",2);
-    SetMealMessages("You drink your water, and feel refreshed.", "$N drinks "+
-            "$P water.");
+    SetMealMessages("Вы пьете воду и чувствуете себя посвежевшим.", "$N пьет "+
+            "$P воду.");
 }
 void init(){
     ::init();
