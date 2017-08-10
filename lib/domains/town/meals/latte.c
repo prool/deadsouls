@@ -6,17 +6,17 @@ inherit LIB_MEAL;
 
 static void create()  {
     meal::create();
-    SetKeyName("milk");
-    SetId("latte");
-    SetShort("a cafe latte");
-    SetLong("A perfect pull of espresso married to steamed milk, "
-            "and,  voila!: cafe latte!");
+    SetKeyName("латте");
+    SetId("латте");
+    SetShort("кофе латте");
+    SetLong("Великолепный кофейный напиток с большим содержанием молока, "
+            "невероятно вкусно!");
     SetMass(10);
     SetMealType( MEAL_DRINK | MEAL_CAFFEINE );
     SetStrength(25);
     SetValue(2);
-    SetMealMessages("The wonderful drink is invigorating." , 
-            "$N drinks $P latte, and looks invigorated.");
+    SetMealMessages("Вы выпили кофе латте." , 
+            "$N выпил $P кофе латте.");
 }
 void init(){
     ::init();

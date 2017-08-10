@@ -5,15 +5,15 @@ inherit LIB_POTION;
 
 static void create() {
     potion::create();
-    SetKeyName("potion");
-    SetId( ({ "potion","philtrum","megapotion","megapotion of uberness" }) );
-    SetShort("a megapotion of uberness");
-    SetLong("An example of a potion that is totally out of proportion in power.");
+    SetKeyName("зелье");
+    SetId( ({ "зелье","philtrum","megapotion","зелье суперсилы" }) );
+    SetShort("зелье суперсилы");
+    SetLong("Это зелье значительно увеличивает силу выпившего.");
     SetMass(60);
     SetMealType(MEAL_DRINK | MEAL_ALCOHOL);
     SetStrength(5);
-    SetMealMessages("You drink a potion.",
-            "$N drinks a potion.");
+    SetMealMessages("Вы выпили зелье.",
+            "$N выпил зелье.");
     SetBaseCost("silver",10000);
     SetDuration(30);
     SetStats( ([ "strength" : 50, "speed" : 50 ]) );

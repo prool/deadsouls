@@ -5,11 +5,11 @@ inherit LIB_FLASK;
 
 void create(){
     ::create();
-    SetKeyName("stein");
-    SetId( ({"mug","vessel","guinness"}) );
-    SetAdjectives( ({"large","beer","guinness"}) );
-    SetShort("a large beer stein");
-    SetLong("A large vessel for drinking fluids.");
+    SetKeyName("пиво");
+    SetId( ({"бутыль","бутылка","guinness"}) );
+    SetAdjectives( ({"большая","пиво","guinness"}) );
+    SetShort("большая бутылка пива");
+    SetLong("Большая полупрозрачная бутыль с полуторами литрами живительной жидкости.");
     SetMass(40);
     SetBaseCost("gold",1);
     SetVendorType(VT_DRINK);

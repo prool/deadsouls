@@ -7,18 +7,18 @@ inherit LIB_POTION;
 
 static void create() {
     ::create();
-    SetKeyName("blue spice");
-    SetId(({"spice","stick","stick of blue spice","slender"}));
-    SetShort("a stick of blue spice");
-    SetAdjectives(({"blue","spice"}));
-    SetLong("A slender stick of blue spice.");
+    SetKeyName("синяя специя");
+    SetId(({"специя","палочка","палочка синей специи","slender"}));
+    SetShort("палочка синей специи");
+    SetAdjectives(({"синей","синюю"}));
+    SetLong("Тонкая палочка синей специи.");
     SetMass(1);
     SetStrength(1);
     SetBaseCost("gold",10);
     SetStrength(1);
     SetMealType(MEAL_FOOD);
-    SetMealMessages("You eat a stick of blue spice.",
-            "$N eats a stick of blue spice.");
+    SetMealMessages("Вы съели палочку синей специи.",
+            "$N съел палочку синей специи.");
     SetDuration(30);
     SetStats( ([ "durability" : 1 ]) );
     SetPoints( ([ "HP" : 450 ]) );

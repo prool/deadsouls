@@ -6,11 +6,11 @@ inherit LIB_FISH;
 
 static void create() {
     fish::create();
-    SetKeyName("zyqxuwy");
-    SetId( ({ "fish", "pinkfish" }) );
-    SetAdjectives( ({ "pink","freshwater","fresh water" }) );
-    SetShort("a pink zyqxuwy");
-    SetLong("It is freshwater fish, and pink in color.");
+    SetKeyName("таранька");
+    SetId( ({ "рыба", "таранька" }) );
+    SetAdjectives( ({ "pink","свежевыловленная","fresh water" }) );
+    SetShort("таранька");
+    SetLong("Это свежевыловленная рыба, сгодится на закуску.");
     SetMealType(MEAL_FOOD);
     SetMass(10); 
     SetStrength(10); 

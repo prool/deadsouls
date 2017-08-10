@@ -6,16 +6,16 @@ inherit LIB_POTION;
 
 static void create() {
     potion::create();
-    SetKeyName("potion");
-    SetId( ({ "bottle", "potion","philtrum","potion of healing","potion of minor healing" }) );
-    SetAdjectives( "green", "healing","minor healing" );
-    SetShort("a green potion of minor healing");
-    SetLong("A bottle containing a green fluid with the magical property of restoring some health.");
+    SetKeyName("зелье");
+    SetId( ({ "бутылка", "зелье","бутылочка","зелье лечения","зелье слабого лечения" }) );
+    SetAdjectives(({"зеленое", "слабого", "greater healing"}));
+    SetShort("зеленое зелье слабого лечения");
+    SetLong("Это небольшая бутылочка с зеленой жидкостью, которая способна залечивать зарапины.");
     SetMass(60);
     SetMealType(MEAL_DRINK);
     SetStrength(5);
-    SetMealMessages("You drink a potion.",
-            "$N drinks a potion.");
+    SetMealMessages("Вы выпили зелье.",
+            "$N выпил зелье.");
     SetBaseCost("silver",500);
     SetPoints( ([ "HP" : 100 ]) );
     SetVendorType(VT_MAGIC);
