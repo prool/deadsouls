@@ -1,0 +1,44 @@
+DeadSoulsNew crashed Thu Aug 10 16:56:24 2017 with error Process interrupted.
+
+0:OBJ(/secure/sefun/sefun), file: /secure/sefun/sefun.c, fun: get_stack, origin: simul
+1:OBJ(/secure/daemon/master), file: /secure/daemon/master.c, fun: crash, origin: driver
+({ })
+---
+DeadSoulsNew crashed Thu Aug 10 17:28:27 2017 with error Process interrupted.
+
+0:OBJ(/secure/sefun/sefun), file: /secure/sefun/sefun.c, fun: get_stack, origin: simul
+1:OBJ(/secure/daemon/master), file: /secure/daemon/master.c, fun: crash, origin: driver
+({ })
+---
+DeadSoulsNew crashed Thu Aug 10 17:30:18 2017 with error Process interrupted.
+
+0:OBJ(/secure/sefun/sefun), file: /secure/sefun/sefun.c, fun: get_stack, origin: simul
+1:OBJ(/secure/daemon/master), file: /secure/daemon/master.c, fun: crash, origin: driver
+({ })
+---
+DeadSoulsNew crashed Thu Aug 10 17:34:22 2017 with error Process interrupted.
+
+0:OBJ(/secure/sefun/sefun), file: /secure/sefun/sefun.c, fun: get_stack, origin: simul
+1:OBJ(/secure/daemon/master), file: /secure/daemon/master.c, fun: crash, origin: driver
+({ })
+---
+DeadSoulsNew crashed Thu Aug 10 17:34:55 2017 with error Process interrupted.
+
+0:OBJ(/secure/sefun/sefun), file: /secure/sefun/sefun.c, fun: get_stack, origin: simul
+1:OBJ(/secure/daemon/master), file: /secure/daemon/master.c, fun: crash, origin: driver
+({ })
+---
+DeadSoulsNew crashed Thu Aug 10 17:35:35 2017 with error Process interrupted.
+
+0:OBJ(/secure/sefun/sefun), file: /secure/sefun/sefun.c, fun: get_stack, origin: simul
+1:OBJ(/secure/daemon/master), file: /secure/daemon/master.c, fun: crash, origin: driver
+({ })
+---
+DeadSoulsNew crashed Thu Aug 10 17:38:55 2017 with error Process interrupted.
+
+0:OBJ(/secure/sefun/sefun), file: /secure/sefun/sefun.c, fun: get_stack, origin: simul
+1:OBJ(/secure/daemon/master), file: /secure/daemon/master.c, fun: crash, origin: driver
+2:OBJ(/secure/daemon/file), file: /secure/daemon/file.c, fun: Report, origin: local
+3:OBJ(/secure/daemon/file), file: /secure/daemon/file.c, fun: heart_beat, origin: driver
+({ OBJ(/secure/daemon/file) })
+---

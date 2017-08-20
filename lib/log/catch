@@ -1,0 +1,118 @@
+
+--- DeadSoulsNew
+2017.08.10-11.45,04
+*Error in loading object '/domains/town/room/wtunnel3'
+Object: /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+'preload' at /secure/daemon/master at line 252
+'CATCH' at /secure/daemon/master at line 252
+'create' at /secure/daemon/portal at line 141
+'CheckPortals' at /secure/daemon/portal at line 20
+'CATCH' at /secure/daemon/portal at line 20
+'load_object' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+'CATCH' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+--- DeadSoulsNew
+2017.08.10-12.27,26
+*Error in loading object '/domains/town/room/wtunnel3'
+Object: /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+'preload' at /secure/daemon/master at line 252
+'CATCH' at /secure/daemon/master at line 252
+'create' at /secure/daemon/portal at line 141
+'CheckPortals' at /secure/daemon/portal at line 20
+'CATCH' at /secure/daemon/portal at line 20
+'load_object' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+'CATCH' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+--- DeadSoulsNew
+2017.08.10-12.29,52
+*Error in loading object '/domains/town/room/wtunnel3'
+Object: /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+'preload' at /secure/daemon/master at line 252
+'CATCH' at /secure/daemon/master at line 252
+'create' at /secure/daemon/portal at line 141
+'CheckPortals' at /secure/daemon/portal at line 20
+'CATCH' at /secure/daemon/portal at line 20
+'load_object' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+'CATCH' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+--- DeadSoulsNew
+2017.08.10-12.32,02
+*Error in loading object '/domains/town/room/wtunnel3'
+Object: /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+'preload' at /secure/daemon/master at line 252
+'CATCH' at /secure/daemon/master at line 252
+'create' at /secure/daemon/portal at line 141
+'CheckPortals' at /secure/daemon/portal at line 20
+'CATCH' at /secure/daemon/portal at line 20
+'load_object' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+'CATCH' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+--- DeadSoulsNew
+2017.08.10-12.34,28
+*Error in loading object '/domains/town/room/wtunnel3'
+Object: /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+'preload' at /secure/daemon/master at line 252
+'CATCH' at /secure/daemon/master at line 252
+'create' at /secure/daemon/portal at line 141
+'CheckPortals' at /secure/daemon/portal at line 20
+'CATCH' at /secure/daemon/portal at line 20
+'load_object' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+'CATCH' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+--- DeadSoulsNew
+2017.08.10-12.34,35
+*Error in loading object '/secure/lib/connect'
+Object: /secure/sefun/sefun at line 120
+
+'connect' at /secure/daemon/master at line 419
+'CATCH' at /secure/daemon/master at line 419
+'clone_object' at /secure/sefun/sefun at line 120
+
+--- DeadSoulsNew
+2017.08.10-12.35,01
+*Error in loading object '/domains/town/room/wtunnel3'
+Object: /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+'preload' at /secure/daemon/master at line 252
+'CATCH' at /secure/daemon/master at line 252
+'create' at /secure/daemon/portal at line 141
+'CheckPortals' at /secure/daemon/portal at line 20
+'CATCH' at /secure/daemon/portal at line 20
+'load_object' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+'CATCH' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+--- DeadSoulsNew
+2017.08.10-12.35,13
+*Error in loading object '/secure/lib/connect'
+Object: /secure/sefun/sefun at line 120
+
+'connect' at /secure/daemon/master at line 419
+'CATCH' at /secure/daemon/master at line 419
+'clone_object' at /secure/sefun/sefun at line 120
+
+--- DeadSoulsNew
+2017.08.10-12.35,31
+*Error in loading object '/secure/lib/connect'
+Object: /secure/sefun/sefun at line 120
+
+'connect' at /secure/daemon/master at line 419
+'CATCH' at /secure/daemon/master at line 419
+'clone_object' at /secure/sefun/sefun at line 120
+
+--- DeadSoulsNew
+2017.08.10-12.37,26
+*Error in loading object '/domains/town/room/wtunnel3'
+Object: /secure/sefun/sefun at /secure/sefun/load_object.c:35
+
+'preload' at /secure/daemon/master at line 252
+'CATCH' at /secure/daemon/master at line 252
+'create' at /secure/daemon/portal at line 141
+'CheckPortals' at /secure/daemon/portal at line 20
+'CATCH' at /secure/daemon/portal at line 20
+'load_object' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
+'CATCH' at /secure/sefun/sefun at /secure/sefun/load_object.c:35
