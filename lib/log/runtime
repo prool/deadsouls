@@ -1,0 +1,87 @@
+----------------------------------------------------------------------------
+DeadSoulsNew (FluffOS v2.23-ds03) starting up on Linux - Thu Aug 10 17:37:26 2017
+
+
+
+Loading preloaded files ...
+Error in error handler: *Object cannot be loaded during compilation.
+program: /secure/sefun/sefun.c, object: /secure/sefun/sefun, file: /secure/sefun/timestamp.c:19
+--- trace ---
+Object: /secure/daemon/master, Program: /secure/daemon/master.c
+   in preload() at /secure/daemon/master.c:252
+Object: /secure/daemon/master, Program: /secure/daemon/master.c
+   in <catch>() at /secure/daemon/master.c:252
+Object: /secure/daemon/portal, Program: /secure/daemon/portal.c
+   in create() at /secure/daemon/portal.c:141
+Object: /secure/daemon/portal, Program: /secure/daemon/portal.c
+   in CheckPortals() at /secure/daemon/portal.c:20
+Object: /secure/daemon/portal, Program: /secure/daemon/portal.c
+   in <catch>() at /secure/daemon/portal.c:20
+Object: /secure/sefun/sefun, Program: /secure/sefun/sefun.c
+   in load_object() at /secure/sefun/load_object.c:35
+Object: /secure/sefun/sefun, Program: /secure/sefun/sefun.c
+   in <catch>() at /secure/sefun/load_object.c:35
+Object: /secure/daemon/master, Program: /secure/daemon/master.c
+   in log_error() at /secure/daemon/master.c:685
+Object: /secure/sefun/sefun, Program: /secure/sefun/sefun.c
+   in load_object() at /secure/sefun/load_object.c:35
+Object: /secure/sefun/sefun, Program: /secure/sefun/sefun.c
+   in <catch>() at /secure/sefun/load_object.c:35
+Object: /secure/daemon/master, Program: /secure/daemon/master.c
+   in error_handler() at /secure/daemon/master.c:651
+'      timestamp' in '/secure/sefun/sefun.c' ('/  secure/sefun/sefun') /secure/sefun/timestamp.c:19
+--- end trace ---
+Error in error handler: *Object cannot be loaded during compilation.
+program: /secure/sefun/sefun.c, object: /secure/sefun/sefun, file: /secure/sefun/timestamp.c:19
+--- trace ---
+Object: /secure/daemon/master, Program: /secure/daemon/master.c
+   in preload() at /secure/daemon/master.c:252
+Object: /secure/daemon/master, Program: /secure/daemon/master.c
+   in <catch>() at /secure/daemon/master.c:252
+Object: /secure/daemon/portal, Program: /secure/daemon/portal.c
+   in create() at /secure/daemon/portal.c:141
+Object: /secure/daemon/portal, Program: /secure/daemon/portal.c
+   in CheckPortals() at /secure/daemon/portal.c:20
+Object: /secure/daemon/portal, Program: /secure/daemon/portal.c
+   in <catch>() at /secure/daemon/portal.c:20
+Object: /secure/sefun/sefun, Program: /secure/sefun/sefun.c
+   in load_object() at /secure/sefun/load_object.c:35
+Object: /secure/sefun/sefun, Program: /secure/sefun/sefun.c
+   in <catch>() at /secure/sefun/load_object.c:35
+Object: /secure/daemon/master, Program: /secure/daemon/master.c
+   in log_error() at /secure/daemon/master.c:695
+Object: /secure/daemon/master, Program: /secure/daemon/master.c
+   in <catch>() at /secure/daemon/master.c:695
+Object: /secure/sefun/sefun, Program: /secure/sefun/sefun.c
+   in timestamp() at /secure/sefun/timestamp.c:19
+Object: /secure/daemon/master, Program: /secure/daemon/master.c
+   in error_handler() at /secure/daemon/master.c:651
+'      timestamp' in '/secure/sefun/sefun.c' ('/  secure/sefun/sefun') /secure/sefun/timestamp.c:19
+--- end trace ---
+Initializations complete.
+
+Accepting connections on port 6666.
+
+Running autoexec, please wait...
+Autoexec daemon run complete. (47ms)
+
+CPU time in boot: 0.52 seconds. (Performance score: Spectacular.)
+
+/log/login
+*Cannot index type 'int' using [ .. ] operator.
+Object: /secure/daemon/master at line 958
+
+'<fake>' at /secure/lib/connect#79 (/<driver>) at line 0
+'InputName' at /secure/lib/connect#79 at line 47
+'player_object' at /secure/daemon/master at line 958
+
+--
+******** FATAL ERROR: Process interrupted
+FluffOS driver attempting to exit gracefully.
+(current object was /secure/daemon/file)
+--- trace ---
+Object: /secure/daemon/file, Program: /secure/daemon/file.c
+   in heart_beat() at /secure/daemon/file.c:38
+'         Report' in '/secure/daemon/file.c' ('/  secure/daemon/file') /secure/daemon/file.c:98
+--- end trace ---
+crash() in master called successfully.  Aborting.
